@@ -1,341 +1,333 @@
- <body style="background-attachment: fixed;" vlink="red" alink="#ff0000" background="Image 01" bgcolor="black" lang="EN-US" link="#646464"><p align="center">&nbsp;</p><embed src="CHILL.mp3" height="0" width="0"> 
- </object> 
 
- 
- 
-   <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
- 
- 
-<html xmlns="http://www.w3.org/1999/xhtml"> 
- 
-  <head> 
- 
-  <SCRIPT LANGUAGE="JavaScript"> 
- 
-      <!-- Begin
- 
-      function popUp(URL) {
- 
-        day = new Date();
- 
-        id = day.getTime();
- 
-        eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=550,height=550,left = 408,top = 109');");
- 
-      }
- 
-      --> 
- 
-    </script> 
- 
-    <style> 
- 
-      td
- 
-      {
- 
-        background-color: #1f1f1f;
- 
-        font-family: Courier New;
- 
-        font-size:9pt;
- 
-        color:#00FF00;
- 
-        border-color: #ffffff;
- 
-        border-width:1pt;
- 
-        border-style:solid;
- 
-        border-collapse:collapse;
- 
-        padding:0pt 3pt;
- 
-        vertical-align:top;
- 
-      }
- 
-      table
- 
-      {
- 
-        border-color: #88aace;
- 
-        border-width:0pt 1pt;
- 
-        border-style:dash;
- 
-      }
- 
-      A:Link, A:Visited
- 
-      {
- 
-        color: #88aace;
- 
-      }
- 
-      A.no:Link, A.no:Visited
- 
-      {
- 
-        color: #88aace;
- 
-        text-decoration: none;
- 
-      }
- 
-      A:Hover, A:Visited:Hover , A.no:Hover, A.no:Visited:Hover
- 
-      {
- 
-        color: #88aace;
- 
-        background-color:#2e2e2e;
- 
-        text-decoration:
- 
-        overline underline;
- 
-      }
- 
-      .style1
- 
-      {
- 
-        color: #88aace
- 
-      }
- 
-      .style2
- 
-      {
- 
-        color: 1f1f1f
- 
-      }
- 
-      body
- 
-      {
- 
-        color:white;
-         
-        background-position:center;
- 
-        background-attachment:fixed;
- 
-        </div>
- 
-      }
- 
-    </style> </head> 
- 
-  <BODY bgColor="#000000" onLoad="teclear();" oncontextmenu="return false" onselectstart="return false"> 
- 
-    <DIV align="center"><SPAN style="FILTER: blur(add=1,direction=170,strength=30); HEIGHT: 50px"> 
- 
-    <STYLE> 
- 
-      .layermensaje {
- 
-        FONT-SIZE: 10pt;LINE-HEIGHT: 10pt; FONT-FAMILY: "Arial"
- 
-      }
- 
-    </STYLE> 
- 
-    <FONT style="FONT-SIZE: 8pt" face="Courier New"> 
- 
-      <script type="text/javascript"> 
- 
-        var charIndex = -1;
- 
-        var stringLength = 0;
- 
-        var inputText;
- 
-        function writeContent(init)
- 
-        {
- 
-          if(init)
- 
-          {
- 
-            inputText = document.getElementById('contentToWrite').innerHTML;
- 
-          }
- 
-          if(charIndex==-1)
- 
-          {
- 
-            charIndex = 0;
- 
-            stringLength = inputText.length;
- 
-          }
- 
-          var initString = document.getElementById('myContent').innerHTML;
- 
-          initString = initString.replace(/<SPAN.*$/gi,"");
- 
- 
- 
-          var theChar = inputText.charAt(charIndex);
- 
-          var nextFourChars = inputText.substr(charIndex,4);
- 
-          if(nextFourChars=='<BR>' || nextFourChars=='<br>')
- 
-          {
- 
-            theChar  = '<BR>';
- 
-            charIndex+=3;
- 
-          }
- 
-          initString = initString + theChar + "<SPAN id='blink'>></SPAN>";
- 
-          document.getElementById('myContent').innerHTML = initString;
- 
- 
- 
-          charIndex = charIndex/1 +1;
- 
-          if(charIndex%2==1)
- 
-          {
- 
-            document.getElementById('blink').style.display='none';
- 
-          }
- 
-          else
- 
-          {
- 
-            document.getElementById('blink').style.display='inline';
- 
-          }
- 
-          if(charIndex<=stringLength)
- 
-          {
- 
-            setTimeout('writeContent(false)',100);
- 
-          }
- 
-          else
- 
-          {
- 
-            blinkSpan();
- 
-          }
- 
-        }
- 
-        var currentStyle = 'inline';
- 
-        function blinkSpan()
- 
-        {
- 
-          if(currentStyle=='inline')
- 
-          {
- 
-            currentStyle='none';
- 
-          }
- 
-          else
- 
-          {
- 
-            currentStyle='inline';
- 
-          }
- 
-          document.getElementById('blink').style.display = currentStyle;
- 
-          setTimeout('blinkSpan()',400);
- 
-        }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MANHCOT-BLOG</title>
+		<meta name="author" content="name">
+    <meta name="description" content="description here">
+		<meta name="keywords" content="keywords,here">
+		<link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet"> <!--Replace with your tailwind.css once created-->
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" rel="stylesheet">
+		
+</head>
 
-        msg = "Đang bảo trì !";
- 
- 
- 
-        msg = " " + msg;pos = 0;
- 
-        function scrollMSG()
- 
-        {
- 
-          document.title = msg.substring(pos, msg.length) + msg.substring(0, pos);
- 
-          pos++;
- 
-          if (pos >  msg.length) pos = 0
- 
-          window.setTimeout("scrollMSG()",100);
- 
-        }
- 
-        scrollMSG();
- 
-      </script> 
- 
-            <center>Diễn Đàn Công Nghệ - ĐANG TẠM THỜI BẢO TRÌ! ADMIN - MANHCOT<br /><br /> 
- 
-              <img src="Image 01.gif" width="500" height="282" alt="Logo"><br /><br /><br /> <table width="800" height="0"> 
- 
-          <tr> 
- 
-            <td> 
- 
-              <div id="myContent" class="tip"> 
- 
-              </div> 
- 
-              <div id="contentToWrite" style="display:none" text-decoration:"overline" class="tip"> - Mong bạn thông cảm ... <br/>
-- Đang tải....<br/>
-- Lỗi do thằng chủ không cập nhật trang =)) <br/>
--facebook : facebook.com/caubidiena <br/>
--youtube : https://www.youtube.com/channel/UCbhJKKbKRM7XFPuXwHkomeA<br/><br/>
-..........Ngắt kết nối!......</div> 
- 
-            </td> 
- 
-          </tr> 
- 
-        </table> 
- 
-        <p>&nbsp;</p> 
- 
-        <script type="text/javascript"> 
- 
+<body class="bg-gray-200 font-sans leading-normal tracking-normal">
 
-         writeContent(true);
- 
-        </script> 
- 
-        <form name="form1" method="post" action=""><strong>Xin lỗi vì Diễn Đàn đang trong quá trình bảo trì!</strong>
-        </form>
-      </center> 
- 
-      <center>        
- 
-      </center> 
- 
-          </body> 
- 
- 
+	<!--Header-->
+	         <div class="w-full m-0 p-0 bg-cover bg-bottom" style="background-image:url('cover.jpg'); height: 100%; background-position: center; min-height: 400px;">
+			<div class="container max-w-4xl mx-auto pt-16 md:pt-32 text-center break-normal">
+				<!--Title-->
+					<p class="text-white font-extrabold text-3xl md:text-5xl">
+						MANHCOT-BLOG!
+					</p>
+					<p class="text-xl md:text-2xl text-gray-500">WELCOME TO MY WORLD !</p>
+			</div>
+		</div>
+		
+		<!--Container-->
+		<div class="blyat" style="background-image:url('BLUE.jpg'); height: 100%; background-position: center; ">
+		<div class="container px-4 md:px-0 max-w-6xl mx-auto -mt-32">
+			
+			<div class="mx-0 sm:mx-6">
+				
+				<!--Nav-->
+				<nav class="mt-0 w-full">
+					<div class="container mx-auto flex items-center">
+						
+						<div class="flex w-1/2 pl-4 text-sm">
+							<ul class="list-reset flex justify-between flex-1 md:flex-none items-center">
+								<li class="mr-2">
+								<a class="inline-block py-2 px-2 text-white no-underline hover:underline" href="post.html">Bài đăng</a>
+								</li>
+								<li class="mr-2">
+								<a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:underline py-2 px-2" href="#">LINK</a>
+								</li>
+								<li class="mr-2">
+								<a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:underline py-2 px-2" href="#">LINK</a>
+								</li>
+								<li class="mr-2">
+								<a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:underline py-2 px-2" href="post_vue.html">POST_VUE</a>
+								</li>
+							</ul>
+						</div>
 
-</html> 
+
+						<div class="flex w-1/2 justify-end content-center">		
+							<a class="inline-block text-gray-500 no-underline hover:text-white hover:text-underline text-center h-10 p-2 md:h-auto md:p-4 avatar" data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#">
+								<svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"></path></svg>
+							</a>
+							<a class="inline-block text-gray-500 no-underline hover:text-white hover:text-underline text-center h-10 p-2 md:h-auto md:p-4 avatar" data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#">
+								<svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"></path></svg>
+							</a>
+						</div>
+
+					</div>
+				</nav>
+
+				<div class="bg-gray-200 w-full text-xl md:text-2xl text-gray-800 leading-normal rounded-t" >
+					
+				<!--Lead Card-->
+				<div class="blyat" style="background-image:url('BLUE.jpg'); height: 100%; background-position: center; ">
+				<div class="flex h-full bg-white rounded overflow-hidden shadow-lg">
+					<a href="post.html" class="flex flex-wrap no-underline hover:no-underline">
+						<div class="w-full md:w-2/3 rounded-t">	
+							<img src="https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" class="h-full w-full shadow">
+						</div>
+
+						<div class="w-full md:w-1/3 flex flex-col flex-grow flex-shrink">
+							<div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
+								<p class="w-full text-gray-600 text-xs md:text-sm pt-6 px-6">Mở Đầu</p>
+								<div class="w-full font-bold text-xl text-gray-900 px-6">👋 Chào mừng đến với Blog của mình</div>
+								<p class="text-gray-800 font-bold break-normal text-base px-8 mb-5">
+									Đây là bài viết mở đầu, giới thiệu về bản thân.
+								</p>
+							</div>
+
+							<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
+								<div class="flex items-center justify-between">
+									<img class="w-8 h-8 rounded-full mr-4 avatar" data-tippy-content="manhcot" src="https://scontent.fhph1-2.fna.fbcdn.net/v/t1.0-9/139095403_838285930298142_2944789260915449161_n.jpg?_nc_cat=108&ccb=2&_nc_sid=09cbfe&_nc_ohc=Br7pWzn5wbsAX-kl6aj&_nc_ht=scontent.fhph1-2.fna&oh=f1724cd227e8d7c4c083ad1ad801cc4a&oe=60279233" alt="Avatar of Author">
+									<p class="text-gray-600 text-xs md:text-sm">lock</p>
+								</div>
+							</div>
+						</div>
+
+					</a>
+				</div>
+				<!--/Lead Card-->
+
+
+				<!--Posts Container-->
+				<div class="flex flex-wrap justify-between pt-12 -mx-6">
+
+					<!--1/3 col -->
+					<div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+						<div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
+							<a href="#" class="flex flex-wrap no-underline hover:no-underline">
+								<img src="https://source.unsplash.com/collection/225/800x600" class="h-64 w-full rounded-t pb-6">
+								<p class="w-full text-gray-600 text-xs md:text-sm px-6">Mở Đầu</p>
+								<div class="w-full font-bold text-xl text-gray-900 px-6">Lorem ipsum dolor sit amet.</div>
+								<p class="text-gray-800 font-serif text-base px-6 mb-5">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula. 
+								</p>
+							</a>
+						</div>
+						<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
+							<div class="flex items-center justify-between">
+								<img class="w-8 h-8 rounded-full mr-4 avatar" data-tippy-content="MANHCOT" src="https://scontent.fhph1-2.fna.fbcdn.net/v/t1.0-9/139095403_838285930298142_2944789260915449161_n.jpg?_nc_cat=108&ccb=2&_nc_sid=09cbfe&_nc_ohc=Br7pWzn5wbsAX-kl6aj&_nc_ht=scontent.fhph1-2.fna&oh=f1724cd227e8d7c4c083ad1ad801cc4a&oe=60279233" alt="Avatar of Author">
+								<p class="text-gray-600 text-xs md:text-sm">1 MIN READ</p>
+							</div>
+						</div>
+					</div>
+				
+					
+					<!--1/3 col -->
+					<div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+						<div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
+							<a href="#" class="flex flex-wrap no-underline hover:no-underline">
+								<img src="https://source.unsplash.com/collection/3106804/800x600" class="h-64 w-full rounded-t pb-6">
+								<p class="w-full text-gray-600 text-xs md:text-sm px-6">GETTING STARTED</p>
+								<div class="w-full font-bold text-xl text-gray-900 px-6">Lorem ipsum dolor sit amet.</div>
+								<p class="text-gray-800 font-serif text-base px-6 mb-5">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ip Aliquam at ipsum eu nunc commodo posuere et sit amet ligula. 
+								</p>
+							</a>
+							</div>
+						<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
+							<div class="flex items-center justify-between">
+								<img class="w-8 h-8 rounded-full mr-4 avatar" data-tippy-content="MANHCOT" src="https://scontent.fhph1-2.fna.fbcdn.net/v/t1.0-9/139095403_838285930298142_2944789260915449161_n.jpg?_nc_cat=108&ccb=2&_nc_sid=09cbfe&_nc_ohc=Br7pWzn5wbsAX-kl6aj&_nc_ht=scontent.fhph1-2.fna&oh=f1724cd227e8d7c4c083ad1ad801cc4a&oe=60279233" alt="Avatar of Author">
+								<p class="text-gray-600 text-xs md:text-sm">1 MIN READ</p>
+							</div>
+						</div>
+					</div>
+
+					<!--1/3 col -->
+					<div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+						<div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
+							<a href="#" class="flex flex-wrap no-underline hover:no-underline">
+								<img src="https://source.unsplash.com/collection/539527/800x600" class="h-64 w-full rounded-t pb-6">
+								<p class="w-full text-gray-600 text-xs md:text-sm px-6">GETTING STARTED</p>
+								<div class="w-full  font-bold text-xl text-gray-900 px-6">Lorem ipsum dolor sit amet.</div>
+								<p class="text-gray-800 font-serif text-base px-6 mb-5">
+									Lorem ipsum eu nunc commodo posuere et sit amet ligula. 
+								</p>
+							</a>
+						</div>
+						<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
+							<div class="flex items-center justify-between">
+								<img class="w-8 h-8 rounded-full mr-4 avatar" data-tippy-content="MANHCOT" src="https://scontent.fhph1-2.fna.fbcdn.net/v/t1.0-9/139095403_838285930298142_2944789260915449161_n.jpg?_nc_cat=108&ccb=2&_nc_sid=09cbfe&_nc_ohc=Br7pWzn5wbsAX-kl6aj&_nc_ht=scontent.fhph1-2.fna&oh=f1724cd227e8d7c4c083ad1ad801cc4a&oe=60279233" alt="Avatar of Author">
+								<p class="text-gray-600 text-xs md:text-sm">1 MIN READ</p>
+							</div>
+						</div>
+					</div>
+
+
+					<!--1/2 col -->
+					<div class="w-full md:w-1/2 p-6 flex flex-col flex-grow flex-shrink">
+						<div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
+							<a href="#" class="flex flex-wrap no-underline hover:no-underline">
+								<img src="https://source.unsplash.com/collection/3657445/800x600" class="h-full w-full rounded-t pb-6">
+								<p class="w-full text-gray-600 text-xs md:text-sm px-6">GETTING STARTED</p>
+								<div class="w-full font-bold text-xl text-gray-900 px-6">Lorem ipsum dolor sit amet.</div>
+								<p class="text-gray-800 font-serif text-base px-6 mb-5">
+									Lorem ipsum eu nunc commodo posuere et sit amet ligula. 
+								</p>
+							</a>
+						</div>
+						<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
+							<div class="flex items-center justify-between">
+								<img class="w-8 h-8 rounded-full mr-4 avatar" data-tippy-content="MANHCOT" src="https://scontent.fhph1-2.fna.fbcdn.net/v/t1.0-9/139095403_838285930298142_2944789260915449161_n.jpg?_nc_cat=108&ccb=2&_nc_sid=09cbfe&_nc_ohc=Br7pWzn5wbsAX-kl6aj&_nc_ht=scontent.fhph1-2.fna&oh=f1724cd227e8d7c4c083ad1ad801cc4a&oe=60279233" alt="Avatar of Author">
+								<p class="text-gray-600 text-xs md:text-sm">1 MIN READ</p>
+							</div>
+						</div>
+					</div>
+
+					<!--1/2 col -->
+					<div class="w-full md:w-1/2 p-6 flex flex-col flex-grow flex-shrink">
+						<div class="flex-1 flex-row bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
+							<a href="#" class="flex flex-wrap no-underline hover:no-underline">	
+								<img src="https://source.unsplash.com/collection/764827/800x600" class="h-full w-full rounded-t pb-6">
+								<p class="w-full text-gray-600 text-xs md:text-sm px-6">GETTING STARTED</p>
+								<div class="w-full font-bold text-xl text-gray-900 px-6">Lorem ipsum dolor sit amet.</div>
+								<p class="text-gray-800 font-serif text-base px-6 mb-5">
+									Lorem ipsum eu nunc commodo posuere et sit amet ligula. 
+								</p>
+							</a>
+						</div>
+						<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
+							<div class="flex items-center justify-between">
+								<img class="w-8 h-8 rounded-full mr-4 avatar" data-tippy-content="MANHCOT" src="https://scontent.fhph1-2.fna.fbcdn.net/v/t1.0-9/139095403_838285930298142_2944789260915449161_n.jpg?_nc_cat=108&ccb=2&_nc_sid=09cbfe&_nc_ohc=Br7pWzn5wbsAX-kl6aj&_nc_ht=scontent.fhph1-2.fna&oh=f1724cd227e8d7c4c083ad1ad801cc4a&oe=60279233" alt="Avatar of Author">
+								<p class="text-gray-600 text-xs md:text-sm">1 MIN READ</p>
+							</div>
+						</div>
+					</div>
+
+
+
+					<!--2/3 col -->
+					<div class="w-full md:w-2/3 p-6 flex flex-col flex-grow flex-shrink">
+						<div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
+							<a href="#" class="flex flex-wrap no-underline hover:no-underline">	
+								<img src="https://source.unsplash.com/collection/325867/800x600" class="h-full w-full rounded-t pb-6">
+								<p class="w-full text-gray-600 text-xs md:text-sm px-6">GETTING STARTED</p>
+								<div class="w-full font-bold text-xl text-gray-900 px-6">Lorem ipsum dolor sit amet.</div>
+								<p class="text-gray-800 font-serif text-base px-6 mb-5">
+									Lorem ipsum eu nunc commodo posuere et sit amet ligula. 
+								</p>
+							</a>
+						</div>
+						<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
+							<div class="flex items-center justify-between">
+								<img class="w-8 h-8 rounded-full mr-4 avatar" data-tippy-content="manhcot" src="https://scontent.fhph1-2.fna.fbcdn.net/v/t1.0-9/139095403_838285930298142_2944789260915449161_n.jpg?_nc_cat=108&ccb=2&_nc_sid=09cbfe&_nc_ohc=Br7pWzn5wbsAX-kl6aj&_nc_ht=scontent.fhph1-2.fna&oh=f1724cd227e8d7c4c083ad1ad801cc4a&oe=60279233" alt="Avatar of Author">
+								<p class="text-gray-600 text-xs md:text-sm">1 MIN READ</p>
+							</div>
+						</div>
+					</div>
+
+					<!--1/3 col -->
+					<div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+						<div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
+							<a href="#" class="flex flex-wrap no-underline hover:no-underline">
+								<img src="https://source.unsplash.com/collection/1118905/800x600" class="h-full w-full rounded-t pb-6">
+								<p class="w-full text-gray-600 text-xs md:text-sm px-6">GETTING STARTED</p>
+								<div class="w-full font-bold text-xl text-gray-900 px-6">Lorem ipsum dolor sit amet.</div>
+								<p class="text-gray-800 font-serif text-base px-6 mb-5">
+									Lorem ipsum eu nunc commodo posuere et sit amet ligula. 
+								</p>
+							</a>
+						</div>
+						<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
+							<div class="flex items-center justify-between">
+								<img class="w-8 h-8 rounded-full mr-4 avatar" data-tippy-content="MANHCOT" src="https://scontent.fhph1-2.fna.fbcdn.net/v/t1.0-9/139095403_838285930298142_2944789260915449161_n.jpg?_nc_cat=108&ccb=2&_nc_sid=09cbfe&_nc_ohc=Br7pWzn5wbsAX-kl6aj&_nc_ht=scontent.fhph1-2.fna&oh=f1724cd227e8d7c4c083ad1ad801cc4a&oe=60279233" alt="Avatar of Author">
+								<p class="text-gray-600 text-xs md:text-sm">1 MIN READ</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<!--/ Post Content-->
+						
+			</div>
+			
+			
+				<!--Subscribe-->	
+
+				<div class="container font-sans bg-blue-200 rounded mt-8 p-4 md:p-24 text-center">
+					<h2 class="font-bold break-normal text-2xl md:text-4xl">ĐĂNG KÍ NHẬN THÔNG BÁO</h2>
+					<h3 class="font-bold break-normal font-normal text-gray-600 text-base md:text-xl">nhận những thông báo về bài viết mới nhất !</h3>
+					<div class="w-full text-center pt-4">
+						<form action="#">
+							<div class="max-w-xl mx-auto p-1 pr-0 flex flex-wrap items-center">
+								<input type="email" placeholder="emailcuaban@example.com" class="flex-1 appearance-none rounded shadow p-3 text-gray-600 mr-2 focus:outline-none">
+								<button type="submit" class="flex-1 mt-4 md:mt-0 block md:inline-block appearance-none bg-green-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-green-400">Đăng kí</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<!-- /Subscribe-->
+			<div class="blyat" style="background-image:url('BLUE.jpg'); height: 100%; background-position: center; ">
+	
+				<!--Author-->
+				<div class="flex w-full items-center font-sans p-8 md:p-24">
+					<img class="w-10 h-10 rounded-full mr-4" src="https://scontent.fhph1-2.fna.fbcdn.net/v/t1.0-9/139095403_838285930298142_2944789260915449161_n.jpg?_nc_cat=108&ccb=2&_nc_sid=09cbfe&_nc_ohc=Br7pWzn5wbsAX-kl6aj&_nc_ht=scontent.fhph1-2.fna&oh=f1724cd227e8d7c4c083ad1ad801cc4a&oe=60279233" alt="Avatar of Author">
+					<div class="flex-1">
+						<p class="text-base font-bold text-base md:text-xl leading-none">MANHCOT</p>
+						<p class="text-gray-600 text-xs md:text-base">Liên hệ: <a class="text-gray-800 hover:text-green-500 no-underline border-b-2 border-green-500" href="https://www.facebook.com/caubidiena/">FACEBOOK</a><p </p>
+
+
+					</div>
+					<div class="justify-end">
+						<button class="bg-transparent border border-gray-500 hover:border-green-500 text-xs text-gray-500 hover:text-green-500 font-bold py-2 px-4 rounded-full">đọc thêm</button>
+					</div>
+				</div>
+				<!--/Author-->
+			
+		</div>
+	
+
+	</div>
+
+
+	<footer class="bg-cover.jpg">	
+		<div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
+
+			<div class="w-full mx-auto flex flex-wrap items-center">
+				<div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold">
+					<a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="#">
+						👻 <span class="text-base text-gray-200">HACKED</span>
+					</a>
+				</div>
+				<div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+					<ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
+					  <li>
+						<a class="inline-block py-2 px-3 text-white no-underline" href="#">Hoạt động</a>
+					  </li>
+					  <li>
+						<a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:underline py-2 px-3" href="#">link</a>
+					  </li>
+					  <li>
+						<a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:underline py-2 px-3" href="#">link</a>
+					  </li>
+						<li>
+						<a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:underline py-2 px-3" href="#">link</a>
+					  </li>
+					</ul>
+				</div>
+			</div>
+        
+
+		
+		</div>
+	</footer>
+
+	<script src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
+	<script src="https://unpkg.com/tippy.js@4"></script>
+	<script>
+		//Init tooltips
+		tippy('.avatar')
+	</script>
+</body>
+</html>
