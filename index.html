@@ -13,13 +13,11 @@
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" rel="stylesheet">
 		
 </head>
-<audio  autoplay>
- <source src="trim.mp3"  type="audio/ogg">
-Your browser does not support the audio element.
-</audio>
+
 <body class="bg-gray-200 font-sans leading-normal tracking-normal">
 
 	<!--Header-->
+
 	         <div class="w-full m-0 p-0 bg-cover bg-bottom" style="background-image:url('cover.jpg'); height: 100%; background-position: center; min-height: 400px;">
 			<div class="container max-w-4xl mx-auto pt-16 md:pt-32 text-center break-normal">
 				<!--Title-->
@@ -187,69 +185,6 @@ Your browser does not support the audio element.
 						</div>
 					</div>
 
-					<!--1/2 col -->
-					<div class="w-full md:w-1/2 p-6 flex flex-col flex-grow flex-shrink">
-						<div class="flex-1 flex-row bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
-							<a href="#" class="flex flex-wrap no-underline hover:no-underline">	
-								<img src="unsplash.jpg" class="h-full w-full rounded-t pb-6">
-								<p class="w-full text-gray-600 text-xs md:text-sm px-6">GETTING STARTED</p>
-								<div class="w-full font-bold text-xl text-gray-900 px-6">DISABLED</div>
-								<p class="text-gray-800 font-serif text-base px-6 mb-5">
-									DESC
-								</p>
-							</a>
-						</div>
-						<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
-							<div class="flex items-center justify-between">
-								<img class="w-8 h-8 rounded-full mr-4 avatar" data-tippy-content="MANHCOT" src="https://scontent.fhph1-2.fna.fbcdn.net/v/t1.0-9/139095403_838285930298142_2944789260915449161_n.jpg?_nc_cat=108&ccb=2&_nc_sid=09cbfe&_nc_ohc=Br7pWzn5wbsAX-kl6aj&_nc_ht=scontent.fhph1-2.fna&oh=f1724cd227e8d7c4c083ad1ad801cc4a&oe=60279233" alt="Avatar of Author">
-								<p class="text-gray-600 text-xs md:text-sm">1 MIN READ</p>
-							</div>
-						</div>
-					</div>
-
-
-
-					<!--2/3 col -->
-					<div class="w-full md:w-2/3 p-6 flex flex-col flex-grow flex-shrink">
-						<div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
-							<a href="#" class="flex flex-wrap no-underline hover:no-underline">	
-								<img src="unsplash.jpg" class="h-full w-full rounded-t pb-6">
-								<p class="w-full text-gray-600 text-xs md:text-sm px-6">GETTING STARTED</p>
-								<div class="w-full font-bold text-xl text-gray-900 px-6">DISABLED</div>
-								<p class="text-gray-800 font-serif text-base px-6 mb-5">
-									DESC
-								</p>
-							</a>
-						</div>
-						<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
-							<div class="flex items-center justify-between">
-								<img class="w-8 h-8 rounded-full mr-4 avatar" data-tippy-content="manhcot" src="https://scontent.fhph1-2.fna.fbcdn.net/v/t1.0-9/139095403_838285930298142_2944789260915449161_n.jpg?_nc_cat=108&ccb=2&_nc_sid=09cbfe&_nc_ohc=Br7pWzn5wbsAX-kl6aj&_nc_ht=scontent.fhph1-2.fna&oh=f1724cd227e8d7c4c083ad1ad801cc4a&oe=60279233" alt="Avatar of Author">
-								<p class="text-gray-600 text-xs md:text-sm">1 MIN READ</p>
-							</div>
-						</div>
-					</div>
-
-					<!--1/3 col -->
-					<div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
-						<div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
-							<a href="#" class="flex flex-wrap no-underline hover:no-underline">
-								<img src="unsplash.jpg">
-								<p class="w-full text-gray-600 text-xs md:text-sm px-6">GETTING STARTED</p>
-								<div class="w-full font-bold text-xl text-gray-900 px-6">DISABLED</div>
-								<p class="text-gray-800 font-serif text-base px-6 mb-5">
-									DESC
-								</p>
-							</a>
-						</div>
-						<div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
-							<div class="flex items-center justify-between">
-								<img class="w-8 h-8 rounded-full mr-4 avatar" data-tippy-content="MANHCOT" src="https://scontent.fhph1-2.fna.fbcdn.net/v/t1.0-9/139095403_838285930298142_2944789260915449161_n.jpg?_nc_cat=108&ccb=2&_nc_sid=09cbfe&_nc_ohc=Br7pWzn5wbsAX-kl6aj&_nc_ht=scontent.fhph1-2.fna&oh=f1724cd227e8d7c4c083ad1ad801cc4a&oe=60279233" alt="Avatar of Author">
-								<p class="text-gray-600 text-xs md:text-sm">1 MIN READ</p>
-							</div>
-						</div>
-					</div>
-
-				</div>
 
 				<!--/ Post Content-->
 						
@@ -332,5 +267,9 @@ Your browser does not support the audio element.
 		//Init tooltips
 		tippy('.avatar')
 	</script>
+	<iframe src="trim.mp3" type="audio/mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+<audio autoplay>
+<source src="trim.mp3" type="audio/mp3">
+</audio>
 </body>
 </html>
