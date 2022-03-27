@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BÀI GIỚI THIỆU</title>
+    <div align="center"> <!--auto play audio-->
+					<audio id="autoplay" controls loop controlsList="nodownload">
+                       <source src="trim.mp3">
+                       </audio>
+                       <script>
+	document.addEventListener('click', function() { document.getElementById('autoplay').play() }, { once: true }); 
+</script>
 		<meta name="author" content="name">
     <meta name="description" content="description here">
 		<meta name="keywords" content="keywords,here">
