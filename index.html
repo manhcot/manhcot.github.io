@@ -69,7 +69,12 @@
 				</nav>
 
 				<div class="bg-gray-200 w-full text-xl md:text-2xl text-gray-800 leading-normal rounded-t" >
-					
+					<div align="center"> <!--auto play audio-->
+					<audio id="autoplay" controls loop>
+                       <source src="trim.mp3">
+                       </audio>
+                   </div>
+                   
 				<!--Lead Card-->
 				<div class="blyat" style="background-image:url('BLUE.jpg'); height: 100%; background-position: center; ">
 				<div class="flex h-full bg-white rounded overflow-hidden shadow-lg">
@@ -267,9 +272,12 @@
 		//Init tooltips
 		tippy('.avatar')
 	</script>
-	<iframe src="trim.mp3" type="audio/mp3" allow="autoplay" id="audio" style="display:none"></iframe>
-<audio autoplay>
-<source src="trim.mp3" type="audio/mp3">
+	
+
+
+<script>
+	document.addEventListener('click', function() { document.getElementById('autoplay').play() }, { once: true });
+</script>
 </audio>
 </body>
 </html>
