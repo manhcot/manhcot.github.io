@@ -1,0 +1,3018 @@
+<!DOCTYPE html>
+<html lang="en" data-darkreader-mode="dynamic" data-darkreader-scheme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) contrast(90%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #131516;
+   --darkreader-neutral-text: #d8d4cf;
+   --darkreader-selection-background: #004daa;
+   --darkreader-selection-text: #e8e6e3;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #181a1b !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body, input, textarea, select, button {
+    background-color: #181a1b;
+}
+html, body, input, textarea, select, button {
+    border-color: #736b5e;
+    color: #e8e6e3;
+}
+a {
+    color: #3391ff;
+}
+table {
+    border-color: #545b5e;
+}
+::placeholder {
+    color: #b2aba1;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #404400 !important;
+    color: #e8e6e3 !important;
+}
+::-webkit-scrollbar {
+    background-color: #202324;
+    color: #aba499;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #454a4d;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #575e62;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #484e51;
+}
+::-webkit-scrollbar-corner {
+    background-color: #181a1b;
+}
+::selection {
+    background-color: #004daa !important;
+    color: #e8e6e3 !important;
+}
+::-moz-selection {
+    background-color: #004daa !important;
+    color: #e8e6e3 !important;
+}</style>
+    <!-- so meta -->
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="guide bug-bugbounty">
+<meta property="og:url" content="https://manhcot.github.io">
+<meta property="og:site_name" content="/ home / blog /">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-04-3T17:00:01.000Z">
+<meta property="article:modified_time" content="2022-04-03T02:27:58.708Z">
+<meta property="article:author" content="manhcot">
+<meta property="article:tag" content="bug bounty">
+<meta property="article:tag" content="huong dan">
+<meta property="article:tag" content="meo thu thuat">
+<meta name="twitter:card" content="summary">
+
+    
+      
+        
+          <link rel="shortcut icon" href="favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="https://scontent.fhan3-1.fna.fbcdn.net/v/t39.30808-1/272718727_1072542486872484_8210496924260633424_n.jpg?stp=dst-jpg_p160x160&_nc_cat=102&ccb=1-5&_nc_sid=7206a8&_nc_ohc=3VpVADvF4MsAX-uIcGO&_nc_ht=scontent.fhan3-1.fna&oh=00_AT_rtgLBHKWX9H7SGOGHebIojf_i1tOWtLTqJIHbj4sOmQ&oe=624E12FC" sizes="192x192">
+        
+      
+      
+        
+          
+        
+      <div align="center">
+    <audio id="autoplay" controls loop controlsList="nodownload">
+                       <source src="trim.mp3">
+                       </audio>
+                       <script>
+  document.addEventListener('click', function() { document.getElementById('autoplay').play() }, { once: true }); 
+  </script>
+    <!-- title -->
+    <title>Bugbounty hướng dẫn cho người mới bắt đầu</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="style.css"><style class="darkreader darkreader--cors" media="screen">
+
+  .inline {
+  display: inline;
+}
+
+.block {
+  display: block;
+}
+.inline-block {
+  display: inline-block;
+}
+.table {
+  display: table;
+}
+.table-cell {
+  display: table-cell;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.overflow-scroll {
+  overflow: scroll;
+}
+.overflow-auto {
+  overflow: auto;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: " ";
+}
+.clearfix:after {
+  clear: both;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.fit {
+  max-width: 100%;
+}
+.truncate {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.max-width-1 {
+  max-width: 24rem;
+}
+.max-width-2 {
+  max-width: 32rem;
+}
+.max-width-3 {
+  max-width: 48rem;
+}
+.max-width-4 {
+  max-width: 64rem;
+}
+.border-box {
+  box-sizing: border-box;
+}
+.m0 {
+  margin: 0;
+}
+.mt0 {
+  margin-top: 0;
+}
+.mr0 {
+  margin-right: 0;
+}
+.mb0 {
+  margin-bottom: 0;
+}
+.ml0 {
+  margin-left: 0;
+}
+.mx0 {
+  margin-right: 0;
+  margin-left: 0;
+}
+.my0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.m1 {
+  margin: 0.5rem;
+}
+.mt1 {
+  margin-top: 0.5rem;
+}
+.mr1 {
+  margin-right: 0.5rem;
+}
+.mb1 {
+  margin-bottom: 0.5rem;
+}
+.ml1 {
+  margin-left: 0.5rem;
+}
+.mx1 {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+.my1 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.m2 {
+  margin: 1rem;
+}
+.mt2 {
+  margin-top: 1rem;
+}
+.mr2 {
+  margin-right: 1rem;
+}
+.mb2 {
+  margin-bottom: 1rem;
+}
+.ml2 {
+  margin-left: 1rem;
+}
+.mx2 {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+.my2 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.m3 {
+  margin: 2rem;
+}
+.mt3 {
+  margin-top: 2rem;
+}
+.mr3 {
+  margin-right: 2rem;
+}
+.mb3 {
+  margin-bottom: 2rem;
+}
+.ml3 {
+  margin-left: 2rem;
+}
+.mx3 {
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+.my3 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.m4 {
+  margin: 4rem;
+}
+.mt4 {
+  margin-top: 4rem;
+}
+.mr4 {
+  margin-right: 4rem;
+}
+.mb4 {
+  margin-bottom: 4rem;
+}
+.ml4 {
+  margin-left: 4rem;
+}
+.mx4 {
+  margin-right: 4rem;
+  margin-left: 4rem;
+}
+.my4 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+.mxn1 {
+  margin-right: -0.5rem;
+  margin-left: -0.5rem;
+}
+.mxn2 {
+  margin-right: -1rem;
+  margin-left: -1rem;
+}
+.mxn3 {
+  margin-right: -2rem;
+  margin-left: -2rem;
+}
+.mxn4 {
+  margin-right: -4rem;
+  margin-left: -4rem;
+}
+.ml-auto {
+  margin-left: auto;
+}
+.mr-auto {
+  margin-right: auto;
+}
+.mx-auto {
+  margin-right: auto;
+  margin-left: auto;
+}
+.p0 {
+  padding: 0;
+}
+.pt0 {
+  padding-top: 0;
+}
+.pr0 {
+  padding-right: 0;
+}
+.pb0 {
+  padding-bottom: 0;
+}
+.pl0 {
+  padding-left: 0;
+}
+.px0 {
+  padding-right: 0;
+  padding-left: 0;
+}
+.py0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.p1 {
+  padding: 0.5rem;
+}
+.pt1 {
+  padding-top: 0.5rem;
+}
+.pr1 {
+  padding-right: 0.5rem;
+}
+.pb1 {
+  padding-bottom: 0.5rem;
+}
+.pl1 {
+  padding-left: 0.5rem;
+}
+.py1 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.px1 {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+.p2 {
+  padding: 1rem;
+}
+.pt2 {
+  padding-top: 1rem;
+}
+.pr2 {
+  padding-right: 1rem;
+}
+.pb2 {
+  padding-bottom: 1rem;
+}
+.pl2 {
+  padding-left: 1rem;
+}
+.py2 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.px2 {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+.p3 {
+  padding: 2rem;
+}
+.pt3 {
+  padding-top: 2rem;
+}
+.pr3 {
+  padding-right: 2rem;
+}
+.pb3 {
+  padding-bottom: 2rem;
+}
+.pl3 {
+  padding-left: 2rem;
+}
+.py3 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.px3 {
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+.p4 {
+  padding: 4rem;
+}
+.pt4 {
+  padding-top: 4rem;
+}
+.pr4 {
+  padding-right: 4rem;
+}
+.pb4 {
+  padding-bottom: 4rem;
+}
+.pl4 {
+  padding-left: 4rem;
+}
+.py4 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+.px4 {
+  padding-right: 4rem;
+  padding-left: 4rem;
+}
+body h1,
+body .h1 {
+
+  display: block;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  color: #dc322f;
+  letter-spacing: 0.01em;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1.5em;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+body h2,
+body .h2 {
+  position: relative;
+  display: block;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: #eee;
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+body h3 {
+  color: #eee;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+body h4,
+body h5,
+body h6 {
+  display: inline;
+  text-decoration: none;
+  color: #ccc;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+body h3,
+body h4,
+body h5,
+body h6 {
+  margin-top: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+body hr {
+  border: 0.5px dashed #ccc;
+  opacity: 0.5;
+  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+body strong {
+  font-weight: bold;
+}
+body em,
+body cite {
+  font-style: italic;
+}
+body sup,
+body sub {
+  position: relative;
+  vertical-align: baseline;
+  font-size: 0.75em;
+  line-height: 0;
+}
+body sup {
+  top: -0.5em;
+}
+body sub {
+  bottom: -0.2em;
+}
+body small {
+  font-size: 0.85em;
+}
+body acronym,
+body abbr {
+  border-bottom: 1px dotted;
+}
+body ul,
+body ol,
+body dl {
+  line-height: 1.725;
+}
+body ul ul,
+body ol ul,
+body ul ol,
+body ol ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+body ol {
+  list-style: decimal;
+}
+body dt {
+  font-weight: bold;
+}
+body table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: -0.9rem;
+  overflow: auto;
+  display: block;
+}
+body th {
+  padding: 8px;
+  border-bottom: 1px dashed #666;
+  color: #eee;
+  font-weight: bold;
+  font-size: 0.1rem;
+}
+body td {
+  padding: 0 8px;
+  border-bottom: none;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  border-top: 2px solid #d6d6d6;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  height: 100%;
+  background-color: #1d1f21;
+  color: #d6d6d6;
+  font-display: swap;
+  font-weight: 400;
+  font-size: 1.1rem;
+  font-family: "Inter", "Hardpixel", "Fira Code", monospace, monospace;
+  line-height: 1.725;
+  text-rendering: geometricPrecision;
+  flex: 1;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow-wrap: break-word;
+}
+.content p {
+  hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -webkit-hyphens: auto;
+  font-family: "Inter", sans-serif;
+}
+.content code {
+  hyphens: manual;
+  -moz-hyphens: manual;
+  -ms-hyphens: manual;
+  -webkit-hyphens: manual;
+}
+.content a.icon {
+  background: none;
+}
+.content a.icon:hover {
+  color: #dc322f;
+}
+.content h1 a,
+.content .h1 a,
+.content h2 a,
+.content h3 a,
+.content h4 a,
+.content h5 a,
+.content h6 a {
+  background: none;
+  color: inherit;
+  text-decoration: none;
+}
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+  font-family: "Hardpixel", "IM Fell Double Pica SC", serif;
+}
+.content h1 a:hover,
+.content .h1 a:hover,
+.content h2 a:hover,
+.content h3 a:hover,
+.content h4 a:hover,
+.content h5 a:hover,
+.content h6 a:hover {
+  background-image: linear-gradient(transparent, transparent 6px, #dc322f 6px, #dc322f);
+  background-position: bottom;
+  background-size: 100% 6px;
+  background-repeat: repeat-x;
+}
+.content h6 a {
+  background: none;
+  color: inherit;
+  text-decoration: none;
+}
+.content h6 a:hover {
+  background-image: linear-gradient(transparent, transparent 6px, #dc322f 6px, #dc322f);
+  background-position: bottom;
+  background-size: 100% 6px;
+  background-repeat: repeat-x;
+}
+@media (min-width: 540px) {
+  .image-wrap {
+    flex-direction: row;
+    margin-bottom: 2rem;
+  }
+  .image-wrap .image-block {
+    flex: 1 0 35%;
+    margin-right: 2rem;
+  }
+  .image-wrap p {
+    flex: 1 0 65%;
+  }
+}
+.max-width {
+  max-width: 48rem;
+}
+@media (max-width: 480px) {
+  .px3 {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  .my4 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+iframe {
+  width: auto;
+}
+@media screen and (max-width: 900px) {
+  h1::before,
+  h2::before {
+    visibility: hidden;
+  }
+  article,
+  section {
+    margin: 0 1.5rem 2rem 1.5rem;
+  }
+}
+#header {
+  margin: 0 auto 2rem;
+  width: 100%;
+  font-family: "Hardpixel", "Fira Code", monospace;
+}
+#header h1,
+#header .h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #d6d6d6;
+  letter-spacing: 0.01em;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+#header a {
+  background: none;
+  color: inherit;
+  text-decoration: none;
+}
+#header #logo {
+  display: inline-block;
+  float: left;
+  margin-right: 20px;
+  width: 100px;
+  height: 56px;
+  border-radius: 5px;
+  background-size: 100px 56px;
+  background-repeat: no-repeat;
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
+#header #nav {
+  color: #dc322f;
+  letter-spacing: 0.01em;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 0.8rem;
+}
+#header #nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  line-height: 15px;
+  font-family: "Hardpixel", "Fira Code", monospace;
+}
+#header #nav ul a {
+  margin-right: 15px;
+  color: #dc322f;
+}
+#header #nav ul a:hover {
+  background-image: linear-gradient(transparent, transparent 5px, #dc322f 5px, #dc322f);
+  background-position: bottom;
+  background-size: 100% 6px;
+  background-repeat: repeat-x;
+}
+#header #nav ul li {
+  display: inline-block;
+  margin-right: 15px;
+  border-right: 1px dotted;
+  border-color: #dc322f;
+  vertical-align: middle;
+}
+#header #nav ul .icon {
+  display: none;
+}
+#header #nav ul li:last-child {
+  margin-right: 0;
+  border-right: 0;
+}
+#header #nav ul li:last-child a {
+  margin-right: 0;
+}
+#header:hover #logo {
+  filter: none;
+  -webkit-filter: none;
+}
+@media screen and (max-width: 480px) {
+  #header #title {
+    display: table;
+    margin-right: 5rem;
+    min-height: 56px;
+  }
+  #header #title h1 {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  #header #nav ul a:hover {
+    background: none;
+  }
+  #header #nav ul li {
+    display: none;
+    border-right: 0;
+  }
+  #header #nav ul li.icon {
+    position: absolute;
+    top: 77px;
+    right: 1rem;
+    display: inline-block;
+  }
+  #header #nav ul.responsive li {
+    display: block;
+  }
+  #header #nav li:not(:first-child) {
+    padding-top: 1rem;
+    padding-left: 120px;
+    font-size: 1rem;
+  }
+}
+#header-post {
+  position: fixed;
+  top: 2rem;
+  right: 0;
+  display: inline-block;
+  float: right;
+  z-index: 100;
+}
+#header-post a {
+  background: none;
+  color: inherit;
+  text-decoration: none;
+}
+#header-post a.icon {
+  background: none;
+}
+#header-post a.icon:hover {
+  color: #dc322f;
+}
+#header-post ol {
+  list-style-type: none;
+}
+#header-post ul {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+#header-post ul li {
+  display: inline-block;
+  margin-right: 15px;
+  vertical-align: middle;
+}
+#header-post ul li:last-child {
+  margin-right: 0;
+}
+#header-post #menu-icon {
+  float: right;
+  margin-right: 2rem;
+  margin-left: 15px;
+}
+#header-post #menu-icon:hover {
+  color: #dc322f;
+}
+#header-post #menu-icon-tablet {
+  float: right;
+  margin-right: 2rem;
+  margin-left: 15px;
+}
+#header-post #menu-icon-tablet:hover {
+  color: #dc322f;
+}
+#header-post #top-icon-tablet {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  margin-right: 2rem;
+  margin-left: 15px;
+}
+#header-post #top-icon-tablet:hover {
+  color: #dc322f;
+}
+#header-post .active {
+  color: #dc322f;
+}
+#header-post #menu {
+  visibility: hidden;
+  margin-right: 2rem;
+}
+#header-post #nav {
+  color: #dc322f;
+  letter-spacing: 0.01em;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 0.8rem;
+}
+#header-post #nav ul {
+  line-height: 15px;
+  font-family: "Hardpixel", "Fira Code", monospace;
+}
+#header-post #nav ul a {
+  margin-right: 15px;
+  color: #dc322f;
+}
+#header-post #nav ul a:hover {
+  background-image: linear-gradient(transparent, transparent 5px, #dc322f 5px, #dc322f);
+  background-position: bottom;
+  background-size: 100% 6px;
+  background-repeat: repeat-x;
+}
+#header-post #nav ul li {
+  border-right: 1px dotted #dc322f;
+}
+#header-post #nav ul li:last-child {
+  margin-right: 0;
+  border-right: 0;
+}
+#header-post #nav ul li:last-child a {
+  margin-right: 0;
+}
+#header-post #actions {
+  float: right;
+  margin-top: 2rem;
+  margin-right: 2rem;
+  width: 100%;
+  text-align: right;
+}
+#header-post #actions ul {
+  display: block;
+}
+#header-post #actions .info {
+  display: block;
+  font-style: italic;
+}
+#header-post #share {
+  clear: both;
+  padding-top: 1rem;
+  padding-right: 2rem;
+  text-align: right;
+}
+#header-post #share li {
+  display: block;
+  margin: 0;
+}
+#header-post #toc {
+  float: right;
+  clear: both;
+  overflow: auto;
+  margin-top: 1rem;
+  padding-right: 2rem;
+  max-width: 20em;
+  max-height: calc(95vh - 7rem);
+  text-align: right;
+}
+#header-post #toc a:hover {
+  color: #dc322f;
+}
+#header-post #toc .toc-level-1 > .toc-link {
+  display: none;
+}
+#header-post #toc .toc-level-2 {
+  color: #d6d6d6;
+  font-size: 0.8rem;
+}
+#header-post #toc .toc-level-2:before {
+  color: #dc322f;
+  content: "#";
+}
+#header-post #toc .toc-level-3 {
+  color: #666;
+  font-size: 0.7rem;
+}
+#header-post #toc .toc-level-4 {
+  color: #525252;
+  font-size: 0.4rem;
+}
+#header-post #toc .toc-level-5 {
+  display: none;
+}
+#header-post #toc .toc-level-6 {
+  display: none;
+}
+#header-post #toc .toc-number {
+  display: none;
+}
+@media screen and (max-width: 500px) {
+  #header-post {
+    display: none;
+  }
+}
+@media screen and (max-width: 900px) {
+  #header-post #menu-icon {
+    display: none;
+  }
+  #header-post #actions {
+    display: none;
+  }
+}
+@media screen and (max-width: 1199px) {
+  #header-post #toc {
+    display: none;
+  }
+}
+@media screen and (min-width: 900px) {
+  #header-post #menu-icon-tablet {
+    display: none !important;
+  }
+  #header-post #top-icon-tablet {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 1199px) {
+  #header-post #actions {
+    width: auto;
+  }
+  #header-post #actions ul {
+    display: inline-block;
+    float: right;
+  }
+  #header-post #actions .info {
+    display: inline;
+    float: left;
+    margin-right: 2rem;
+    font-style: italic;
+  }
+}
+@media print {
+  #header-post {
+    display: none;
+  }
+  #footer-post-container {
+    display: none;
+  }
+}
+#footer-post {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5000000;
+  width: 100%;
+  border-top: 1px solid #666;
+  background: #212326;
+  transition: opacity 0.2s;
+}
+#footer-post a {
+  background: none;
+  color: inherit;
+  text-decoration: none;
+}
+#footer-post a.icon {
+  background: none;
+}
+#footer-post a.icon:hover {
+  color: #dc322f;
+}
+#footer-post #nav-footer {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  background: #323539;
+  text-align: center;
+}
+#footer-post #nav-footer a {
+  color: #dc322f;
+  font-size: 1em;
+}
+#footer-post #nav-footer a:hover {
+  background-image: linear-gradient(transparent, transparent 5px, #dc322f 5px, #dc322f);
+  background-position: bottom;
+  background-size: 100% 6px;
+  background-repeat: repeat-x;
+}
+#footer-post #nav-footer ul {
+  display: table;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  list-style-type: none;
+}
+#footer-post #nav-footer ul li {
+  display: inline-table;
+  padding: 10px;
+  width: 20%;
+  vertical-align: middle;
+}
+#footer-post #actions-footer {
+  overflow: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+}
+#footer-post #actions-footer a {
+  display: inline-block;
+  padding-left: 1rem;
+  color: #dc322f;
+}
+#footer-post #share-footer {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  background: #323539;
+  text-align: center;
+}
+#footer-post #share-footer ul {
+  display: table;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  list-style-type: none;
+}
+#footer-post #share-footer ul li {
+  display: inline-table;
+  padding: 10px;
+  width: 20%;
+  vertical-align: middle;
+}
+#footer-post #toc-footer {
+  clear: both;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background: #323539;
+  text-align: left;
+}
+#footer-post #toc-footer ol {
+  margin: 0;
+  padding-left: 20px;
+  list-style-type: none;
+}
+#footer-post #toc-footer ol li {
+  line-height: 30px;
+}
+#footer-post #toc-footer a:hover {
+  color: #dc322f;
+}
+#footer-post #toc-footer .toc-level-1 > .toc-link {
+  display: none;
+}
+#footer-post #toc-footer .toc-level-2 {
+  color: #d6d6d6;
+  font-size: 0.8rem;
+}
+#footer-post #toc-footer .toc-level-2:before {
+  color: #dc322f;
+  content: "#";
+}
+#footer-post #toc-footer .toc-level-3 {
+  color: #666;
+  font-size: 0.7rem;
+  line-height: 15px;
+}
+#footer-post #toc-footer .toc-level-4 {
+  display: none;
+}
+#footer-post #toc-footer .toc-level-5 {
+  display: none;
+}
+#footer-post #toc-footer .toc-level-6 {
+  display: none;
+}
+#footer-post #toc-footer .toc-number {
+  display: none;
+}
+@media screen and (min-width: 500px) {
+  #footer-post-container {
+    display: none;
+  }
+}
+.post-list {
+  padding: 0;
+}
+.post-list .post-item {
+  margin-bottom: 1rem;
+  margin-left: 0;
+  list-style-type: none;
+}
+.post-list .post-item span {
+  font-family: "Inter", sans-serif;
+}
+.post-list .post-item .meta {
+  display: block;
+  margin-right: 16px;
+  min-width: 100px;
+  color: #666;
+  font-size: 14px;
+}
+@media (min-width: 480px) {
+  .post-list .post-item {
+    display: flex;
+    margin-bottom: 5px;
+  }
+  .post-list .post-item .meta {
+    text-align: left;
+  }
+}
+.project-list {
+  padding: 0;
+  list-style: none;
+}
+.project-list .project-item {
+  margin-bottom: 5px;
+}
+.project-list .project-item p {
+  display: inline;
+}
+article ul li {
+  font-family: "Inter", sans-serif;
+}
+article header {
+  text-align: center;
+}
+article header .posttitle {
+  margin-top: 0;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  line-height: 1.25;
+  font-weight: 600;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+article header .meta {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 0.9em;
+  font-family: "Fira Code", monospace;
+}
+article header .meta * {
+  color: #ccc;
+  font-size: 0.9em;
+}
+article header .author {
+  letter-spacing: 0.01em;
+  font-weight: 300;
+}
+article header .postdate {
+  display: inline;
+}
+article .content img {
+  margin: auto;
+  border-radius: 8px;
+}
+article .content h2:before {
+  position: absolute;
+  left: -1.3rem;
+  color: #dc322f;
+  content: "#";
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+article .content h1:before {
+  position: absolute;
+  left: -3rem;
+  margin-top: 3px;
+  color: #dc322f;
+  content: url("computer.svg");
+  content: url("comp.png");
+}
+article .content img,
+article .content video {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  height: auto;
+}
+article .content .video-container {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+  height: 0;
+}
+article .content .video-container iframe,
+article .content .video-container object,
+article .content .video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 0;
+  width: 100%;
+  height: 100%;
+}
+article .content blockquote {
+  margin: 1rem 10px;
+  padding: 0.5em 10px;
+  background: inherit;
+  color: #e8e8e8;
+  quotes: "\201C" "\201D" "\2018" "\2019";
+  font-weight: 500;
+  font-style: italic;
+  font-size: 0.8rem;
+}
+article .content blockquote p {
+  margin: 0;
+}
+article .content blockquote:before {
+  margin-right: 0.25em;
+  color: #e8e8e8;
+  content: "\201C";
+  vertical-align: -0.4em;
+  font-size: 2em;
+  line-height: 0.1em;
+}
+article .content blockquote footer {
+  margin: line-height 0;
+  color: #666;
+  font-size: 11px;
+}
+article .content blockquote footer a {
+  background-image: linear-gradient(transparent, transparent 5px, #666 5px, #666);
+  color: #666;
+}
+article .content blockquote footer a:hover {
+  background-image: linear-gradient(transparent, transparent 4px, #858585 4px, #858585);
+  color: #858585;
+}
+article .content blockquote footer cite:before {
+  padding: 0 0.5em;
+  content: "—";
+}
+article .content .pullquote {
+  margin: 0;
+  width: 45%;
+  text-align: left;
+}
+article .content .pullquote.left {
+  margin-right: 1em;
+  margin-left: 0.5em;
+}
+article .content .pullquote.right {
+  margin-right: 0.5em;
+  margin-left: 1em;
+}
+article .content .caption {
+  position: relative;
+  display: block;
+  margin-top: 0.5em;
+  color: #666;
+  text-align: center;
+  font-size: 0.9em;
+}
+.posttitle {
+  text-transform: uppercase;
+  font-size: 1.5em;
+  line-height: 1.25;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+}
+.article-tag .tag-link {
+  background-image: linear-gradient(transparent, transparent 10px, #dc322f 10px, #dc322f);
+  background-position: bottom;
+  background-size: 100% 6px;
+  background-repeat: repeat-x;
+}
+.article-tag .tag-link:before {
+  content: "#";
+}
+.article-category .category-link {
+  background-image: linear-gradient(transparent, transparent 10px, #dc322f 10px, #dc322f);
+  background-position: bottom;
+  background-size: 100% 6px;
+  background-repeat: repeat-x;
+}
+@media (min-width: 480px) {
+  .article-tag,
+  .article-category {
+    display: inline;
+  }
+  .article-tag:before,
+  .article-category:before {
+    content: "|";
+  }
+}
+#archive .post-list {
+  padding: 0;
+}
+#archive .post-list .post-item {
+  margin-bottom: 1rem;
+  margin-left: 0;
+  list-style-type: none;
+}
+#archive .post-list .post-item .meta {
+  display: block;
+  margin-right: 16px;
+  min-width: 100px;
+  color: #666;
+  font-size: 14px;
+}
+@media (min-width: 480px) {
+  #archive .post-list .post-item {
+    display: flex;
+    margin-bottom: 5px;
+    margin-left: 1rem;
+  }
+  #archive .post-list .post-item .meta {
+    text-align: left;
+  }
+}
+.blog-post-comments {
+  margin-top: 4rem;
+}
+#footer {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 10px;
+  width: 100%;
+  color: #666;
+  vertical-align: top;
+  text-align: center;
+  font-size: 0.8rem;
+  font-family: "Hardpixel", "Fira Code", monospace;
+}
+#footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#footer li {
+  display: inline-block;
+  margin-right: 15px;
+  border-right: 1px solid;
+  border-color: #666;
+  vertical-align: middle;
+}
+#footer li a {
+  margin-right: 15px;
+}
+#footer li:last-child {
+  margin-right: 0;
+  border-right: 0;
+}
+#footer li:last-child a {
+  margin-right: 0;
+}
+#footer a {
+  color: #666;
+  text-decoration: underline;
+  background-image: none;
+}
+#footer a:hover {
+  color: #858585;
+}
+#footer .footer-left {
+  height: 20px;
+  vertical-align: middle;
+  line-height: 20px;
+}
+@media (min-width: 39rem) {
+  #footer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 20px;
+  }
+  #footer .footer-left {
+    align-self: flex-start;
+    margin-right: 20px;
+  }
+  #footer .footer-right {
+    align-self: flex-end;
+  }
+}
+.pagination {
+  display: inline-block;
+  margin-top: 2rem;
+  width: 100%;
+  text-align: center;
+}
+.pagination .page-number {
+  color: #d6d6d6;
+  font-size: 0.8rem;
+}
+.pagination a {
+  padding: 4px 6px;
+  border-radius: 5px;
+  background-image: none;
+  color: #d6d6d6;
+  text-decoration: none;
+}
+.pagination a:hover {
+  background-image: none;
+}
+.pagination a:hover:not(.active) {
+  color: #eee;
+}
+.search-input {
+  padding: 4px 7px;
+  width: 100%;
+  outline: none;
+  border: solid 1px #ccc;
+  border-radius: 5px;
+  background-color: #1d1f21;
+  color: #d6d6d6;
+  font-size: 1.2rem;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+.search-input:focus {
+  border: solid 1px #dc322f;
+}
+#search-result ul.search-result-list {
+  padding: 0;
+  list-style-type: none;
+}
+#search-result li {
+  margin: 2em auto;
+}
+#search-result a.search-result-title {
+  background-image: none;
+  color: #d6d6d6;
+  text-transform: capitalize;
+  font-weight: bold;
+  line-height: 1.2;
+}
+#search-result p.search-result {
+  overflow: hidden;
+  margin: 0.4em auto;
+  max-height: 13em;
+  text-align: justify;
+  font-size: 0.8em;
+}
+#search-result em.search-keyword {
+  border-bottom: 1px dashed #dc322f;
+  color: #dc322f;
+  font-weight: bold;
+}
+.search-no-result {
+  display: none;
+  padding-bottom: 0.5em;
+  color: #d6d6d6;
+}
+#tag-cloud .tag-cloud-title {
+  color: #666;
+}
+#tag-cloud .tag-cloud-tags {
+  clear: both;
+  text-align: center;
+}
+#tag-cloud .tag-cloud-tags a {
+  display: inline-block;
+  margin: 10px;
+}
+.tooltipped {
+  position: relative;
+}
+.tooltipped::after {
+  position: absolute;
+  z-index: 1000000;
+  display: none;
+  padding: 0.2em 0.5em;
+  -webkit-font-smoothing: subpixel-antialiased;
+  color: #1d1f21;
+  font-display: swap;
+  font-weight: 400;
+  font-size: 0.88rem;
+  font-family: "Inter", "Hardpixel", "Fira Code", monospace;
+  line-height: 1.725;
+  text-rendering: geometricPrecision;
+  text-align: center;
+  word-wrap: break-word;
+  white-space: pre;
+  content: attr(aria-label);
+  background: #d6d6d6;
+  border-radius: 3px;
+  opacity: 0;
+}
+.tooltipped::before {
+  position: absolute;
+  z-index: 1000001;
+  display: none;
+  width: 0;
+  height: 0;
+  color: #d6d6d6;
+  pointer-events: none;
+  content: '';
+  border: 6px solid transparent;
+  opacity: 0;
+}
+.tooltipped:hover::before,
+.tooltipped:active::before,
+.tooltipped:focus::before,
+.tooltipped:hover::after,
+.tooltipped:active::after,
+.tooltipped:focus::after {
+  display: inline-block;
+  text-decoration: none;
+  animation-name: tooltip-appear;
+  animation-duration: 0.1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+.tooltipped-s::after,
+.tooltipped-sw::after {
+  top: 100%;
+  right: 50%;
+  margin-top: 6px;
+}
+.tooltipped-s::before,
+.tooltipped-sw::before {
+  top: auto;
+  right: 50%;
+  bottom: -7px;
+  margin-right: -6px;
+  border-bottom-color: #d6d6d6;
+}
+.tooltipped-sw::after {
+  margin-right: -16px;
+}
+.tooltipped-s::after {
+  transform: translateX(50%);
+}
+@-moz-keyframes tooltip-appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes tooltip-appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes tooltip-appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes tooltip-appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+#categories .category-list-title {
+  color: #666;
+}
+#categories .category-list .category-list-item .category-list-count {
+  color: #666;
+}
+#categories .category-list .category-list-item .category-list-count:before {
+  content: " (";
+}
+#categories .category-list .category-list-item .category-list-count:after {
+  content: ")";
+}
+.highlight {
+  background: #474949;
+  color: #d1d9e1;
+}
+.highlight .code .comment,
+.highlight .code .quote {
+  color: #969896;
+  font-style: italic;
+}
+.highlight .code .keyword,
+.highlight .code .selector-tag,
+.highlight .code .literal,
+.highlight .code .type,
+.highlight .code .addition {
+  color: #c9c;
+}
+.highlight .code .number,
+.highlight .code .selector-attr,
+.highlight .code .selector-pseudo {
+  color: #f99157;
+}
+.highlight .code .string,
+.highlight .code .doctag,
+.highlight .code .regexp {
+  color: #8abeb7;
+}
+.highlight .code .title,
+.highlight .code .name,
+.highlight .code .section,
+.highlight .code .built_in {
+  color: #b5bd68;
+}
+.highlight .code .variable,
+.highlight .code .template-variable,
+.highlight .code .selector-id,
+.highlight .code .class .title {
+  color: #fc6;
+}
+.highlight .code .section,
+.highlight .code .name,
+.highlight .code .strong {
+  font-weight: bold;
+}
+.highlight .code .symbol,
+.highlight .code .bullet,
+.highlight .code .subst,
+.highlight .code .meta,
+.highlight .code .link {
+  color: #f99157;
+}
+.highlight .code .deletion {
+  color: #dc322f;
+}
+.highlight .code .formula {
+  background: #eee8d5;
+}
+.highlight .code .attr,
+.highlight .code .attribute {
+  color: #81a2be;
+}
+.highlight .code .emphasis {
+  font-style: italic;
+}
+pre {
+  overflow-x: auto;
+  padding: 10px 15px;
+  padding-bottom: 0;
+  border: 1px dotted #666;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: "Fira Code", monospace;
+  line-height: 22px;
+  -webkit-border-radius: 4px;
+  white-space: pre-wrap; 
+  white-space: -moz-pre-wrap; 
+  white-space: -pre-wrap; 
+  white-space: -o-pre-wrap; 
+  word-wrap: break-word; 
+}
+pre code {
+  display: block;
+  padding: 0;
+  border: none;
+}
+code {
+  font-size: 0.9rem;
+  padding: 0 5px;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  font-family: "Fira Code", monospace;
+  background: #323539;
+  color: #fff;
+}
+a {
+  color: #d6d6d6;
+}
+a:hover {
+  color: #dc322f;
+}
+.highlight {
+  overflow-x: auto;
+  margin: 1rem 0;
+  padding: 10px 15px;
+  border-radius: 4px;
+  background: #212326;
+  font-family: "Fira Code", monospace;
+  -webkit-border-radius: 4px;
+}
+.highlight figcaption {
+  margin: -5px 0 5px;
+  color: #666;
+  font-size: 0.9em;
+  zoom: 1;
+}
+.highlight figcaption a {
+  float: right;
+  color: #666;
+  font-style: italic;
+  font-size: 0.8em;
+  background-image: linear-gradient(transparent, transparent 10px, #dc322f 10px, #dc322f);
+  background-position: bottom;
+  background-size: 100% 6px;
+  background-repeat: repeat-x;
+}
+.highlight figcaption a:hover {
+  color: #858585;
+}
+.highlight figcaption:before,
+.highlight figcaption content: "" {
+  display: table;
+}
+.highlight figcaption:after {
+  clear: both;
+}
+.highlight:hover .btn-copy {
+  opacity: 1;
+}
+.highlight .btn-copy {
+  font-size: 1.2rem;
+  position: absolute;
+  right: 20px;
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+}
+.highlight .btn-copy:hover {
+  color: #dc322f;
+}
+.highlight pre {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+}
+.highlight table {
+  width: auto;
+}
+.highlight td.gutter {
+  text-align: right;
+  opacity: 0.2;
+}
+.highlight .line {
+  height: 22px;
+}
+.dash_blink::after {
+  content: "_";
+  animation: blink-animation 1s infinite;
+}
+.post-list a {
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.text {
+  fill: none;
+  stroke-width: 3;
+  stroke-linejoin: round;
+  stroke-dasharray: 70 330;
+  stroke-dashoffset: 0;
+  -webkit-animation: stroke 6s infinite linear;
+  animation: stroke 6s infinite linear;
+}
+.text:nth-child(5n + 1) {
+  stroke: #f2385a;
+  -webkit-animation-delay: -1.2s;
+  animation-delay: -1.2s;
+}
+.text:nth-child(5n + 2) {
+  stroke: #f5a503;
+  -webkit-animation-delay: -2.4s;
+  animation-delay: -2.4s;
+}
+.text:nth-child(5n + 3) {
+  stroke: #e9f1df;
+  -webkit-animation-delay: -3.6s;
+  animation-delay: -3.6s;
+}
+.text:nth-child(5n + 4) {
+  stroke: #56d9cd;
+  -webkit-animation-delay: -4.8s;
+  animation-delay: -4.8s;
+}
+.text:nth-child(5n + 5) {
+  stroke: #3aa1bf;
+  -webkit-animation-delay: -6s;
+  animation-delay: -6s;
+}
+@-webkit-keyframes stroke {
+  100% {
+    stroke-dashoffset: -400;
+  }
+}
+svg {
+  width: 100%;
+  height: 100%;
+}
+.headerlink {
+  font-family: "Inter", monospace;
+  font-weight: 600;
+}
+.content > h1::after {
+  content: "▊";
+  animation: blink-animation 1s infinite;
+}
+#about {
+  font-family: "Hardpixel", "Fira Code", monospace;
+  font-weight: 400;
+}
+.pixel_text {
+  font-family: "Fira Code", monospace;
+}
+.pixel_text p,
+.pixel_text * {
+  font-family: "Fira Code", monospace;
+}
+#writing *,
+#writing span > a {
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+#writing .post-item > span > a {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+time {
+  font-size: 1.2rem;
+}
+.c-glitch,
+.c-glitch__img {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+.c-glitch {
+  height: 100%;
+  width: auto;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+.c-glitch .c-glitch__img:nth-child(n + 2) {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-delay: 0;
+  animation-delay: 0;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+.c-glitch .c-glitch__img:nth-child(2) {
+  -webkit-animation-name: glitch-anim-1;
+  animation-name: glitch-anim-1;
+}
+.c-glitch .c-glitch__img:nth-child(3) {
+  -webkit-animation-name: glitch-anim-2;
+  animation-name: glitch-anim-2;
+}
+.c-glitch .c-glitch__img:nth-child(4) {
+  -webkit-animation-name: glitch-anim-3;
+  animation-name: glitch-anim-3;
+}
+.c-glitch .c-glitch__img:nth-child(5) {
+  -webkit-animation-name: glitch-anim-4;
+  animation-name: glitch-anim-4;
+  background-blend-mode: overlay;
+  background-color: #af4949;
+}
+.c-glitch__img {
+  background-blend-mode: none;
+  background-color: transparent;
+  height: calc(100% + 5px * 2);
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  width: calc(100% + 10px * 2);
+}
+.c-glitch__img:nth-child(n + 2) {
+  opacity: 0;
+}
+@-moz-keyframes blink-animation {
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    opacity: 0;
+  }
+}
+@-o-keyframes blink-animation {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes blink-animation {
+  to {
+    opacity: 0;
+  }
+}
+@-moz-keyframes stroke {
+  100% {
+    stroke-dashoffset: -400;
+  }
+}
+@-webkit-keyframes stroke {
+  100% {
+    stroke-dashoffset: -400;
+  }
+}
+@-o-keyframes stroke {
+  100% {
+    stroke-dashoffset: -400;
+  }
+}
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: -400;
+  }
+}
+@-moz-keyframes fe30-anime {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fe30-anime {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes fe30-anime {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fe30-anime {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes glitch-anim-1 {
+  0%, 100% {
+    opacity: 1;
+    transform: translate3d(40px, 0, 0) scale3d(-1, -1, 1);
+    clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+  }
+  20% {
+    clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+  }
+  30% {
+    clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+  }
+  40% {
+    clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%);
+  }
+  50% {
+    clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+  }
+  55% {
+    clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%);
+  }
+  60% {
+    clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%);
+    clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%);
+  }
+  70% {
+    clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+  }
+  80% {
+    clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%);
+  }
+  85% {
+    clip-path: polygon(0 60%, 100% 60%, 100% 65%, 0 65%);
+  }
+  95% {
+    clip-path: polygon(0 72%, 100% 72%, 100% 78%, 0 78%);
+  }
+}
+@-webkit-keyframes glitch-anim-1 {
+  0%, 100% {
+    opacity: 1;
+    transform: translate3d(40px, 0, 0) scale3d(-1, -1, 1);
+    clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+  }
+  20% {
+    clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+  }
+  30% {
+    clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+  }
+  40% {
+    clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%);
+  }
+  50% {
+    clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+  }
+  55% {
+    clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%);
+  }
+  60% {
+    clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%);
+    clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%);
+  }
+  70% {
+    clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+  }
+  80% {
+    clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%);
+  }
+  85% {
+    clip-path: polygon(0 60%, 100% 60%, 100% 65%, 0 65%);
+  }
+  95% {
+    clip-path: polygon(0 72%, 100% 72%, 100% 78%, 0 78%);
+  }
+}
+@-o-keyframes glitch-anim-1 {
+  0%, 100% {
+    opacity: 1;
+    transform: translate3d(40px, 0, 0) scale3d(-1, -1, 1);
+    clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+  }
+  20% {
+    clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+  }
+  30% {
+    clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+  }
+  40% {
+    clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%);
+  }
+  50% {
+    clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+  }
+  55% {
+    clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%);
+  }
+  60% {
+    clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%);
+    clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%);
+  }
+  70% {
+    clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+  }
+  80% {
+    clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%);
+  }
+  85% {
+    clip-path: polygon(0 60%, 100% 60%, 100% 65%, 0 65%);
+  }
+  95% {
+    clip-path: polygon(0 72%, 100% 72%, 100% 78%, 0 78%);
+  }
+}
+@keyframes glitch-anim-1 {
+  0%, 100% {
+    opacity: 1;
+    transform: translate3d(40px, 0, 0) scale3d(-1, -1, 1);
+    clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+  }
+  20% {
+    clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+  }
+  30% {
+    clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+  }
+  40% {
+    clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%);
+  }
+  50% {
+    clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+  }
+  55% {
+    clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%);
+  }
+  60% {
+    clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%);
+    clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%);
+  }
+  70% {
+    clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+  }
+  80% {
+    clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%);
+  }
+  85% {
+    clip-path: polygon(0 60%, 100% 60%, 100% 65%, 0 65%);
+  }
+  95% {
+    clip-path: polygon(0 72%, 100% 72%, 100% 78%, 0 78%);
+  }
+}
+@-moz-keyframes glitch-anim-2 {
+  0%, 100% {
+    opacity: 1;
+    transform: translate3d(-10px, 0, 0);
+    clip-path: polygon(0 25%, 100% 25%, 100% 30%, 0 30%);
+  }
+  10% {
+    clip-path: polygon(0 3%, 100% 3%, 100% 3%, 0 3%);
+  }
+  15% {
+    clip-path: polygon(0 5%, 100% 5%, 100% 20%, 0 20%);
+  }
+  17% {
+    clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
+  }
+  19% {
+    clip-path: polygon(0 40%, 100% 40%, 100% 40%, 0 40%);
+  }
+  33% {
+    clip-path: polygon(0 52%, 100% 52%, 100% 59%, 0 59%);
+  }
+  35% {
+    clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%);
+  }
+  40% {
+    clip-path: polygon(0 75%, 100% 75%, 100% 75%, 0 75%);
+  }
+  45% {
+    clip-path: polygon(0 65%, 100% 65%, 100% 40%, 0 40%);
+  }
+  49% {
+    clip-path: polygon(0 45%, 100% 45%, 100% 50%, 0 50%);
+  }
+  50% {
+    clip-path: polygon(0 14%, 100% 14%, 100% 33%, 0 33%);
+  }
+  55% {
+    clip-path: polygon(0 15%, 100% 15%, 100% 35%, 0 35%);
+  }
+  60% {
+    clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+  }
+  70% {
+    clip-path: polygon(0 65%, 100% 65%, 100% 60%, 0 60%);
+  }
+  80% {
+    clip-path: polygon(0 80%, 100% 80%, 100% 85%, 0 85%);
+  }
+  90% {
+    clip-path: polygon(0 55%, 100% 55%, 100% 65%, 0 65%);
+  }
+}
+@-webkit-keyframes glitch-anim-2 {
+  0%, 100% {
+    opacity: 1;
+    transform: translate3d(-10px, 0, 0);
+    clip-path: polygon(0 25%, 100% 25%, 100% 30%, 0 30%);
+  }
+  10% {
+    clip-path: polygon(0 3%, 100% 3%, 100% 3%, 0 3%);
+  }
+  15% {
+    clip-path: polygon(0 5%, 100% 5%, 100% 20%, 0 20%);
+  }
+  17% {
+    clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
+  }
+  19% {
+    clip-path: polygon(0 40%, 100% 40%, 100% 40%, 0 40%);
+  }
+  33% {
+    clip-path: polygon(0 52%, 100% 52%, 100% 59%, 0 59%);
+  }
+  35% {
+    clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%);
+  }
+  40% {
+    clip-path: polygon(0 75%, 100% 75%, 100% 75%, 0 75%);
+  }
+  45% {
+    clip-path: polygon(0 65%, 100% 65%, 100% 40%, 0 40%);
+  }
+  49% {
+    clip-path: polygon(0 45%, 100% 45%, 100% 50%, 0 50%);
+  }
+  50% {
+    clip-path: polygon(0 14%, 100% 14%, 100% 33%, 0 33%);
+  }
+  55% {
+    clip-path: polygon(0 15%, 100% 15%, 100% 35%, 0 35%);
+  }
+  60% {
+    clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+  }
+  70% {
+    clip-path: polygon(0 65%, 100% 65%, 100% 60%, 0 60%);
+  }
+  80% {
+    clip-path: polygon(0 80%, 100% 80%, 100% 85%, 0 85%);
+  }
+  90% {
+    clip-path: polygon(0 55%, 100% 55%, 100% 65%, 0 65%);
+  }
+}
+@-o-keyframes glitch-anim-2 {
+  0%, 100% {
+    opacity: 1;
+    transform: translate3d(-10px, 0, 0);
+    clip-path: polygon(0 25%, 100% 25%, 100% 30%, 0 30%);
+  }
+  10% {
+    clip-path: polygon(0 3%, 100% 3%, 100% 3%, 0 3%);
+  }
+  15% {
+    clip-path: polygon(0 5%, 100% 5%, 100% 20%, 0 20%);
+  }
+  17% {
+    clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
+  }
+  19% {
+    clip-path: polygon(0 40%, 100% 40%, 100% 40%, 0 40%);
+  }
+  33% {
+    clip-path: polygon(0 52%, 100% 52%, 100% 59%, 0 59%);
+  }
+  35% {
+    clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%);
+  }
+  40% {
+    clip-path: polygon(0 75%, 100% 75%, 100% 75%, 0 75%);
+  }
+  45% {
+    clip-path: polygon(0 65%, 100% 65%, 100% 40%, 0 40%);
+  }
+  49% {
+    clip-path: polygon(0 45%, 100% 45%, 100% 50%, 0 50%);
+  }
+  50% {
+    clip-path: polygon(0 14%, 100% 14%, 100% 33%, 0 33%);
+  }
+  55% {
+    clip-path: polygon(0 15%, 100% 15%, 100% 35%, 0 35%);
+  }
+  60% {
+    clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+  }
+  70% {
+    clip-path: polygon(0 65%, 100% 65%, 100% 60%, 0 60%);
+  }
+  80% {
+    clip-path: polygon(0 80%, 100% 80%, 100% 85%, 0 85%);
+  }
+  90% {
+    clip-path: polygon(0 55%, 100% 55%, 100% 65%, 0 65%);
+  }
+}
+@keyframes glitch-anim-2 {
+  0%, 100% {
+    opacity: 1;
+    transform: translate3d(-10px, 0, 0);
+    clip-path: polygon(0 25%, 100% 25%, 100% 30%, 0 30%);
+  }
+  10% {
+    clip-path: polygon(0 3%, 100% 3%, 100% 3%, 0 3%);
+  }
+  15% {
+    clip-path: polygon(0 5%, 100% 5%, 100% 20%, 0 20%);
+  }
+  17% {
+    clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
+  }
+  19% {
+    clip-path: polygon(0 40%, 100% 40%, 100% 40%, 0 40%);
+  }
+  33% {
+    clip-path: polygon(0 52%, 100% 52%, 100% 59%, 0 59%);
+  }
+  35% {
+    clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%);
+  }
+  40% {
+    clip-path: polygon(0 75%, 100% 75%, 100% 75%, 0 75%);
+  }
+  45% {
+    clip-path: polygon(0 65%, 100% 65%, 100% 40%, 0 40%);
+  }
+  49% {
+    clip-path: polygon(0 45%, 100% 45%, 100% 50%, 0 50%);
+  }
+  50% {
+    clip-path: polygon(0 14%, 100% 14%, 100% 33%, 0 33%);
+  }
+  55% {
+    clip-path: polygon(0 15%, 100% 15%, 100% 35%, 0 35%);
+  }
+  60% {
+    clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+  }
+  70% {
+    clip-path: polygon(0 65%, 100% 65%, 100% 60%, 0 60%);
+  }
+  80% {
+    clip-path: polygon(0 80%, 100% 80%, 100% 85%, 0 85%);
+  }
+  90% {
+    clip-path: polygon(0 55%, 100% 55%, 100% 65%, 0 65%);
+  }
+}
+@-moz-keyframes glitch-anim-3 {
+  0%, 100% {
+    opacity: 1;
+    transform: translate3d(0, -5px, 0) scale3d(-1, -1, 1);
+    clip-path: polygon(0 1%, 100% 1%, 100% 3%, 0 3%);
+  }
+  5% {
+    clip-path: polygon(0 10%, 100% 10%, 100% 9%, 0 9%);
+  }
+  11% {
+    clip-path: polygon(0 5%, 100% 5%, 100% 6%, 0 6%);
+  }
+  20% {
+    clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
+  }
+  25% {
+    clip-path: polygon(0 10%, 100% 10%, 100% 10%, 0 10%);
+  }
+  35% {
+    clip-path: polygon(0 30%, 100% 30%, 100% 25%, 0 25%);
+  }
+  42% {
+    clip-path: polygon(0 15%, 100% 15%, 100% 16%, 0 16%);
+  }
+  48% {
+    clip-path: polygon(0 40%, 100% 40%, 100% 39%, 0 39%);
+  }
+  50% {
+    clip-path: polygon(0 20%, 100% 20%, 100% 21%, 0 21%);
+  }
+  56% {
+    clip-path: polygon(0 60%, 100% 60%, 100% 55%, 0 55%);
+  }
+  61% {
+    clip-path: polygon(0 30%, 100% 30%, 100% 31%, 0 31%);
+  }
+  68% {
+    clip-path: polygon(0 70%, 100% 70%, 100% 69%, 0 69%);
+  }
+  72% {
+    clip-path: polygon(0 40%, 100% 40%, 100% 41%, 0 41%);
+  }
+  77% {
+    clip-path: polygon(0 80%, 100% 80%, 100% 75%, 0 75%);
+  }
+  81% {
+    clip-path: polygon(0 50%, 100% 50%, 100% 51%, 0 51%);
+  }
+  86% {
+    clip-path: polygon(0 90%, 100% 90%, 100% 90%, 0 90%);
+  }
+  90% {
+    clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%);
+  }
+  92% {
+    clip-path: polygon(0 100%, 100% 100%, 100% 99%, 0 99%);
+  }
+  94% {
+    clip-path: polygon(0 70%, 100% 70%, 100% 71%, 0 71%);
+  }
+}
+@-webkit-keyframes glitch-anim-3 {
+  0%, 100% {
+    opacity: 1;
+    transform: translate3d(0, -5px, 0) scale3d(-1, -1, 1);
+    clip-path: polygon(0 1%, 100% 1%, 100% 3%, 0 3%);
+  }
+  5% {
+    clip-path: polygon(0 10%, 100% 10%, 100% 9%, 0 9%);
+  }
+  11% {
+    clip-path: polygon(0 5%, 100% 5%, 100% 6%, 0 6%);
+  }
+  20% {
+    clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
+  }
+  25% {
+    clip-path: polygon(0 10%, 100% 10%, 100% 10%, 0 10%);
+  }
+  35% {
+    clip-path: polygon(0 30%, 100% 30%, 100% 25%, 0 25%);
+  }
+  42% {
+    clip-path: polygon(0 15%, 100% 15%, 100% 16%, 0 16%);
+  }
+  48% {
+    clip-path: polygon(0 40%, 100% 40%, 100% 39%, 0 39%);
+  }
+  50% {
+    clip-path: polygon(0 20%, 100% 20%, 100% 21%, 0 21%);
+  }
+  56% {
+    clip-path: polygon(0 60%, 100% 60%, 100% 55%, 0 55%);
+  }
+  61% {
+    clip-path: polygon(0 30%, 100% 30%, 100% 31%, 0 31%);
+  }
+  68% {
+    clip-path: polygon(0 70%, 100% 70%, 100% 69%, 0 69%);
+  }
+  72% {
+    clip-path: polygon(0 40%, 100% 40%, 100% 41%, 0 41%);
+  }
+  77% {
+    clip-path: polygon(0 80%, 100% 80%, 100% 75%, 0 75%);
+  }
+  81% {
+    clip-path: polygon(0 50%, 100% 50%, 100% 51%, 0 51%);
+  }
+  86% {
+    clip-path: polygon(0 90%, 100% 90%, 100% 90%, 0 90%);
+  }
+  90% {
+    clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%);
+  }
+  92% {
+    clip-path: polygon(0 100%, 100% 100%, 100% 99%, 0 99%);
+  }
+  94% {
+    clip-path: polygon(0 70%, 100% 70%, 100% 71%, 0 71%);
+  }
+}
+@-o-keyframes glitch-anim-3 {
+  0%, 100% {
+    opacity: 1;
+    transform: translate3d(0, -5px, 0) scale3d(-1, -1, 1);
+    clip-path: polygon(0 1%, 100% 1%, 100% 3%, 0 3%);
+  }
+  5% {
+    clip-path: polygon(0 10%, 100% 10%, 100% 9%, 0 9%);
+  }
+  11% {
+    clip-path: polygon(0 5%, 100% 5%, 100% 6%, 0 6%);
+  }
+  20% {
+    clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
+  }
+  25% {
+    clip-path: polygon(0 10%, 100% 10%, 100% 10%, 0 10%);
+  }
+  35% {
+    clip-path: polygon(0 30%, 100% 30%, 100% 25%, 0 25%);
+  }
+  42% {
+    clip-path: polygon(0 15%, 100% 15%, 100% 16%, 0 16%);
+  }
+  48% {
+    clip-path: polygon(0 40%, 100% 40%, 100% 39%, 0 39%);
+  }
+  50% {
+    clip-path: polygon(0 20%, 100% 20%, 100% 21%, 0 21%);
+  }
+  56% {
+    clip-path: polygon(0 60%, 100% 60%, 100% 55%, 0 55%);
+  }
+  61% {
+    clip-path: polygon(0 30%, 100% 30%, 100% 31%, 0 31%);
+  }
+  68% {
+    clip-path: polygon(0 70%, 100% 70%, 100% 69%, 0 69%);
+  }
+  72% {
+    clip-path: polygon(0 40%, 100% 40%, 100% 41%, 0 41%);
+  }
+  77% {
+    clip-path: polygon(0 80%, 100% 80%, 100% 75%, 0 75%);
+  }
+  81% {
+    clip-path: polygon(0 50%, 100% 50%, 100% 51%, 0 51%);
+  }
+  86% {
+    clip-path: polygon(0 90%, 100% 90%, 100% 90%, 0 90%);
+  }
+  90% {
+    clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%);
+  }
+  92% {
+    clip-path: polygon(0 100%, 100% 100%, 100% 99%, 0 99%);
+  }
+  94% {
+    clip-path: polygon(0 70%, 100% 70%, 100% 71%, 0 71%);
+  }
+}
+@keyframes glitch-anim-3 {
+  0%, 100% {
+    opacity: 1;
+    transform: translate3d(0, -5px, 0) scale3d(-1, -1, 1);
+    clip-path: polygon(0 1%, 100% 1%, 100% 3%, 0 3%);
+  }
+  5% {
+    clip-path: polygon(0 10%, 100% 10%, 100% 9%, 0 9%);
+  }
+  11% {
+    clip-path: polygon(0 5%, 100% 5%, 100% 6%, 0 6%);
+  }
+  20% {
+    clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
+  }
+  25% {
+    clip-path: polygon(0 10%, 100% 10%, 100% 10%, 0 10%);
+  }
+  35% {
+    clip-path: polygon(0 30%, 100% 30%, 100% 25%, 0 25%);
+  }
+  42% {
+    clip-path: polygon(0 15%, 100% 15%, 100% 16%, 0 16%);
+  }
+  48% {
+    clip-path: polygon(0 40%, 100% 40%, 100% 39%, 0 39%);
+  }
+  50% {
+    clip-path: polygon(0 20%, 100% 20%, 100% 21%, 0 21%);
+  }
+  56% {
+    clip-path: polygon(0 60%, 100% 60%, 100% 55%, 0 55%);
+  }
+  61% {
+    clip-path: polygon(0 30%, 100% 30%, 100% 31%, 0 31%);
+  }
+  68% {
+    clip-path: polygon(0 70%, 100% 70%, 100% 69%, 0 69%);
+  }
+  72% {
+    clip-path: polygon(0 40%, 100% 40%, 100% 41%, 0 41%);
+  }
+  77% {
+    clip-path: polygon(0 80%, 100% 80%, 100% 75%, 0 75%);
+  }
+  81% {
+    clip-path: polygon(0 50%, 100% 50%, 100% 51%, 0 51%);
+  }
+  86% {
+    clip-path: polygon(0 90%, 100% 90%, 100% 90%, 0 90%);
+  }
+  90% {
+    clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%);
+  }
+  92% {
+    clip-path: polygon(0 100%, 100% 100%, 100% 99%, 0 99%);
+  }
+  94% {
+    clip-path: polygon(0 70%, 100% 70%, 100% 71%, 0 71%);
+  }
+}
+@-moz-keyframes glitch-anim-4 {
+  0%, 5% {
+    opacity: 0.2;
+    transform: translate3d(10px, 5px, 0);
+  }
+  5.5%, 100% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes glitch-anim-4 {
+  0%, 5% {
+    opacity: 0.2;
+    transform: translate3d(10px, 5px, 0);
+  }
+  5.5%, 100% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-o-keyframes glitch-anim-4 {
+  0%, 5% {
+    opacity: 0.2;
+    transform: translate3d(10px, 5px, 0);
+  }
+  5.5%, 100% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes glitch-anim-4 {
+  0%, 5% {
+    opacity: 0.2;
+    transform: translate3d(10px, 5px, 0);
+  }
+  5.5%, 100% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+}</style><style class="darkreader darkreader--sync" media="screen"></style>
+
+    <!-- persian styles -->
+    <!-- fix bug: by bach' -->
+    <!-- 
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+     -->
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 5.2.0"><meta name="darkreader" content="5677283656904253a3330f832c43dbab"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #7b5300 !important;
+    border-color: #d8b013 !important;
+    color: #f3e8c8 !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1 {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #0f3a48 !important;
+}</style></head>
+
+<body class="max-width mx-auto ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="https://manhcot.github.io/#" class="active"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="https://manhcot.github.io/#" class="active"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="https://manhcot.github.io/#" onclick="$(&#39;html, body&#39;).animate({ scrollTop: 0 }, &#39;fast&#39;);" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu" style="visibility: visible;">
+    <span id="nav" style="display: none;">
+      <ul>
+         
+          <li><a href="https://manhcot.github.io/">home</a></li>
+         
+         
+         
+        
+      </ul>
+    </span>
+    <br>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://manhcot.github.io"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://manhcot.github.io&amp;"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="https://blog.cyberjutsu.asia/2021/05/13/HTML-sanitizer-vs-XSS/#Mo-dau"><span class="toc-number">1.</span> <span class="toc-text">Mở đầu</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="https://manhcot.github.io"><span class="toc-number">1.1.</span> <span class="toc-text">Trang chủ</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="https://manhcot.github.io/#Com-them">
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Bugbounty cho người mới bắt đầu
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <span itemprop="name">MANHCOT</span>
+      </span>&gt;&gt;
+      
+    <div class="postdate">
+      
+        <time datetime="2021-05-12T17:00:01.000Z" itemprop="datePublished">2022-04-3</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="https://manhcot.github.io" rel="tag">bug bounty</a>, <a class="tag-link-link" href="https://manhcot.github.io" rel="tag">huong dan</a>, <a class="tag-link-link" href="fb.com/13thall" rel="tag">facebook</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <main>
+  <div class="c-glitch" style="background-image: url(&#39;https://camo.githubusercontent.com/223e9758b09eb2908cb04c01c05f6e8550596dfd1526db5a2895c471b378a538/68747470733a2f2f64336a32706b6d6a74696e366f752e636c6f756466726f6e742e6e65742f636f64696e672d61742d7468652d7768697465626f6172642d73696c69636f6e2d76616c6c65792e706e67&#39;);">
+    <img src="https://camo.githubusercontent.com/223e9758b09eb2908cb04c01c05f6e8550596dfd1526db5a2895c471b378a538/68747470733a2f2f64336a32706b6d6a74696e366f752e636c6f756466726f6e742e6e65742f636f64696e672d61742d7468652d7768697465626f6172642d73696c69636f6e2d76616c6c65792e706e67">
+    <div class="c-glitch__img" style="background-image: url(&#39;https://camo.githubusercontent.com/223e9758b09eb2908cb04c01c05f6e8550596dfd1526db5a2895c471b378a538/68747470733a2f2f64336a32706b6d6a74696e366f752e636c6f756466726f6e742e6e65742f636f64696e672d61742d7468652d7768697465626f6172642d73696c69636f6e2d76616c6c65792e706e67&#39;);"></div>
+    <div class="c-glitch__img" style="background-image: url(&#https://camo.githubusercontent.com/223e9758b09eb2908cb04c01c05f6e8550596dfd1526db5a2895c471b378a538/68747470733a2f2f64336a32706b6d6a74696e366f752e636c6f756466726f6e742e6e65742f636f64696e672d61742d7468652d7768697465626f6172642d73696c69636f6e2d76616c6c65792e706e67&#39;);"></div>
+    <div class="c-glitch__img" style="background-image: url(&#https://camo.githubusercontent.com/223e9758b09eb2908cb04c01c05f6e8550596dfd1526db5a2895c471b378a538/68747470733a2f2f64336a32706b6d6a74696e366f752e636c6f756466726f6e742e6e65742f636f64696e672d61742d7468652d7768697465626f6172642d73696c69636f6e2d76616c6c65792e706e67&#39;);"></div>
+    <div class="c-glitch__img" style="background-image: url(&#39;https://camo.githubusercontent.com/223e9758b09eb2908cb04c01c05f6e8550596dfd1526db5a2895c471b378a538/68747470733a2f2f64336a32706b6d6a74696e366f752e636c6f756466726f6e742e6e65742f636f64696e672d61742d7468652d7768697465626f6172642d73696c69636f6e2d76616c6c65792e706e67&#39;);"></div>
+    <div class="c-glitch__img" style="background-image: url(&#39;https://camo.githubusercontent.com/223e9758b09eb2908cb04c01c05f6e8550596dfd1526db5a2895c471b378a538/68747470733a2f2f64336a32706b6d6a74696e366f752e636c6f756466726f6e742e6e65742f636f64696e672d61742d7468652d7768697465626f6172642d73696c69636f6e2d76616c6c65792e706e67&#39;);"></div>
+  </div>
+</main>
+
+<h1 id="Mo-dau"><a href="https://manhcot.github.io/#Mo-dau" class="headerlink" title="Mở đầu">Mở đầu</a></h1><blockquote>
+If you are beginning bug bounty hunting, you will need to know that it will take time to learn the bug hunting skills. You need to have the patience and determination to continue hunting even though you might not see successful results quickly. The bug bounty field is crowded and competitive, hence you will require hardwork, dedication, lateral thinking to persist on. Hunting is about learning and acting noob all the time. Everyone starts from somewhere. <br>
+
+From Tommy (dawgyg) DeVoss: If you have the ability to look at a web application and think of ways to break the application, then you can give it a shot. For some people it can be a very slow start to the process, and others will start finding bugs right after they begin. A very important thing to remember when doing bug bounties is to not get depressed / upset if it takes you longer to find valid bugs etc. Not everyone is going to find bugs every time they sit down to hack. And its very common to go days, weeks or even months with out finding bugs. Don't compare your own success or failures to others. Because as with anything else, there will always be someone better than you, and others worse than you. So setting your own goals and working to acheive them can be very important.<br>
+
+Rewards. The lessons and knowledge learned are the only rewards that are within your control. So if you are a beginner, you should set the goal of learning about the vulnerabilities and techniques to exploit them rather than how much money you should make.
+
+Responsiblity. Do not disclose an issue if the counterparty have not agreed to do so. <br>
+
+
+<p>Ref: <a target="_blank" rel="noopener" href="https://medium.com/@ryoberfelder/describing-xss-the-story-hidden-in-time-80c3600ffe81">https://medium.com/@ryoberfelder/describing-xss-the-story-hidden-in-time-80c3600ffe81</a></p>
+</blockquote>
+<h1 id="Learning"><a href="https://manhcot.github.io/#Mo-dau" class="headerlink" title="Learning">Learning</a></h1>
+
+<p>Web Application basics. Learn how a request works, HTTP headers, JSON requests, how a browser works, how they communicate and send data to the servers, DNS etc. https://developer.mozilla.org/en-US/docs/Web<br>
+
+Common scope vulnerabilities. You will need to know common scope vulnerabilities such as Remote Code Execution (RCE), Cross Site Request Forgery (CSRF), Cross Site Scripting (XSS), Injections (SQL, Command etc.), Clickjacking, Open Redirects, etc.<br>
+
+Read blogs. Learn new techniques from other bug bounty hunters so that you can test it out during your testing.</p>
+<p>If you are new to Bug Bounty program, you might not feel confident that you can find something a public program. This is something that a lot of hackers are struggling with. If you haven’t found a lot of security vulnerabilities yet, it might payoff to practice on Capture The Flag (CTF). Exploiting something for the first time is difficult and eye-opening. Apply the same structure if you would apply when looking in real targets as this help you a build a solid foundation and will help you to become an amazing hacker. Use bug bounty as a way to expand your knowledge and not as a race. Write simple scripts and use available tools to expand the process of expanding attack surface [...] Understand the web application and figure out what assets the web application are trying to protect. Think like an engineer of the web application. (Jobert Abma, Hackerone Cofounder)</p>
+<p>Learn how to make and then break. You need to know how a web or mobile application is developed first so that you can understand how the thing works and hence how it can be broken down. This is beneficial for your long-term development rather than being a hunter that only knows how to send payloads (obtained from internet). Build a few web applications to understand how the web architecture works.</p>
+<p>From Spaceraccoon's tweet: To be blunt, I don't automate. I tried building a pipeline and failed. You can succeed just by learning the fundamentals. Check out @PortSwigger's web academy, watch @NahamSec's stream, read @Hacker0x01 disclosures. And learn how to build what you're hacking.</p>
+</blockquote>
+<h1 id="Training Platforms"><a href="https://manhcot.github.io/#Mo-dau" class="headerlink" title="Training Platforms">Training Platforms</a></h1> 
+  <a href="https://www.bugbountyhunter.com/">BugBountyHunter :</a>
+<ul>
+<li>Simulates Opacity: The platform simulates a more realistic bug hunting experience where you need to explore and understand each features to find bugs. You do not know beforehand on whether the features have bugs or not (and what kind of vulnerabilities).</li>
+<li>Community: Members share resources and help each other</li>
+<li>Zseano Methodology: Download from <a href="https://www.bugbountyhunter.com/methodology/"> https://www.bugbountyhunter.com/methodology</li>
+</ul>
+<h1 id="Testing Strategies"><a href="https://manhcot.github.io/#Mo-dau" class="headerlink" title="Testing Strategies">Testing Strategies</a></h1> 
+
+<p>Scope your Testing. You do not want to test the applications for different vulnerabilities in an unstructured manner because this often results in shallow testing or makes you feel that you have already search for everything. If you are stuck with your testing, ask yourself what you are testing on. Set a SMART goal - specify what the vulnerability you are targeting, the hard deadline for completing the testing, etc. This strategy will help you to know which resources to look for and specific questions to ask your peers. You can also prioritize on what to look for based on the goal.</p>
+
+<p>Example of a goal: For the next 4 hours, I will test on feature X for SQL Injection.</p>
+<p>Choosing programs with Larger Scope. You want to choose a program that uses something that you are familiar with. If not, then you must ask yourself whether this is something you will like to learn. Larger scope is better because the researchers will not concentrate on the same targets and some things might be overlooked.</p>
+
+<p>From Tommy (dawgyg) DeVoss: When it comes to picking a program to start there are several things to consider. The first, and most important, is picking a program that employs the kind of stack / architecture you may be familiar with, or have a desire to learn and attack [...] Next you are going to want to consider the scope. When I look at a program to decide if I want to spend any time on it, I look for programs with either large scopes (such as wild card domains, and the more domains the better) or with web apps that are very complex. I personally love huge scopes, since it kind of helps to spread out the researchers a bit.</p>
+
+<p>Test the uncommon attack vectors. This requires you to do more in depth work in understanding how the application works (in terms of technologies and business functions). Ask yourself whether the bug that you are looking for are already tested automatically by a conventional scanner. For example, if you test a normal XSS payload on the common attack vectors such as input boxes etc., the chances are that many hunters have done it. Ask yourself whether there are other ways to trigger the XSS payload in an unexpected attack vector.</p>
+
+<p>From Inti: Edge-cases like that is what I love. If I have a secret, that is the one. Do not look where everyone is looking, because you will get a duplicate [...] My advice: if you are a researcher and want to secure your payout for the next 5-10 years, start looking for custom bugs, logical flaws, and other things scanners or other researchers do not look into. That can lead to more impact, you will find new types of vulnerabilities, you can get speaker events, write blog posts about it, opportunities are plenty. It is more about your mindset and being open-minded to try stupid stuff or something unknown and not follow a checklist.</p>
+
+<p>Look for impactful bugs. Try to submit bugs which are impactful and easy to understand. Choose quality over quantity. Many successful hunters read the programme policies first before they start looking for vulnerabilities.</p>
+
+<p>Do the unexpected action Don't submit what the application is expecting. Instead, start thinking about the things that the developers did not consider.</p>
+
+<p>From Peter Yaworski:</p>
+<p><code>For a text editor, if you can insert html, try doubling up on html attributes, like two hrefs in an anchor tag, or extra quotes like the markdown example.</code></p>
+
+<p><code>When submitting forms, use a tool or proxy to remove parameters (for Firefox, tamperdata is a great one). On the same note, if a site is using JavaScript to validate input before it is submitted to the server, use the proxy to change the values after they are validated in the event the developer just relied on the JavaScript.</code></p>
+<p><code>Combining steps to create vulnerability. Again, with the Hackerone markdown example, having the hanging single quote combined with additional html later in the page with a single quote would create vulnerability. With Google's program, they include a multiplier whereby if you need multiple steps and you can actually demonstrate that all the steps are achievable, they'll increase your reward.</code></p>
+<p><code>Consider where the vulnerability might actually show up. For example, Shopify's disclosure program states that it excludes vulnerabilities on your own store or cart (I learned the hard way from over excitement...). BUT, some of the fields that are used to create your store are used externally as well. There is an disclosure report indicating that the currency formatting field allowed for XSS injection. At first glance, you would think this shows up on the store page so who cares. BUT, Shopify provides integration with Facebook and Twitter using that same field and actually rendered the XSS resulting in a $500 bounty</code></p>
+
+<h1 id="Resources"><a href="https://manhcot.github.io/#Mo-dau" class="headerlink" title="Resources">Resources</a></h1> <br>
+
+
+<p>The Web Application Hacker’s Handbook : <a href="https://www.owasp.org/index.php/OWASP_Testing_Project">link</a></p>
+<p>The Tangled Web: A Guide to Securing Modern Web Applications<br>
+Web Hacking 101<br>
+Breaking into Information Security<br>
+Mastering Modern Web Penetration Testing<br>
+The Mobile Application Hacker's Handbook</p>
+<p>OWASP Mobile Security Testing Guide (MSTG) : <a href="https://www.owasp.org/index.php/OWASP_Mobile_Security_Testing_Guide">link</a></p>
+<h2>Platform / Companies</h2><br>
+<a href="https://www.hackerone.com/">HACKERONE</a>
+<a href="https://www.bugcrowd.com/">bugcrowd</a>
+<a href="https://www.cobalt.io/">cobalt</a>
+<a href="https://www.synack.com/">synack</a>
+<a href="https://www.facebook.com/whitehat">facebook</a>
+<a href="https://www.google.com/about/appsecurity/">google</a>
+
+<h2>Online Readings</h2>
+<ul>
+  <li><a ref="https://bugbountytuts.files.wordpress.com/2018/02/dirty-recon.pdf">Recon Like A Boss</a></li>
+  <li><a href="https://whitton.io/articles/bug-bounties-101-getting-started/">https://whitton.io/articles/bug-bounties-101-getting-started/</a></li>
+  <li><a href="https://github.com/jhaddix/tbhm">The Bug Hunters Methodology</a></li>
+  <li><a href="https://github.com/EdOverflow/bugbounty-cheatsheet">Bug Bounty Cheatsheet</a></li>
+  <li><a href="https://github.com/ngalongc/bug-bounty-reference/">Bug Bounty Reference</a></li>
+  <li><a href="https://github.com/bugcrowd/vulnerability-rating-taxonomy">Bugcrowd Vulnerability Rating Taxonomy (VRT)</a></li>
+  <li><a href="https://hackerone.com/hacktivity">Hackerone Hacktivity</a></li>
+  <li><a href="https://www.hackerone.com/blog/What-To-Do-When-You-Are-Stuck-Hacking">https://www.hackerone.com/blog/What-To-Do-When-You-Are-Stuck-Hacking</a></li>
+  <li><a href="https://www.quora.com/How-does-one-become-a-bug-bounty-hunter/answer/Jobert-Abma">https://www.quora.com/How-does-one-become-a-bug-bounty-hunter/answer/Jobert-Abma</a></li>
+  <li><a href="https://www.quora.com/How-much-time-did-you-take-from-completely-beginning-hacking-to-your-first-success-or-bug-bounty/answer/Jobert-Abma">https://www.quora.com/How-much-time-did-you-take-from-completely-beginning-hacking-to-your-first-success-or-bug-bounty/answer/Jobert-Abma</a></li>
+  <li><a href="https://www.quora.com/How-do-bug-bounty-hunters-find-bugs/answer/Jobert-Abma">https://www.quora.com/How-do-bug-bounty-hunters-find-bugs/answer/Jobert-Abma</a></li>
+  <li><a href="https://www.quora.com/How-much-can-I-make-in-my-first-year-as-a-bug-bounty-hunter">https://www.quora.com/How-much-can-I-make-in-my-first-year-as-a-bug-bounty-hunter</a></li>
+  <li><a href="https://blog.detectify.com/2019/05/03/meet-the-hacker-inti-de-ceukelaire-while-everyone-is-looking-for-xss-i-am-just-reading-the-docs">https://blog.detectify.com/2019/05/03/meet-the-hacker-inti-de-ceukelaire-while-everyone-is-looking-for-xss-i-am-just-reading-the-docs</a></li>
+  <li><a href="http://blog.oath.ninja/basic-bug-bounty-faq">http://blog.oath.ninja/basic-bug-bounty-faq</a></li>
+  <li><a href="https://twitter.com/spaceraccoonsec">https://twitter.com/spaceraccoonsec</a></li>
+</ul>
+<h2>Online Videos</h2>
+<ul>
+  <li><a href="https://sites.google.com/site/bughunteruniversity/">Google Bughunter University</a></li>
+  <li><a href="https://www.hacksplaining.com/lessons">https://www.hacksplaining.com/lessons</a></li>
+  <li><a href="https://www.udemy.com/android-application-penetration-testing-ethical-hacking/">https://www.udemy.com/android-application-penetration-testing-ethical-hacking/</a></li>
+  <li><a href="https://www.youtube.com/user/Hak5Darren/playlists">https://www.youtube.com/user/Hak5Darren/playlists</a></li>
+  <li><a href="https://www.youtube.com/user/DEFCONConference/videos">https://www.youtube.com/user/DEFCONConference/videos</a></li>
+  <li><a href="https://www.youtube.com/user/JackkTutorials/videos">https://www.youtube.com/user/JackkTutorials/videos</a></li>
+  <li><a href="https://www.youtube.com/watch?v=mQjTgDuLsp4">https://www.youtube.com/watch?v=mQjTgDuLsp4</a></li>
+  <li><a href="https://www.youtube.com/watch?v=KDo68Laayh8">https://www.youtube.com/watch?v=KDo68Laayh8</a></li>
+  <li><a href="https://www.youtube.com/watch?v=XoYF-euS-zs">https://www.youtube.com/watch?v=XoYF-euS-zs</a></li>
+  <li><a href="https://www.youtube.com/watch?v=Q2WK5LpDbxw">Finding Bugs with Burp Plugins &amp; Bug Bounty 101</a></li>
+ </ul>
+ <h2>Forums / Blogs</h2>
+ <ul>
+  <li><a href="https://www.bugcrowd.com/about/blog/">https://www.bugcrowd.com/about/blog/</a></li>
+  <li><a href="https://www.reddit.com/r/netsec">https://www.reddit.com/r/netsec</a></li>
+  <li><a href="https://www.reddit.com/r/websecurity/">https://www.reddit.com/r/websecurity/</a></li>
+</ul>
+<h2>Other Aggregated Resources</h2>
+<ul>
+  <li><a href="https://www.hackerone.com/blog/resources-for-new-hackers">https://www.hackerone.com/blog/resources-for-new-hackers</a></li>
+  <li><a href="https://www.peerlyst.com/posts/the-everything-bug-bounty-wiki-peerlyst?trk=company_page_posts_panel">https://www.peerlyst.com/posts/the-everything-bug-bounty-wiki-peerlyst?trk=company_page_posts_panel</a></li>
+  <li><a href="https://github.com/onlurking/awesome-infosec">https://github.com/onlurking/awesome-infosec</a></li>
+  <li><a href="https://forum.bugcrowd.com/t/researcher-resources-tutorials/370">https://forum.bugcrowd.com/t/researcher-resources-tutorials/370</a></li>
+  <li><a href="https://forum.bugcrowd.com/t/researcher-resources-tools/167">https://forum.bugcrowd.com/t/researcher-resources-tools/167</a></li>
+  <li><a href="https://forum.bugcrowd.com/t/how-do-you-approach-a-target/293">https://forum.bugcrowd.com/t/how-do-you-approach-a-target/293</a></li>
+  <li><a href="http://www.amanhardikar.com/mindmaps/Practice.html">http://www.amanhardikar.com/mindmaps/Practice.html</a></li>
+  <li><a href="https://github.com/djadmin/awesome-bug-bounty">https://github.com/djadmin/awesome-bug-bounty</a></li>
+</ul>
+
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://blog.cyberjutsu.io/2021/05/13/HTML-sanitizer-vs-XSS/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+ </i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="Trang chủ" class="icon" href="https://manhcot.github.io/#" onclick="$(&#39;#nav-footer&#39;.toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Trang chủ</a>
+        <a id="share" class="icon" href="https://manhcot.github.io/#" onclick="$(&#39;#share-footer&#39;.toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+ 
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+         </li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="text/javascript" async="" src="./jsonfile/analytics.js.download"></script><script async="" src="./jsonfile/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-50645715-1');
+</script>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="./jsonfile/all.min.css"><style class="darkreader darkreader--sync" media="screen"></style>
+
+
+<link rel="stylesheet" href="./jsonfile/justifiedGallery.min.css"><style class="darkreader darkreader--sync" media="screen"></style>
+
+
+    <!-- jquery -->
+
+<script src="./jsonfile/jquery.min.js.download"></script>
+
+
+<script src="./jsonfile/jquery.justifiedGallery.min.js.download"></script>
+
+<!-- clipboard -->
+
+  
+<script src="./jsonfile/clipboard.min.js.download"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="./jsonfile/main.js.download"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+
+
+</body></html>
