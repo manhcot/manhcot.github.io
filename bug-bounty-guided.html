@@ -2797,60 +2797,68 @@ gr-main-header {
 </main>
 
 <h1 id="Mo-dau"><a href="https://manhcot.github.io/#Mo-dau" class="headerlink" title="Mở đầu">Mở đầu</a></h1><blockquote>
-If you are beginning bug bounty hunting, you will need to know that it will take time to learn the bug hunting skills. You need to have the patience and determination to continue hunting even though you might not see successful results quickly. The bug bounty field is crowded and competitive, hence you will require hardwork, dedication, lateral thinking to persist on. Hunting is about learning and acting noob all the time. Everyone starts from somewhere. <br>
+Nếu như bạn là người mới bắt đầu trong việc bug bounty thì bạn phải biết một điều rằng nó sẽ
+cần nhiều thời gian để học kĩ năng bug hunting.Bạn cần có sự kiên nhẫn và sự quyết tâm để tiếp tục hunt, mặc dù bạn có thể không gặt hái được thành công nhanh chóng,thể loại bug bounty này
+nó rất đông đúc người hunt và nó rất cạnh tranh do đó mà bạn đòi hỏi phải có sự chăm chỉ, sự suy nghĩ chín chắn để kiên trì. <br>
 
-From Tommy (dawgyg) DeVoss: If you have the ability to look at a web application and think of ways to break the application, then you can give it a shot. For some people it can be a very slow start to the process, and others will start finding bugs right after they begin. A very important thing to remember when doing bug bounties is to not get depressed / upset if it takes you longer to find valid bugs etc. Not everyone is going to find bugs every time they sit down to hack. And its very common to go days, weeks or even months with out finding bugs. Don't compare your own success or failures to others. Because as with anything else, there will always be someone better than you, and others worse than you. So setting your own goals and working to acheive them can be very important.<br>
 
-Rewards. The lessons and knowledge learned are the only rewards that are within your control. So if you are a beginner, you should set the goal of learning about the vulnerabilities and techniques to exploit them rather than how much money you should make.
+Từ Tommy (dawgyg) DeVoss:
+Nếu như bạn có khả năng nhìn vào một ứng dụng web và nghĩ ra cách để phá vỡ ứng dụng đó, thì bạn có thể thử nó. Đối với một số người, quá trình này có thể bắt đầu rất chậm và những người khác sẽ bắt đầu tìm ra lỗi ngay sau khi mới bắt đầu. Một điều rất quan trọng cần nhớ khi thực hiện bug bounty là đừng chán nản / khó chịu nếu bạn mất nhiều thời gian hơn để tìm ra lỗi hợp lệ, v.v. Không phải ai cũng tìm thấy lỗi mỗi khi họ ngồi xuống để hack. Và việc tìm ra lỗi rất phổ biến thường mất trong nhiều ngày, vài tuần hoặc thậm chí vài tháng. Đừng so sánh thành công hay thất bại của chính bạn với người khác. Bởi vì cũng như bất cứ điều gì khác, sẽ luôn có người tốt hơn bạn và người khác kém hơn bạn. Vì vậy, đặt ra các mục tiêu của riêng bạn và làm việc để đạt được mục tiêu là rất quan trọng.<br>
 
-Responsiblity. Do not disclose an issue if the counterparty have not agreed to do so. <br>
+Phần thưởng. Những bài học và kiến thức học được là phần thưởng duy nhất nằm trong tầm kiểm soát của bạn. Vì vậy, nếu bạn là người mới bắt đầu, bạn nên đặt mục tiêu tìm hiểu về các lỗ hổng và kỹ thuật khai thác chúng hơn là kiếm được bao nhiêu tiền. <br>
+
 
 
 <p>Ref: <a target="_blank" rel="noopener" href="https://medium.com/@ryoberfelder/describing-xss-the-story-hidden-in-time-80c3600ffe81">https://medium.com/@ryoberfelder/describing-xss-the-story-hidden-in-time-80c3600ffe81</a></p>
 </blockquote>
-<h1 id="Learning"><a href="https://manhcot.github.io/#Mo-dau" class="headerlink" title="Learning">Learning</a></h1>
+<h1 id="Learning"><a href="https://manhcot.github.io/#Mo-dau" class="headerlink" title="Learning">Học</a></h1>
 
-<p>Web Application basics. Learn how a request works, HTTP headers, JSON requests, how a browser works, how they communicate and send data to the servers, DNS etc. https://developer.mozilla.org/en-US/docs/Web<br>
+<p>Web Application cơ bản. Học cách yêu cầu hoạt động, HTTP headers, JSON requests, cách mà trình duyệt hoạt động, cách mà chúng giao tiếp và gửi dữ liệu đến server, DNS etc. https://developer.mozilla.org/en-US/docs/Web<br>
 
-Common scope vulnerabilities. You will need to know common scope vulnerabilities such as Remote Code Execution (RCE), Cross Site Request Forgery (CSRF), Cross Site Scripting (XSS), Injections (SQL, Command etc.), Clickjacking, Open Redirects, etc.<br>
+Các lỗ hổng phổ biến. Bạn sẽ cần biết các lỗ hổng phổ biến như Thực thi mã từ xa (RCE), Cross Site Request Forgery (CSRF), Cross Site Scripting (XSS), Injections (SQL, Command etc.), Clickjacking, Open Redirects, etc.<br>
 
-Read blogs. Learn new techniques from other bug bounty hunters so that you can test it out during your testing.</p>
-<p>If you are new to Bug Bounty program, you might not feel confident that you can find something a public program. This is something that a lot of hackers are struggling with. If you haven’t found a lot of security vulnerabilities yet, it might payoff to practice on Capture The Flag (CTF). Exploiting something for the first time is difficult and eye-opening. Apply the same structure if you would apply when looking in real targets as this help you a build a solid foundation and will help you to become an amazing hacker. Use bug bounty as a way to expand your knowledge and not as a race. Write simple scripts and use available tools to expand the process of expanding attack surface [...] Understand the web application and figure out what assets the web application are trying to protect. Think like an engineer of the web application. (Jobert Abma, Hackerone Cofounder)</p>
-<p>Learn how to make and then break. You need to know how a web or mobile application is developed first so that you can understand how the thing works and hence how it can be broken down. This is beneficial for your long-term development rather than being a hunter that only knows how to send payloads (obtained from internet). Build a few web applications to understand how the web architecture works.</p>
-<p>From Spaceraccoon's tweet: To be blunt, I don't automate. I tried building a pipeline and failed. You can succeed just by learning the fundamentals. Check out @PortSwigger's web academy, watch @NahamSec's stream, read @Hacker0x01 disclosures. And learn how to build what you're hacking.</p>
+Đọc các blog. Học các kỹ thuật mới từ những bug bounty hunters khác để bạn có thể thử nghiệm nó trong quá trình thử nghiệm của mình.</p>
+
+<p>Nếu bạn chưa quen với chương trình Bug Bounty, bạn có thể không cảm thấy tự tin rằng mình có thể tìm thấy lỗ hổng gì đó ở một chương trình công khai. Đây là điều mà rất nhiều hacker đang phải vật lộn. Nếu bạn vẫn chưa tìm thấy nhiều lỗ hổng bảo mật, bạn có thể thực hành trên Capture The Flag (CTF). Khai thác một thứ gì đó lần đầu tiên rất khó và mở mang tầm mắt. Hãy áp dụng cấu trúc tương tự nếu bạn muốn áp dụng khi nhìn vào các mục tiêu thực vì điều này giúp bạn xây dựng một nền tảng vững chắc và sẽ giúp bạn trở thành một hacker đáng kinh ngạc. Sử dụng bug bounty như một cách để mở rộng kiến thức của bạn chứ không phải như một cuộc đua. Viết các script đơn giản và sử dụng các công cụ có sẵn để mở rộng quá trình mở rộng bề mặt tấn công […] Hiểu ứng dụng web và tìm ra những assets mà ứng dụng web đang cố gắng bảo vệ. Hãy suy nghĩ như một kỹ sư của ứng dụng web. (Jobert Abma, Nhà đồng sáng lập Hackerone)</p>
+
+<p>Học cách làm và sau đó phá vỡ. Trước tiên, bạn cần biết cách một web hoặc ứng dụng di động được phát triển như nào để có thể hiểu cách thức hoạt động của ứng dụng đó và từ đó có thể chia nhỏ ứng dụng đó như thế nào. Điều này có lợi cho sự phát triển lâu dài của bạn hơn là trở thành một bug bounty hunter chỉ biết cách để gửi payloads (có được từ internet). Xây dựng một vài ứng dụng web để hiểu cách thức hoạt động của kiến trúc web.</p>
+
+<p>Từ tweet của Spaceraccoon: Nói thẳng ra, tôi không tự động hóa. Tôi đã thử xây dựng một pipline và không thành công. Bạn có thể thành công chỉ bằng cách học các nguyên tắc cơ bản. thử qua học viện web @PortSwigger, xem stream của @NahamSec, đọc các bài viết của @ \Hacker0x01. Và học cách xây dựng những gì bạn đang tấn công.</p>
 </blockquote>
-<h1 id="Training Platforms"><a href="https://manhcot.github.io/#Mo-dau" class="headerlink" title="Training Platforms">Training Platforms</a></h1> 
+<h1 id="Training Platforms"><a href="https://manhcot.github.io/#Mo-dau" class="headerlink" title="Training Platforms">Nền tảng luyện tập</a></h1> 
   <a href="https://www.bugbountyhunter.com/">BugBountyHunter :</a>
 <ul>
-<li>Simulates Opacity: The platform simulates a more realistic bug hunting experience where you need to explore and understand each features to find bugs. You do not know beforehand on whether the features have bugs or not (and what kind of vulnerabilities).</li>
-<li>Community: Members share resources and help each other</li>
-<li>Zseano Methodology: Download from <a href="https://www.bugbountyhunter.com/methodology/"> https://www.bugbountyhunter.com/methodology</li>
+<li>Mô phỏng bug bounty : Nền tảng mô phỏng trải nghiệm bug bounty thực tế, nơi bạn cần khám phá và hiểu rõ từng tính năng để tìm lỗi. Bạn không biết trước về các tính năng có lỗi hay không (và loại lỗ hổng).</li>
+<li>Cộng đồng: Các thành viên chia sẻ tài nguyên và giúp đỡ lẫn nhau</li>
+<li>Zseano Methodology: Tải từ <a href="https://www.bugbountyhunter.com/methodology/"> https://www.bugbountyhunter.com/methodology</li>
 </ul>
-<h1 id="Testing Strategies"><a href="https://manhcot.github.io/#Mo-dau" class="headerlink" title="Testing Strategies">Testing Strategies</a></h1> 
+<h1 id="Testing Strategies"><a href="https://manhcot.github.io/#Mo-dau" class="headerlink" title="Testing Strategies">Các chiến lược kiểm thử</a></h1> 
 
-<p>Scope your Testing. You do not want to test the applications for different vulnerabilities in an unstructured manner because this often results in shallow testing or makes you feel that you have already search for everything. If you are stuck with your testing, ask yourself what you are testing on. Set a SMART goal - specify what the vulnerability you are targeting, the hard deadline for completing the testing, etc. This strategy will help you to know which resources to look for and specific questions to ask your peers. You can also prioritize on what to look for based on the goal.</p>
+<p>Xác định phạm vi thử nghiệm của bạn. Bạn không muốn kiểm tra các ứng dụng để tìm các lỗ hổng bảo mật khác nhau theo một cách không có tổ chức vì điều này thường dẫn đến kiểm nghiệm nông cạn hoặc khiến bạn cảm thấy rằng bạn đã tìm kiếm mọi thứ. Nếu bạn đang gặp khó khăn với kiểm nghiệm của mình, hãy tự hỏi bản thân bạn đang kiểm nghiệm cái gì. Đặt mục tiêu THÔNG MINH - chỉ rõ lỗ hổng mà bạn đang nhắm mục tiêu, thời hạn khó hoàn thành kiểm tra, v.v. Chiến lược này sẽ giúp bạn biết nguồn lực nào cần tìm và các câu hỏi cụ thể để hỏi đồng nghiệp của bạn. Bạn cũng có thể ưu tiên những gì cần tìm dựa trên mục tiêu.</p>
 
-<p>Example of a goal: For the next 4 hours, I will test on feature X for SQL Injection.</p>
-<p>Choosing programs with Larger Scope. You want to choose a program that uses something that you are familiar with. If not, then you must ask yourself whether this is something you will like to learn. Larger scope is better because the researchers will not concentrate on the same targets and some things might be overlooked.</p>
+<p>Ví dụ về mục tiêu: Trong 4 giờ tới, tôi sẽ kiểm tra tính năng X cho SQL Injection.</p>
+<p>Chọn các chương trình có Phạm vi lớn hơn. Bạn muốn chọn một chương trình sử dụng thứ gì đó mà bạn đã quen thuộc. Nếu không, bạn phải tự hỏi mình liệu đây có phải là thứ bạn muốn học hay không. Phạm vi lớn hơn sẽ tốt hơn vì các nhà nghiên cứu sẽ không tập trung vào các mục tiêu giống nhau và một số thứ có thể bị bỏ qua.</p>
 
-<p>From Tommy (dawgyg) DeVoss: When it comes to picking a program to start there are several things to consider. The first, and most important, is picking a program that employs the kind of stack / architecture you may be familiar with, or have a desire to learn and attack [...] Next you are going to want to consider the scope. When I look at a program to decide if I want to spend any time on it, I look for programs with either large scopes (such as wild card domains, and the more domains the better) or with web apps that are very complex. I personally love huge scopes, since it kind of helps to spread out the researchers a bit.</p>
+<p>Từ Tommy (dawgyg) DeVoss: Khi chọn một chương trình để bắt đầu, có một số điều cần xem xét. Đầu tiên, và quan trọng nhất, là chọn một chương trình sử dụng loại ngăn xếp hay kiến trúc(stack / architecture) mà bạn có thể quen thuộc, hoặc có mong muốn tìm hiểu và tấn công [...] Tiếp theo, bạn sẽ muốn xem xét phạm vi. Khi tôi xem xét một chương trình để quyết định xem tôi có muốn dành thời gian cho nó hay không, tôi tìm kiếm các chương trình có phạm vi lớn (chẳng hạn như miền thẻ đại diện và càng nhiều miền càng tốt) hoặc với các ứng dụng web rất phức tạp. Cá nhân tôi yêu thích những phạm vi rộng lớn, vì nó có thể giúp phân tán các nhà nghiên cứu một chút.</p>
 
-<p>Test the uncommon attack vectors. This requires you to do more in depth work in understanding how the application works (in terms of technologies and business functions). Ask yourself whether the bug that you are looking for are already tested automatically by a conventional scanner. For example, if you test a normal XSS payload on the common attack vectors such as input boxes etc., the chances are that many hunters have done it. Ask yourself whether there are other ways to trigger the XSS payload in an unexpected attack vector.</p>
+<p>Kiểm tra các vectơ tấn công không phổ biến. Điều này đòi hỏi bạn phải làm công việc chuyên sâu hơn để hiểu cách ứng dụng hoạt động (về công nghệ và chức năng kinh doanh). Tự hỏi bản thân xem lỗi mà bạn đang tìm kiếm đã được kiểm tra tự động bằng máy quét thông thường chưa. Ví dụ: nếu bạn kiểm tra tải trọng XSS bình thường trên các vectơ tấn công phổ biến như hộp đầu vào, v.v., thì rất có thể nhiều thợ săn đã làm điều đó. Hãy tự hỏi bản thân xem có cách nào khác để kích hoạt tải trọng XSS trong một vectơ tấn công không mong muốn hay không.</p>
 
-<p>From Inti: Edge-cases like that is what I love. If I have a secret, that is the one. Do not look where everyone is looking, because you will get a duplicate [...] My advice: if you are a researcher and want to secure your payout for the next 5-10 years, start looking for custom bugs, logical flaws, and other things scanners or other researchers do not look into. That can lead to more impact, you will find new types of vulnerabilities, you can get speaker events, write blog posts about it, opportunities are plenty. It is more about your mindset and being open-minded to try stupid stuff or something unknown and not follow a checklist.</p>
+<p>Từ @Inti: Đừng nhìn vào nơi mà mọi người đang tìm kiếm, bởi vì bạn sẽ nhận được một bản sao (tức nhiều người cũng tìm ra được...[...]) Lời khuyên của tôi: nếu bạn là một nhà nghiên cứu và muốn đảm bảo khoản tiền thưởng của mình trong 5-10 năm tới, hãy bắt đầu tìm kiếm lỗi tùy chỉnh, lỗi logic, và những thứ khác mà máy quét hoặc các nhà nghiên cứu khác không xem xét. Điều đó có thể dẫn đến nhiều tác động hơn, bạn sẽ tìm thấy các loại lỗ hổng bảo mật mới, bạn có thể tham gia các sự kiện của diễn giả, viết các bài đăng trên blog về nó, cơ hội là rất nhiều. Nó thiên về tư duy của bạn và sự cởi mở khi thử những thứ ngu ngốc hoặc thứ gì đó không xác định và không tuân theo danh sách kiểm tra.</p>
 
-<p>Look for impactful bugs. Try to submit bugs which are impactful and easy to understand. Choose quality over quantity. Many successful hunters read the programme policies first before they start looking for vulnerabilities.</p>
+<p>Tìm kiếm các lỗi có ảnh hưởng nhiều. Cố gắng gửi các lỗi có tác động nhiều và dễ hiểu. Chọn chất lượng hơn số lượng. Nhiều bug bounty hunter thành công đọc chính sách chương trình trước khi họ bắt đầu tìm kiếm lỗ hổng bảo mật.</p>
 
-<p>Do the unexpected action Don't submit what the application is expecting. Instead, start thinking about the things that the developers did not consider.</p>
+<p>Thực hiện các thao tác ngoại lệ vd : "Không gửi những gì ứng dụng đang mong đợi (tk, mat khau, sdt...etc). Thay vào đó, hãy bắt đầu suy nghĩ về những điều mà các nhà phát triển đã không xem xét tới.</p>
 
-<p>From Peter Yaworski:</p>
-<p><code>For a text editor, if you can insert html, try doubling up on html attributes, like two hrefs in an anchor tag, or extra quotes like the markdown example.</code></p>
+<p>Từ Peter Yaworski:</p>
+<p><code>VÍ DỤ VỚI MỘT LỖ HỔNG : Đối với trình soạn thảo văn bản, nếu bạn có thể chèn html, hãy thử nhân đôi các thuộc tính html, chẳng hạn như hai hrefs trong thẻ liên kết hoặc các dấu ngoặc kép như ví dụ markdown.</code></p>
 
-<p><code>When submitting forms, use a tool or proxy to remove parameters (for Firefox, tamperdata is a great one). On the same note, if a site is using JavaScript to validate input before it is submitted to the server, use the proxy to change the values after they are validated in the event the developer just relied on the JavaScript.</code></p>
-<p><code>Combining steps to create vulnerability. Again, with the Hackerone markdown example, having the hanging single quote combined with additional html later in the page with a single quote would create vulnerability. With Google's program, they include a multiplier whereby if you need multiple steps and you can actually demonstrate that all the steps are achievable, they'll increase your reward.</code></p>
-<p><code>Consider where the vulnerability might actually show up. For example, Shopify's disclosure program states that it excludes vulnerabilities on your own store or cart (I learned the hard way from over excitement...). BUT, some of the fields that are used to create your store are used externally as well. There is an disclosure report indicating that the currency formatting field allowed for XSS injection. At first glance, you would think this shows up on the store page so who cares. BUT, Shopify provides integration with Facebook and Twitter using that same field and actually rendered the XSS resulting in a $500 bounty</code></p>
+<p><code>
+  Khi gửi các biểu mẫu ( Forms ), hãy sử dụng một công cụ hoặc proxy để loại bỏ các tham số [parameters] (đối với Firefox, tamperdata là một công cụ tuyệt vời). Cũng lưu ý rằng, nếu một trang web đang sử dụng JavaScript để xác thực đầu vào trước khi nó được gửi đến máy chủ, hãy sử dụng proxy để thay đổi các giá trị sau khi chúng được xác thực trong trường hợp nhà phát triển chỉ dựa vào JavaScript.</code></p>
+<p><code>
+Kết hợp với các bước tạo lỗ hổng. Một lần nữa, với ví dụ markdown  Hackerone, việc thêm một dấu nháy đơn kết hợp với html bổ sung sau đó trong trang với một trích dẫn duy nhất sẽ tạo ra lỗ hổng bảo mật. Với chương trình của Google, chúng bao gồm một hệ số theo đó nếu bạn cần nhiều bước và bạn thực sự có thể chứng minh rằng tất cả các bước đều có thể đạt được, chúng sẽ tăng phần thưởng cho bạn.</code></p>
+<p><code>Xem xét nơi lỗ hổng bảo mật có thể thực sự xuất hiện. Ví dụ: chương trình của Shopify tuyên bố rằng nó loại trừ các lỗ hổng trên cửa hàng hoặc giỏ hàng của riêng bạn NHƯNG, một số trường được sử dụng để tạo cửa hàng của bạn cũng được sử dụng bên ngoài. Có một báo cáo tiết lộ chỉ ra rằng trường định dạng tiền tệ được phép đưa vào XSS injection. Thoạt nhìn, bạn sẽ nghĩ điều này hiển thị trên trang cửa hàng nên chả ai quan tâm. NHƯNG, Shopify cung cấp tích hợp với Facebook và Twitter bằng cách sử dụng cùng trường đó và thực sự hiển thị của lỗ hổng XSS dẫn đến tiền thưởng $ 500.</code></p>
 
-<h1 id="Resources"><a href="https://manhcot.github.io/#Mo-dau" class="headerlink" title="Resources">Resources</a></h1> <br>
+<h1 id="Resources"><a href="https://manhcot.github.io/#Mo-dau" class="headerlink" title="Resources">Nguồn tài liệu</a></h1> <br>
 
 
 <p>The Web Application Hacker’s Handbook : <a href="https://www.owasp.org/index.php/OWASP_Testing_Project">link</a></p>
@@ -2868,7 +2876,7 @@ The Mobile Application Hacker's Handbook</p>
 <a href="https://www.facebook.com/whitehat">facebook</a>
 <a href="https://www.google.com/about/appsecurity/">google</a>
 
-<h2>Online Readings</h2>
+<h2>Đọc Online</h2>
 <ul>
   <li><a ref="https://bugbountytuts.files.wordpress.com/2018/02/dirty-recon.pdf">Recon Like A Boss</a></li>
   <li><a href="https://whitton.io/articles/bug-bounties-101-getting-started/">https://whitton.io/articles/bug-bounties-101-getting-started/</a></li>
@@ -2899,13 +2907,13 @@ The Mobile Application Hacker's Handbook</p>
   <li><a href="https://www.youtube.com/watch?v=XoYF-euS-zs">https://www.youtube.com/watch?v=XoYF-euS-zs</a></li>
   <li><a href="https://www.youtube.com/watch?v=Q2WK5LpDbxw">Finding Bugs with Burp Plugins &amp; Bug Bounty 101</a></li>
  </ul>
- <h2>Forums / Blogs</h2>
+ <h2>Diễn đàn / Blogs</h2>
  <ul>
   <li><a href="https://www.bugcrowd.com/about/blog/">https://www.bugcrowd.com/about/blog/</a></li>
   <li><a href="https://www.reddit.com/r/netsec">https://www.reddit.com/r/netsec</a></li>
   <li><a href="https://www.reddit.com/r/websecurity/">https://www.reddit.com/r/websecurity/</a></li>
 </ul>
-<h2>Other Aggregated Resources</h2>
+<h2>Các tài nguyên tổng hợp khác</h2>
 <ul>
   <li><a href="https://www.hackerone.com/blog/resources-for-new-hackers">https://www.hackerone.com/blog/resources-for-new-hackers</a></li>
   <li><a href="https://www.peerlyst.com/posts/the-everything-bug-bounty-wiki-peerlyst?trk=company_page_posts_panel">https://www.peerlyst.com/posts/the-everything-bug-bounty-wiki-peerlyst?trk=company_page_posts_panel</a></li>
