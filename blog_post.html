@@ -146,9 +146,11 @@ function sr_mybbcoder_spoiler_show(ptr) {
 <!-- end: multipage_nextpage -->
 </div>
 <!-- end: multipage -->
-	<audio id="autoplay" controls="" loop="" controlslist="nodownload">
+	<audio id="autoplay" controls loop controlsList="nodownload">
                        <source src="trim.mp3">
                        </audio>
+                       <script>
+    document.addEventListener('click', function() { document.getElementById('autoplay').play() }, { once: true }); 
 	<div class="float_right">
 		
 	</div>
