@@ -13,23 +13,7 @@
     var rainsize="2";
     var wind="left";
     var genxgallery="";
-    $('iframe.embedly-embed').each(function(){
-  
-  var player = new playerjs.Player(this);
-  
- 
-  player.on('ready', function(){
     
-   
-    player.on('play', function(){
-     
-      window.ga('send', 'event', 'Video', 'Play');
-    });
-  
-    
-    player.play();
-  });
-});
 function IE(e) {
      if (navigator.appName == "Microsoft Internet Explorer" && (event.button == "2" || event.button == "3")) {
           return false;
@@ -337,8 +321,12 @@ TypingText.runAll();
 		<input text="test" id="commander" onkeyup="execute(this,event);" disabled="disabled"  style="width:786px;"/>
 	</div>
 	<div class="spacer"></div>
-  <audio src="https://k.top4top.io/m_23589iijp1.mp3"></audio>
-<script>window.addEventListener("DOMContentLoaded", event => { const audio = document.querySelector("audio"); audio.volume = 1; audio.play(); });</script>
+<iframe  src="https://k.top4top.io/m_23589iijp1.mp3" type="audio/mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+ <script>document.querySelector("test").play();</script>
+<video autoplay muted loop playsinline preload="metadata">
+  <source src="sample.mp3">
+</video>
+</body></html>
 </body>
  <script>
 
