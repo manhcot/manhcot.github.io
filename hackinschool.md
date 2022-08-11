@@ -2,7 +2,9 @@
 
 **đây là bài viết tóm tắt, không phải bài phân tích sâu vào
 kĩ thuật.**
+
 **credit: bạn hoàng anh được dịch và chia sẻ lại bởi manhcot**
+
 ```Nếu tôi chỉnh sửa gì đó , Tôi sẽ trở thành học sinh giỏi hay tôi sẽ trở thành học sinh tồi và thực sự công bằng liệu có tồn tại không ?```
 ## Trường cấp hai.
 Trở về thời khi tôi còn học sinh cấp 2 khi tôi vẫn đang còn tập chơi game bangbang trên zingme với một ít hiểu biết về hacking.
