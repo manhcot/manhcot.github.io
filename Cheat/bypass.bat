@@ -1,4 +1,4 @@
-cd %~dp0
+cd /d C:\Windows\temp\Launcher
 Mapper.exe Kernel.sys
-echo Vui Lòng mở valorant....
+echo VUI LONG MO valorant....
 pause
