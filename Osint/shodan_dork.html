@@ -1,0 +1,467 @@
+<html><head><style>@import "furtive-print";
+@import "furtive-typescale";
+@import "furtive-responsive-utils";
+
+@import url(http://fonts.googleapis.com/css?family=Merriweather:300italic,300);
+
+html {
+  font-size: 18px;
+  max-width: 100%;
+}
+
+body {
+  color: #444;
+  font-family: 'Merriweather', Georgia, serif;
+  margin: 0;
+  max-width: 100%;
+}
+
+/* === A bit of a gross hack so we can have bleeding divs/blockquotes. */
+p,
+*:not(div):not(img):not(body):not(html):not(li):not(blockquote):not(p) {
+  margin: 1rem auto 1rem;
+  max-width: 36rem;
+  padding: .25rem;
+}
+
+div {
+  width: 100%;
+}
+
+div img {
+  width: 100%;
+}
+
+blockquote p {
+  font-size: 1.5rem;
+  font-style: italic;
+  margin: 1rem auto 1rem;
+  max-width: 48rem;
+}
+
+li {
+  margin-left: 2rem;
+}
+
+/* Counteract the specificity of the gross *:not() chain. */
+h1 {
+  padding: 4rem 0 !important;
+}
+/*  === End gross hack */
+
+p {
+  color: #555;
+  height: auto;
+  line-height: 1.45;
+}
+
+pre, code {
+  font-family: Menlo, Monaco, "Courier New", monospace
+}
+
+pre {
+  background-color: #fafafa;
+  font-size: .8rem;
+  overflow-x: scroll;
+  padding: 1.125em;
+}
+
+a,
+a:visited {
+  color: #3498db;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: #2980b9;
+}</style></head><body><h1 id="shodan-dorks">Shodan Dorks</h1>
+<h1 id="basic-shodan-filters">Basic Shodan Filters</h1>
+<h3 id="city-">city:</h3>
+<p>Find devices in a particular city.
+<code>city:&quot;Bangalore&quot;</code></p>
+<h3 id="country-">country:</h3>
+<p>Find devices in a particular country.
+<code>country:&quot;IN&quot;</code></p>
+<h3 id="geo-">geo:</h3>
+<p>Find devices by giving geographical coordinates.
+<code>geo:&quot;56.913055,118.250862&quot;</code></p>
+<h3 id="location">Location</h3>
+<p><code>country:us</code>
+<code>country:ru country:de city:chicago</code></p>
+<h3 id="hostname-">hostname:</h3>
+<p>Find devices matching the hostname.
+<code>server: &quot;gws&quot; hostname:&quot;google&quot;</code>
+<code>hostname:example.com -hostname:subdomain.example.com</code>
+<code>hostname:example.com,example.org</code></p>
+<h3 id="net-">net:</h3>
+<p>Find devices based on an IP address or /x CIDR.
+<code>net:210.214.0.0/16</code></p>
+<h3 id="organization">Organization</h3>
+<p><code>org:microsoft</code>
+<code>org:&quot;United States Department&quot;</code></p>
+<h3 id="autonomous-system-number-asn-">Autonomous System Number (ASN)</h3>
+<p><code>asn:ASxxxx</code></p>
+<h3 id="os-">os:</h3>
+<p>Find devices based on operating system.
+<code>os:&quot;windows 7&quot;</code></p>
+<h3 id="port-">port:</h3>
+<p>Find devices based on open ports.
+<code>proftpd port:21</code></p>
+<h3 id="before-after-">before/after:</h3>
+<p>Find devices before or after between a given time.
+<code>apache after:22/02/2009 before:14/3/2010</code></p>
+<h3 id="ssl-tls-certificates">SSL/TLS Certificates</h3>
+<p>Self signed certificates
+<code>ssl.cert.issuer.cn:example.com ssl.cert.subject.cn:example.com</code></p>
+<p>Expired certificates
+<code>ssl.cert.expired:true</code></p>
+<p><code>ssl.cert.subject.cn:example.com</code></p>
+<h3 id="device-type">Device Type</h3>
+<p><code>device:firewall</code>
+<code>device:router</code>
+<code>device:wap</code>
+<code>device:webcam</code>
+<code>device:media</code>
+<code>device:&quot;broadband router&quot;</code>
+<code>device:pbx</code>
+<code>device:printer</code>
+<code>device:switch</code>
+<code>device:storage</code>
+<code>device:specialized</code>
+<code>device:phone</code>
+<code>device:&quot;voip&quot;</code>
+<code>device:&quot;voip phone&quot;</code>
+<code>device:&quot;voip adaptor&quot;</code>
+<code>device:&quot;load balancer&quot;</code>
+<code>device:&quot;print server&quot;</code>
+<code>device:terminal</code>
+<code>device:remote</code>
+<code>device:telecom</code>
+<code>device:power</code>
+<code>device:proxy</code>
+<code>device:pda</code>
+<code>device:bridge</code></p>
+<h3 id="operating-system">Operating System</h3>
+<p><code>os:&quot;windows 7&quot;</code>
+<code>os:&quot;windows server 2012&quot;</code>
+<code>os:&quot;linux 3.x&quot;</code></p>
+<h3 id="product">Product</h3>
+<p><code>product:apache</code>
+<code>product:nginx</code>
+<code>product:android</code>
+<code>product:chromecast</code></p>
+<h3 id="customer-premises-equipment-cpe-">Customer Premises Equipment (CPE)</h3>
+<p><code>cpe:apple</code>
+<code>cpe:microsoft</code>
+<code>cpe:nginx</code>
+<code>cpe:cisco</code></p>
+<h3 id="server">Server</h3>
+<p><code>server: nginx</code>
+<code>server: apache</code>
+<code>server: microsoft</code>
+<code>server: cisco-ios</code></p>
+<h3 id="ssh-fingerprints">ssh fingerprints</h3>
+<p><code>dc:14:de:8e:d7:c1:15:43:23:82:25:81:d2:59:e8:c0</code></p>
+<h1 id="web">Web</h1>
+<h3 id="pulse-secure">Pulse Secure</h3>
+<p><code>http.html:/dana-na</code></p>
+<h3 id="pem-certificates">PEM Certificates</h3>
+<p><code>http.title:&quot;Index of /&quot; http.html:&quot;.pem&quot;</code></p>
+<h3 id="tor-dark-web-sites">Tor / Dark Web sites</h3>
+<p><code>onion-location</code></p>
+<h1 id="databases">Databases</h1>
+<h3 id="mysql">MySQL</h3>
+<p><code>&quot;product:MySQL&quot;</code>
+<code>mysql port:&quot;3306&quot;</code></p>
+<h3 id="mongodb">MongoDB</h3>
+<p><code>&quot;product:MongoDB&quot;</code>
+<code>mongodb port:27017</code></p>
+<h3 id="fully-open-mongodbs">Fully open MongoDBs</h3>
+<p><code>&quot;MongoDB Server Information { &quot;metrics&quot;:&quot;</code>
+<code>&quot;Set-Cookie: mongo-express=&quot; &quot;200 OK&quot;</code>
+<code>&quot;MongoDB Server Information&quot; port:27017 -authentication</code></p>
+<h3 id="kibana-dashboards-without-authentication">Kibana dashboards without authentication</h3>
+<p><code>kibana content-legth:217</code></p>
+<h3 id="elastic">elastic</h3>
+<p><code>port:9200 json</code>
+<code>port:&quot;9200&quot; all:elastic</code>
+<code>port:&quot;9200&quot; all:&quot;elastic indices&quot;</code></p>
+<h3 id="memcached">Memcached</h3>
+<p><code>&quot;product:Memcached&quot;</code></p>
+<h3 id="couchdb">CouchDB</h3>
+<p><code>&quot;product:CouchDB&quot;</code>
+<code>port:&quot;5984&quot;+Server: &quot;CouchDB/2.1.0&quot;</code></p>
+<h3 id="postgresql">PostgreSQL</h3>
+<p><code>&quot;port:5432 PostgreSQL&quot;</code></p>
+<h3 id="riak">Riak</h3>
+<p><code>&quot;port:8087 Riak&quot;</code></p>
+<h3 id="redis">Redis</h3>
+<p><code>&quot;product:Redis&quot;</code></p>
+<h3 id="cassandra">Cassandra</h3>
+<p><code>&quot;product:Cassandra&quot;</code></p>
+<h1 id="industrial-control-systems">Industrial Control Systems</h1>
+<h3 id="samsung-electronic-billboards">Samsung Electronic Billboards</h3>
+<p><code>&quot;Server: Prismview Player&quot;</code></p>
+<h3 id="gas-station-pump-controllers">Gas Station Pump Controllers</h3>
+<p><code>&quot;in-tank inventory&quot; port:10001</code></p>
+<h3 id="fuel-pumps-connected-to-internet-">Fuel Pumps connected to internet:</h3>
+<p>No auth required to access CLI terminal.
+<code>&quot;privileged command&quot; GET</code></p>
+<h3 id="automatic-license-plate-readers">Automatic License Plate Readers</h3>
+<p><code>P372 &quot;ANPR enabled&quot;</code></p>
+<h3 id="traffic-light-controllers-red-light-cameras">Traffic Light Controllers / Red Light Cameras</h3>
+<p><code>mikrotik streetlight</code></p>
+<h3 id="voting-machines-in-the-united-states">Voting Machines in the United States</h3>
+<p>&quot;voter system serial&quot; country:US</p>
+<h3 id="open-atm-">Open ATM:</h3>
+<p>May allow for ATM Access availability
+<code>NCR Port:&quot;161&quot;</code></p>
+<h3 id="telcos-running-cisco-lawful-intercept-wiretaps">Telcos Running Cisco Lawful Intercept Wiretaps</h3>
+<p><code>&quot;Cisco IOS&quot; &quot;ADVIPSERVICESK9_LI-M&quot;</code></p>
+<h3 id="prison-pay-phones">Prison Pay Phones</h3>
+<p><code>&quot;[2J[H Encartele Confidential&quot;</code></p>
+<h3 id="tesla-powerpack-charging-status">Tesla PowerPack Charging Status</h3>
+<p><code>http.title:&quot;Tesla PowerPack System&quot; http.component:&quot;d3&quot; -ga3ca4f2</code></p>
+<h3 id="electric-vehicle-chargers">Electric Vehicle Chargers</h3>
+<p><code>&quot;Server: gSOAP/2.8&quot; &quot;Content-Length: 583&quot;</code></p>
+<h3 id="maritime-satellites">Maritime Satellites</h3>
+<p>Shodan made a pretty sweet Ship Tracker that maps ship locations in real time, too!</p>
+<p><code>&quot;Cobham SATCOM&quot; OR (&quot;Sailor&quot; &quot;VSAT&quot;)</code></p>
+<h3 id="submarine-mission-control-dashboards">Submarine Mission Control Dashboards</h3>
+<p><code>title:&quot;Slocum Fleet Mission Control&quot;</code></p>
+<h3 id="carel-plantvisor-refrigeration-units">CAREL PlantVisor Refrigeration Units</h3>
+<p><code>&quot;Server: CarelDataServer&quot; &quot;200 Document follows&quot;</code></p>
+<h3 id="nordex-wind-turbine-farms">Nordex Wind Turbine Farms</h3>
+<p><code>http.title:&quot;Nordex Control&quot; &quot;Windows 2000 5.0 x86&quot; &quot;Jetty/3.1 (JSP 1.1; Servlet 2.2; java 1.6.0_14)&quot;</code></p>
+<h3 id="c4-max-commercial-vehicle-gps-trackers">C4 Max Commercial Vehicle GPS Trackers</h3>
+<p><code>&quot;[1m[35mWelcome on console&quot;</code></p>
+<h3 id="dicom-medical-x-ray-machines">DICOM Medical X-Ray Machines</h3>
+<p>Secured by default, thankfully, but these 1,700+ machines still have no business being on the internet.</p>
+<p><code>&quot;DICOM Server Response&quot; port:104</code></p>
+<h3 id="gaugetech-electricity-meters">GaugeTech Electricity Meters</h3>
+<p><code>&quot;Server: EIG Embedded Web Server&quot; &quot;200 Document follows&quot;</code></p>
+<h3 id="siemens-industrial-automation">Siemens Industrial Automation</h3>
+<p><code>&quot;Siemens, SIMATIC&quot; port:161</code></p>
+<h3 id="siemens-hvac-controllers">Siemens HVAC Controllers</h3>
+<p><code>&quot;Server: Microsoft-WinCE&quot; &quot;Content-Length: 12581&quot;</code></p>
+<h3 id="door-lock-access-controllers">Door / Lock Access Controllers</h3>
+<p><code>&quot;HID VertX&quot; port:4070</code></p>
+<h3 id="railroad-management">Railroad Management</h3>
+<p><code>&quot;log off&quot; &quot;select the appropriate&quot;</code></p>
+<h3 id="tesla-powerpack-charging-status-">Tesla Powerpack charging Status:</h3>
+<p>Helps to find the charging status of tesla powerpack.
+<code>http.title:&quot;Tesla PowerPack System&quot; http.component:&quot;d3&quot; -ga3ca4f2</code></p>
+<h3 id="xzeres-wind-turbine">XZERES Wind Turbine</h3>
+<p><code>title:&quot;xzeres wind&quot;</code></p>
+<h3 id="pips-automated-license-plate-reader">PIPS Automated License Plate Reader</h3>
+<p><code>&quot;html:&quot;PIPS Technology ALPR Processors&quot;&quot;</code></p>
+<h3 id="modbus">Modbus</h3>
+<p><code>&quot;port:502&quot;</code></p>
+<h3 id="niagara-fox">Niagara Fox</h3>
+<p><code>&quot;port:1911,4911 product:Niagara&quot;</code></p>
+<h3 id="ge-srtp">GE-SRTP</h3>
+<p><code>&quot;port:18245,18246 product:&quot;general electric&quot;&quot;</code></p>
+<h3 id="melsec-q">MELSEC-Q</h3>
+<p><code>&quot;port:5006,5007 product:mitsubishi&quot;</code></p>
+<h3 id="codesys">CODESYS</h3>
+<p><code>&quot;port:2455 operating system&quot;</code></p>
+<h3 id="s7">S7</h3>
+<p><code>&quot;port:102&quot;</code></p>
+<h3 id="bacnet">BACnet</h3>
+<p><code>&quot;port:47808&quot;</code></p>
+<h3 id="hart-ip">HART-IP</h3>
+<p><code>&quot;port:5094 hart-ip&quot;</code></p>
+<h3 id="omron-fins">Omron FINS</h3>
+<p><code>&quot;port:9600 response code&quot;</code></p>
+<h3 id="iec-60870-5-104">IEC 60870-5-104</h3>
+<p><code>&quot;port:2404 asdu address&quot;</code></p>
+<h3 id="dnp3">DNP3</h3>
+<p><code>&quot;port:20000 source address&quot;</code></p>
+<h3 id="ethernet-ip">EtherNet/IP</h3>
+<p><code>&quot;port:44818&quot;</code></p>
+<h3 id="pcworx">PCWorx</h3>
+<p><code>&quot;port:1962 PLC&quot;</code></p>
+<h3 id="crimson-v3-0">Crimson v3.0</h3>
+<p><code>&quot;port:789 product:&quot;Red Lion Controls&quot;</code></p>
+<h3 id="proconos">ProConOS</h3>
+<p><code>&quot;port:20547 PLC&quot;</code></p>
+<h1 id="remote-desktop">Remote Desktop</h1>
+<h3 id="unprotected-vnc">Unprotected VNC</h3>
+<p><code>&quot;authentication disabled&quot; port:5900,5901</code>
+<code>&quot;authentication disabled&quot; &quot;RFB 003.008&quot;</code></p>
+<h3 id="windows-rdp">Windows RDP</h3>
+<p>99.99% are secured by a secondary Windows login screen.</p>
+<p><code>&quot;\x03\x00\x00\x0b\x06\xd0\x00\x00\x124\x00&quot;</code></p>
+<h1 id="c2-infrastructure">C2 Infrastructure</h1>
+<h3 id="cobaltstrike-servers">CobaltStrike Servers</h3>
+<p><code>product:&quot;cobalt strike team server&quot;</code>
+<code>product:&quot;Cobalt Strike Beacon&quot;</code>
+<code>ssl.cert.serial:146473198</code> - default certificate serial number
+<code>ssl.jarm:07d14d16d21d21d07c42d41d00041d24a458a375eef0c576d23a7bab9a9fb1</code></p>
+<h3 id="brute-ratel">Brute Ratel</h3>
+<p><code>http.html_hash:-1957161625</code>
+<code>product:&quot;Brute Ratel C4&quot;</code></p>
+<h3 id="covenant">Covenant</h3>
+<p><code>ssl:”Covenant” http.component:”Blazor”</code></p>
+<h3 id="metasploit">Metasploit</h3>
+<p><code>ssl:&quot;MetasploitSelfSignedCA&quot;</code></p>
+<h1 id="network-infrastructure">Network Infrastructure</h1>
+<h3 id="hacked-routers-">Hacked routers:</h3>
+<p>Routers which got compromised
+<code>hacked-router-help-sos</code></p>
+<h3 id="redis-open-instances">Redis open instances</h3>
+<p><code>product:&quot;Redis key-value store&quot;</code></p>
+<h3 id="citrix-">Citrix:</h3>
+<p>Find Citrix Gateway.
+<code>title:&quot;citrix gateway&quot;</code></p>
+<h3 id="weave-scope-dashboards">Weave Scope Dashboards</h3>
+<p>Command-line access inside Kubernetes pods and Docker containers, and real-time visualization/monitoring of the entire infrastructure.</p>
+<p><code>title:&quot;Weave Scope&quot; http.favicon.hash:567176827</code></p>
+<h3 id="jenkins-ci">Jenkins CI</h3>
+<p><code>&quot;X-Jenkins&quot; &quot;Set-Cookie: JSESSIONID&quot; http.title:&quot;Dashboard&quot;</code></p>
+<h3 id="jenkins-">Jenkins:</h3>
+<p>Jenkins Unrestricted Dashboard
+<code>x-jenkins 200</code></p>
+<h3 id="docker-apis">Docker APIs</h3>
+<p><code>&quot;Docker Containers:&quot; port:2375</code></p>
+<h3 id="docker-private-registries">Docker Private Registries</h3>
+<p><code>&quot;Docker-Distribution-Api-Version: registry&quot; &quot;200 OK&quot; -gitlab</code></p>
+<h3 id="pi-hole-open-dns-servers">Pi-hole Open DNS Servers</h3>
+<p><code>&quot;dnsmasq-pi-hole&quot; &quot;Recursion: enabled&quot;</code></p>
+<h3 id="dns-servers-with-recursion">DNS Servers with recursion</h3>
+<p><code>&quot;port: 53&quot; Recursion: Enabled</code></p>
+<h3 id="already-logged-in-as-root-via-telnet">Already Logged-In as root via Telnet</h3>
+<p><code>&quot;root@&quot; port:23 -login -password -name -Session</code></p>
+<h3 id="telnet-access-">Telnet Access:</h3>
+<p>NO password required for telnet access.
+<code>port:23 console gateway</code></p>
+<h3 id="polycom-video-conference-system-no-auth-shell">Polycom video-conference system no-auth shell</h3>
+<p><code>&quot;polycom command shell&quot;</code></p>
+<h3 id="nport-serial-to-eth-moca-devices-without-password">NPort serial-to-eth / MoCA devices without password</h3>
+<p><code>nport -keyin port:23</code></p>
+<h3 id="android-root-bridges">Android Root Bridges</h3>
+<p>A tangential result of Google&#39;s sloppy fractured update approach. 🙄 More information here.</p>
+<p><code>&quot;Android Debug Bridge&quot; &quot;Device&quot; port:5555</code></p>
+<h3 id="lantronix-serial-to-ethernet-adapter-leaking-telnet-passwords">Lantronix Serial-to-Ethernet Adapter Leaking Telnet Passwords</h3>
+<p><code>Lantronix password port:30718 -secured</code></p>
+<h3 id="citrix-virtual-apps">Citrix Virtual Apps</h3>
+<p><code>&quot;Citrix Applications:&quot; port:1604</code></p>
+<h3 id="cisco-smart-install">Cisco Smart Install</h3>
+<p>Vulnerable (kind of &quot;by design,&quot; but especially when exposed).</p>
+<p><code>&quot;smart install client active&quot;</code></p>
+<h3 id="pbx-ip-phone-gateways">PBX IP Phone Gateways</h3>
+<p><code>PBX &quot;gateway console&quot; -password port:23</code></p>
+<h3 id="polycom-video-conferencing">Polycom Video Conferencing</h3>
+<p><code>http.title:&quot;- Polycom&quot; &quot;Server: lighttpd&quot;</code>
+<code>&quot;Polycom Command Shell&quot; -failed port:23</code></p>
+<h3 id="telnet-configuration-">Telnet Configuration:</h3>
+<p><code>&quot;Polycom Command Shell&quot; -failed port:23</code></p>
+<p>Example: Polycom Video Conferencing</p>
+<h3 id="bomgar-help-desk-portal">Bomgar Help Desk Portal</h3>
+<p><code>&quot;Server: Bomgar&quot; &quot;200 OK&quot;</code></p>
+<h3 id="intel-active-management-cve-2017-5689">Intel Active Management CVE-2017-5689</h3>
+<p><code>&quot;Intel(R) Active Management Technology&quot; port:623,664,16992,16993,16994,16995</code>
+<code>”Active Management Technology”</code></p>
+<h3 id="hp-ilo-4-cve-2017-12542">HP iLO 4 CVE-2017-12542</h3>
+<p><code>HP-ILO-4 !&quot;HP-ILO-4/2.53&quot; !&quot;HP-ILO-4/2.54&quot; !&quot;HP-ILO-4/2.55&quot; !&quot;HP-ILO-4/2.60&quot; !&quot;HP-ILO-4/2.61&quot; !&quot;HP-ILO-4/2.62&quot; !&quot;HP-iLO-4/2.70&quot; port:1900</code></p>
+<h3 id="lantronix-ethernet-adapter-s-admin-interface-without-password">Lantronix ethernet adapter’s admin interface without password</h3>
+<p><code>&quot;Press Enter for Setup Mode port:9999&quot;</code></p>
+<h3 id="wifi-passwords-">Wifi Passwords:</h3>
+<p>Helps to find the cleartext wifi passwords in Shodan.
+<code>html:&quot;def_wirelesspassword&quot;</code></p>
+<h3 id="misconfigured-wordpress-sites-">Misconfigured Wordpress Sites:</h3>
+<p>The wp-config.php if accessed can give out the database credentials.
+<code>http.html:&quot;* The wp-config.php creation script uses this file&quot;</code></p>
+<h1 id="outlook-web-access-">Outlook Web Access:</h1>
+<h3 id="exchange-2007">Exchange 2007</h3>
+<p><code>&quot;x-owa-version&quot; &quot;IE=EmulateIE7&quot; &quot;Server: Microsoft-IIS/7.0&quot;</code></p>
+<h3 id="exchange-2010">Exchange 2010</h3>
+<p><code>&quot;x-owa-version&quot; &quot;IE=EmulateIE7&quot; http.favicon.hash:442749392</code></p>
+<h3 id="exchange-2013-2016">Exchange 2013 / 2016</h3>
+<p><code>&quot;X-AspNet-Version&quot; http.title:&quot;Outlook&quot; -&quot;x-owa-version&quot;</code></p>
+<h3 id="lync-skype-for-business">Lync / Skype for Business</h3>
+<p><code>&quot;X-MS-Server-Fqdn&quot;</code></p>
+<h1 id="network-attached-storage-nas-">Network Attached Storage (NAS)</h1>
+<h3 id="smb-samba-file-shares">SMB (Samba) File Shares</h3>
+<p>Produces ~500,000 results...narrow down by adding &quot;Documents&quot; or &quot;Videos&quot;, etc.</p>
+<p><code>&quot;Authentication: disabled&quot; port:445</code></p>
+<h3 id="specifically-domain-controllers-">Specifically domain controllers:</h3>
+<p><code>&quot;Authentication: disabled&quot; NETLOGON SYSVOL -unix port:445</code></p>
+<h3 id="concerning-default-network-shares-of-quickbooks-files-">Concerning default network shares of QuickBooks files:</h3>
+<p><code>&quot;Authentication: disabled&quot; &quot;Shared this folder to access QuickBooks files OverNetwork&quot; -unix port:445</code></p>
+<h3 id="ftp-servers-with-anonymous-login">FTP Servers with Anonymous Login</h3>
+<p><code>&quot;220&quot; &quot;230 Login successful.&quot; port:21</code></p>
+<h3 id="iomega-lenovoemc-nas-drives">Iomega / LenovoEMC NAS Drives</h3>
+<p><code>&quot;Set-Cookie: iomega=&quot; -&quot;manage/login.html&quot; -http.title:&quot;Log In&quot;</code></p>
+<h3 id="buffalo-terastation-nas-drives">Buffalo TeraStation NAS Drives</h3>
+<p><code>Redirecting sencha port:9000</code></p>
+<h3 id="logitech-media-servers">Logitech Media Servers</h3>
+<p><code>&quot;Server: Logitech Media Server&quot; &quot;200 OK&quot;</code></p>
+<p>Example: Logitech Media Servers</p>
+<h3 id="plex-media-servers">Plex Media Servers</h3>
+<p><code>&quot;X-Plex-Protocol&quot; &quot;200 OK&quot; port:32400</code></p>
+<h3 id="tautulli-plexpy-dashboards">Tautulli / PlexPy Dashboards</h3>
+<p><code>&quot;CherryPy/5.1.0&quot; &quot;/home&quot;</code></p>
+<h3 id="home-router-attached-usb">Home router attached USB</h3>
+<p><code>&quot;IPC$ all storage devices&quot;</code></p>
+<h1 id="webcams">Webcams</h1>
+<h3 id="generic-camera-search">Generic camera search</h3>
+<p><code>title:camera</code></p>
+<h3 id="webcams-with-screenshots">Webcams with screenshots</h3>
+<p><code>webcam has_screenshot:true</code></p>
+<h3 id="d-link-webcams">D-Link webcams</h3>
+<p><code>&quot;d-Link Internet Camera, 200 OK&quot;</code></p>
+<h3 id="hipcam">Hipcam</h3>
+<p><code>&quot;Hipcam RealServer/V1.0&quot;</code></p>
+<h3 id="yawcams">Yawcams</h3>
+<p><code>&quot;Server: yawcam&quot; &quot;Mime-Type: text/html&quot;</code></p>
+<h3 id="webcamxp-webcam7">webcamXP/webcam7</h3>
+<p><code>(&quot;webcam 7&quot; OR &quot;webcamXP&quot;) http.component:&quot;mootools&quot; -401</code></p>
+<h3 id="android-ip-webcam-server">Android IP Webcam Server</h3>
+<p><code>&quot;Server: IP Webcam Server&quot; &quot;200 OK&quot;</code></p>
+<h3 id="security-dvrs">Security DVRs</h3>
+<p><code>html:&quot;DVR_H264 ActiveX&quot;</code></p>
+<h3 id="surveillance-cams-">Surveillance Cams:</h3>
+<p>With username:admin and password: :P
+<code>NETSurveillance uc-httpd</code>
+<code>Server: uc-httpd 1.0.0</code></p>
+<h1 id="printers-copiers-">Printers &amp; Copiers:</h1>
+<h3 id="hp-printers">HP Printers</h3>
+<p><code>&quot;Serial Number:&quot; &quot;Built:&quot; &quot;Server: HP HTTP&quot;</code></p>
+<h3 id="xerox-copiers-printers">Xerox Copiers/Printers</h3>
+<p><code>ssl:&quot;Xerox Generic Root&quot;</code></p>
+<h3 id="epson-printers">Epson Printers</h3>
+<p><code>&quot;SERVER: EPSON_Linux UPnP&quot; &quot;200 OK&quot;</code></p>
+<p><code>&quot;Server: EPSON-HTTP&quot; &quot;200 OK&quot;</code></p>
+<h3 id="canon-printers">Canon Printers</h3>
+<p><code>&quot;Server: KS_HTTP&quot; &quot;200 OK&quot;</code></p>
+<p><code>&quot;Server: CANON HTTP Server&quot;</code></p>
+<h1 id="home-devices">Home Devices</h1>
+<h3 id="yamaha-stereos">Yamaha Stereos</h3>
+<p><code>&quot;Server: AV_Receiver&quot; &quot;HTTP/1.1 406&quot;</code></p>
+<h3 id="apple-airplay-receivers">Apple AirPlay Receivers</h3>
+<p>Apple TVs, HomePods, etc.</p>
+<p><code>&quot;\x08_airplay&quot; port:5353</code></p>
+<h3 id="chromecasts-smart-tvs">Chromecasts / Smart TVs</h3>
+<p><code>&quot;Chromecast:&quot; port:8008</code></p>
+<h3 id="crestron-smart-home-controllers">Crestron Smart Home Controllers</h3>
+<p><code>&quot;Model: PYNG-HUB&quot;</code></p>
+<h1 id="random-stuff">Random Stuff</h1>
+<h3 id="calibre-libraries">Calibre libraries</h3>
+<p><code>&quot;Server: calibre&quot; http.status:200 http.title:calibre</code></p>
+<h3 id="octoprint-3d-printer-controllers">OctoPrint 3D Printer Controllers</h3>
+<p><code>title:&quot;OctoPrint&quot; -title:&quot;Login&quot; http.favicon.hash:1307375944</code></p>
+<h3 id="etherium-miners">Etherium Miners</h3>
+<p><code>&quot;ETH - Total speed&quot;</code></p>
+<h3 id="apache-directory-listings">Apache Directory Listings</h3>
+<p>Substitute .pem with any extension or a filename like phpinfo.php.</p>
+<p><code>http.title:&quot;Index of /&quot; http.html:&quot;.pem&quot;</code></p>
+<h3 id="misconfigured-wordpress">Misconfigured WordPress</h3>
+<p>Exposed wp-config.php files containing database credentials.</p>
+<p><code>http.html:&quot;* The wp-config.php creation script uses this file&quot;</code></p>
+<h3 id="too-many-minecraft-servers">Too Many Minecraft Servers</h3>
+<p><code>&quot;Minecraft Server&quot; &quot;protocol 340&quot; port:25565</code></p>
+<h3 id="literally-everything-in-north-korea">Literally Everything in North Korea</h3>
+<p><code>net:175.45.176.0/22,210.52.109.0/24,77.94.35.0/24</code></p>
+</body></html>
