@@ -16,7 +16,7 @@ $(document).ready(function () {
 			color: "#0ADA95"
 		},
 		{
-			title: "can't  hate you",
+			title: "can't hate you",
 			artist: "kayou",
 			cover: "https://i.scdn.co/image/ab67616d0000b273b9cd1b7d8197e10b24c7ed87",
 			audioFile: "https://manhcot.github.io/MUSIC/hate.mp3",
