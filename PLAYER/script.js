@@ -11,14 +11,14 @@ $(document).ready(function () {
 		{
 			title: "missthoseday",
 			artist: "Post Malone, 21 Savage",
-			cover: "https://i.scdn.co/image/ab67616d0000b273ce87efbb447f4c704e986802",
+			cover: "https://i.scdn.co/image/ab67616d0000b273ce87efbb447f4c704e986802.png",
 			audioFile: "https://manhcot.github.io/MUSIC/missthoseday.mp3",
 			color: "#0ADA95"
 		},
 		{
 			title: "can't hate you",
 			artist: "kayou",
-			cover: "https://i.scdn.co/image/ab67616d0000b273b9cd1b7d8197e10b24c7ed87",
+			cover: "https://m.media-amazon.com/images/I/71D8QQIBAVL.png",
 			audioFile: "https://manhcot.github.io/MUSIC/hate.mp3",
 			color: "#5E2E6A"
 		}
