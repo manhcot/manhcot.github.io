@@ -11,7 +11,7 @@ $(document).ready(function () {
 		{
 			title: "missthoseday",
 			artist: "Post Malone, 21 Savage",
-			cover: "https://i.scdn.co/image/ab67616d0000b273ce87efbb447f4c704e986802.png",
+			cover: "https://manhcot.github.io/MUSIC/missthoseday.jpg",
 			audioFile: "https://manhcot.github.io/MUSIC/missthoseday.mp3",
 			color: "#0ADA95"
 		},
