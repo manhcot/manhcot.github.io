@@ -1,10 +1,4 @@
-/*
- * Icons by:
- * Font Awesome – http://fontawesome.io/
- * Those Icons – https://www.flaticon.com/authors/those-icons
- * EpicCoders – https://www.flaticon.com/authors/epiccoders
- * Smashicons – https://www.flaticon.com/authors/smashicons
- */
+
 
 $(document).ready(function () {
 	var songs = [
@@ -177,11 +171,6 @@ $('#sub-controls i').click(function () {
 	}
 });
 
-/*
- * Music Player
- * By Greg Hovanesyan
- * https://codepen.io/gregh/pen/NdVvbm
- */
 
 var audioPlayer = document.querySelector('#content');
 var playpauseBtn = audioPlayer.querySelector('#play-btn');
