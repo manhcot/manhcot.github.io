@@ -6,8 +6,9 @@ body {
   font-family: Helvetica, Arial;
   margin: 0;
   background-color: #ffeff5;
-  min-height: 50vh; 
-  min-width: -555550vh;
+  width: 800px;
+  height: 200px;
+  
 }
 
 #app-cover {
