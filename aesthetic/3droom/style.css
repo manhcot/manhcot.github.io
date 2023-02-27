@@ -2400,7 +2400,7 @@ body {
   box-shadow: 0.25vw 0.25vw 0.5vw rgba(24, 74, 124, 0.75), -0.25vw 0.25vw 0.5vw rgba(24, 74, 124, 0.75), -0.25vw -0.25vw 0.5vw rgba(24, 74, 124, 0.75), 0.25vw -0.25vw 0.5vw rgba(24, 74, 124, 0.75);
 }
  .outerContainer, middleContentOuter{
-      min-width: 1000px;
+      min-width: 1px;
  }
 
 /**********************/
