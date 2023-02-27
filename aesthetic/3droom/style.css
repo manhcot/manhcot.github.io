@@ -93,9 +93,9 @@ body {
 .h-light:nth-of-type(3)::before, .h-light:nth-of-type(3)::after {
   content: "";
   position: absolute;
-  width: 200%;
+  width: 100%;
   top: -6vw;
-  height: 400%;
+  height: 100%;
   background-image: linear-gradient(to bottom, rgba(40, 125, 210, 0.1), rgba(81, 137, 251, 0.1), transparent);
   border-top-left-radius: 10vw;
   border-top-right-radius: 10vw;
@@ -805,8 +805,8 @@ body {
   position: absolute;
   top: -10%;
   left: 20%;
-  width: 120%;
-  height: 120%;
+  width: 100%;
+  height: 100%;
   background-image: linear-gradient(to left, rgba(7, 23, 39, 0.75), rgba(0, 0, 0, 0.75));
   filter: blur(0.5vw);
 }
