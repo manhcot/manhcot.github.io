@@ -2402,6 +2402,12 @@ body {
 
 /**********************/
 /**********************/
+
+@media only screen and (max-width: 480px){
+  form{width:100%}
+  .icon-div{width:30%}
+  .icon-div .icon {width: 100%;height: 100%}
+
 @keyframes pantalla-tablet {
   from {
     background-color: #6a9afb;
