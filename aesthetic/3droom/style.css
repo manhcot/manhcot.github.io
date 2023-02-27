@@ -2405,13 +2405,13 @@ body {
 
 
 
-@keyframes pantalla-tablet {
+@-webkit-keyframes pantalla-tablet {
   from {
     background-color: #6a9afb;
     -webkit-background-color: #6a9afb;
   }
 }
-@keyframes pantalla-tv {
+@-webkit-keyframes pantalla-tv {
   from {
     background-color: #6a9afb;
      -webkit-background-color: #6a9afb;
@@ -2419,7 +2419,7 @@ body {
     -webkit-box-shadow: 0.125vw 0.125vw 0vw rgba(81, 137, 251, 0), -0.125vw 0.125vw 0vw rgba(81, 137, 251, 0), 0.125vw -0.125vw 0vw rgba(81, 137, 251, 0), -0.125vw -0.125vw 0vw rgba(81, 137, 251, 0);
   }
 }
-@keyframes luz-tv {
+@-webkit-keyframes luz-tv {
   from {
     background-image: radial-gradient(rgba(36, 112, 188, 0.8), rgba(56, 121, 250, 0.8));
     -webkit-background-image: radial-gradient(rgba(36, 112, 188, 0.8), rgba(56, 121, 250, 0.8));
