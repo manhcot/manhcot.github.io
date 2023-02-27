@@ -19,4 +19,4 @@ let base = (e) => {
     `;
 }
 
-b.addEventListener("pointermove", base);
+b.addEventListener("touchmove", base);
