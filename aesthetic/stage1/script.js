@@ -50,25 +50,30 @@ $(window).on('keydown', function(e) {
 })
 
 var Fake = [
-  '<img src=" https://media.tumblr.com/78a9d3eae59a2a3ed8531b482bdc5a4f/tumblr_inline_mgzkontwjP1rxsw83.gif"></img> <b><center>Happy Birthday! :) </b><br><br>So What are your plans for today?',
-    'Thats Good!',
-  'So when are you coming back?',
-  'okay,Damn sometime talking to you is just like sending letters! You reply so late :P',
-  'Fine :P Enjoy your day!',
+  '<img src=" https://media.tumblr.com/78a9d3eae59a2a3ed8531b482bdc5a4f/tumblr_inline_mgzkontwjP1rxsw83.gif"></img> <b><center>Chúc mừng sinh nhật Quỳnh như nha 🍨 :> </b><br>Hãy cho mình biết ngày hôm nay của bạn như nào?<br>',
+    'Mình có thứ này muốn cho bạn xem, bạn có muốn xem không?',
+  'khi nào bạn muốn xem thì vào link này nhé mình để nó <a href="https://manhcot.github.io/aesthetic/stage2/index.html">ở đây</a>',
+  'tạm biệt nha mình đi chơi đây...',
+  'được rồi đừng nhắn nữa :))',
   'Bye',
-  ':)'
+  ':))'
 ]
 
 function fakeMessage() {
   if ($('.message-input').val() != '') {
     return false;
   }
-  $('<div class="message loading new"><figure class="avatar"><img src="https://bit.ly/2iAb20v" /></figure><span></span></div>').appendTo($('.mCSB_container'));
+  $('<div class="message loading new"><figure class="avatar"><img src="https://bit.ly/3pylKsd" /></figure><span></span></div>').appendTo($('.mCSB_container'));
   updateScrollbar();
 
   setTimeout(function() {
     $('.message.loading').remove();
-    $('<div class="message new"><figure class="avatar"><img src="https://bit.ly/2iAb20v" /></figure>' + Fake[i] + '</div>').appendTo($('.mCSB_container')).addClass('new');
+          if(Fake[i] == null)
+      {
+        $('<div class="message new"><figure class="avatar"><img src="https://bit.ly/3pylKsd" /></figure>' +'...' + '</div>').appendTo($('.mCSB_container')).addClass('new');
+       return;
+      }
+    $('<div class="message new"><figure class="avatar"><img src="https://bit.ly/3pylKsd" /></figure>' + Fake[i] + '</div>').appendTo($('.mCSB_container')).addClass('new');
     setDate();
     updateScrollbar();
     i++;
