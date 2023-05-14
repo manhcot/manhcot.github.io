@@ -10,6 +10,14 @@ body {
   background: #ee9ca7;
 }
 
+#confetti{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
 #cake {
   display: block;
   position: relative;
