@@ -1,9 +1,15 @@
 img {
+   display: block;
+   display: inline-block;
+     pointer-events: none;
     position:absolute;
     bottom:440px;
     right:200px;
+    
 }
 
 table {
+    display: inline-block;
+    display: block;
     position:relative;
 }
