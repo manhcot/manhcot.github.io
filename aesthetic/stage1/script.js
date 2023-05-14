@@ -52,7 +52,7 @@ $(window).on('keydown', function(e) {
 var Fake = [
   '<img src=" https://media.tumblr.com/78a9d3eae59a2a3ed8531b482bdc5a4f/tumblr_inline_mgzkontwjP1rxsw83.gif"></img> <b><center>Chúc mừng sinh nhật Quỳnh như nha 🍨 :> </b><br>Hãy cho mình biết ngày hôm nay của bạn như nào?<br>',
     'Mình có thứ này muốn cho bạn xem, bạn có muốn xem không?',
-  'khi nào bạn muốn xem thì vào link này nhé mình để nó <a href="https://manhcot.github.io/aesthetic/stage2/index.html">ở đây</a>',
+  'khi nào bạn muốn xem thì vào link này nhé mình để nó <a href="https://manhcot.github.io/aesthetic/stage2/index.html">ở đây</a> *đeo tai nghe vaooo',
   'tạm biệt nha mình đi chơi đây...',
   'được rồi đừng nhắn nữa :))',
   'Bye',
