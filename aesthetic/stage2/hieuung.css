@@ -9,11 +9,7 @@ body{
 	align-content: center;
 	min-height: 30vh;
 }
-.wrapper
-{
-            display: flex;
-          
-}
+
 .player
 {
  left: 815px;
