@@ -8,6 +8,9 @@ body {
 }
 
 body {
+   min-width: 1080px; /* width: 1080px; */
+     /* height: 1920px; */
+     /*position: fixed;*/
   background: #ee9ca7;
 }
 
@@ -25,11 +28,7 @@ body {
   position: relative;
   margin: -10em auto 0 auto;
 }
-.WebContainer{
-    width:100%;
-    min-width:1000px;
-    height:auto;
-}
+
 /* ============================================== Candle
 */
 .velas {
