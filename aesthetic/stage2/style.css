@@ -8,11 +8,13 @@ body {
 }
 
 body {
+
    min-width: 1080px; /* width: 1080px; */
      /* height: 1920px; */
      /*position: fixed;*/
   background: #ee9ca7;
 }
+
 
 #confetti{
   pointer-events:none;
