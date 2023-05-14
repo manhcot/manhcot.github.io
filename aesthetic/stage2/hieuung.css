@@ -1,13 +1,18 @@
 *{
 	
 	margin: 0;
-	padding: 0;
+	padding: 0 !important;
 	box-sizing: border-box;
 }
 body{
 	justify-content: center;
 	align-content: center;
 	min-height: 30vh;
+}
+.wrapper
+{
+            display: flex;
+          
 }
 .player
 {
