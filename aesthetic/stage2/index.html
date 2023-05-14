@@ -200,7 +200,10 @@ fetch('https://manhcot.github.io/music-player-audio-player/index.html')
 	   <div class="imgbox">
 	   	<img src="img.jpg" alt="AW" />
 	   </div>
-	   <audio src="https://manhcot.github.io/aesthetic/stage2/music.mp3" type="audio/mp3" controls autoplay></audio>
+	   <audio id="autoplay" src="https://manhcot.github.io/aesthetic/stage2/music.mp3" type="audio/mp3" controls autoplay loop controlsList="nodownload"></audio>
+	   <script>
+	document.addEventListener('click', function() { document.getElementById('autoplay').play() }, { once: true }); 
+</script>
 
 	 </div>
 
