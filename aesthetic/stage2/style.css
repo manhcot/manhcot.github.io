@@ -25,7 +25,11 @@ body {
   position: relative;
   margin: -10em auto 0 auto;
 }
-
+.WebContainer{
+    width:100%;
+    min-width:1000px;
+    height:auto;
+}
 /* ============================================== Candle
 */
 .velas {
