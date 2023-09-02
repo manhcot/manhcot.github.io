@@ -1,0 +1,3 @@
+cd /d C:\Windows\temp\Launcher
+rust_inject.exe
+echo VUI LONG MO rust....
