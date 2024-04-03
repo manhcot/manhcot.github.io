@@ -9,6 +9,9 @@
     <meta name="description" content="description here">
 		<meta name="keywords" content="keywords,here">
 		<link href="https://www.unpkg.com/tailwindcss@0.7.4/dist/tailwind.min.css" rel="stylesheet"> <!--Replace with your tailwind.css once created-->
+		<script type="text/javascript" src="./js/hotkeys.min.js"></script>
+<script type="text/javascript" src="./js/devtools-detect.js"></script>
+<script type="text/javascript" src="./js/NoPeek.js"></script>
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" rel="stylesheet">
 	<style>
 	.smooth {transition: box-shadow 0.3s ease-in-out;}
@@ -17,6 +20,25 @@
 </head>
 <body class="bg-white font-family:'Courier New' leading-normal tracking-normal">
 
+<script>
+    var mdpNoPeek = { 
+        "selectAll": "on", 
+        "copy": "on", 
+        "cut": "on", 
+        "paste": "on", 
+        "save": "on", 
+        "viewSource": "on", 
+        "printPage": "on", 
+        "developerTool": "on", 
+        "windowBlur": "off", 
+        "tabHidden": "on", 
+        "readerMode": "on", 
+        "rightClick": "on", 
+        "rightClickImage": "on", 
+        "textSelection": "on", 
+        "imageDragging": "on" 
+    };
+</script>
 	<!--Nav-->
 	<nav class="bg-gray-900 p-4 mt-0 w-full">
         <div class="container mx-auto flex items-center">
@@ -61,7 +83,7 @@
 		<div class="mx-0 sm:mx-6">
 			
 
-			<div class="bg-gray-200 w-full p-8 md:p-24 text-xl md:text-2xl text-gray-800 leading-normal" style="font-family:'verdana', monospace;">
+			<div class="bg-gray-200 w-full p-8 md:p-24 text-xl md:text-2xl text-gray-800 leading-normal" style="font-family:'verdana', monospace; ">
 				
 				<!--Post Content-->
 				
@@ -75,25 +97,31 @@
 				<p class="py-6">Có thể nói rằng, núi cao còn có núi cao hơn, mình chưa hề có kinh nghiệm về viết blog và cũng chưa phải là chuyên về tất cả các mảng đó, bài viết dưới đây chỉ là bài viết nói về cách mình tiếp cận công nghệ thông tin như thế nào thôi !
 				 </p>				
 			
-				<p class="py-6">Mình được tiếp xúc với điện thoại cảm ứng hơi muộn, lúc đó mình hay dùng điện thoại quay lung tung lắm ( tiếc là mấy video đó mất rồi :< ) rồi mình biết đến youtube, facebook và game nữa (thật ra game mình chơi từ hồi nhỏ trên điện thoại nokia rồi :>), và cứ thế cho đến 3 năm sau mình xin được một cái laptop cũ của chị mình nhưng mà nó bị lỗi k kết nối mạng được, chị mình định vứt đi nhưng mình tiếc nên xin lại thử sửa, ai dè mò mẫm lung tung thì thế đéo nào nó lại được (do hồi xưa mình mù công nghệ nên k biết là do cài sai driver hay là tắt gì đó nên tưởng lỗi XD ), vậy là suốt ngày mình mò mẫm trên chiếc laptop (nhưng mà k phải mò mẫm học gì đâu mà là mò cách tải game đấy !) hồi đấy mình còn ngu ngơ vào mấy cái link rút gọn thấy chữ "TẢI VỀ" to đùng tưởng là để tải ai ngờ là CLICK-BAIT, mình tải về xong bị dính virus luôn :< cay thiệt chớ, nhưng mà cũng may thời đó toàn là virus quảng cáo thôi chớ may là chưa dính KEYLOGGER,RAT hay virus mã hóa gì cả (hên là chị mình k còn dùng máy nữa).trong thời gian sử dụng thì con lap của chị mình nó gặp trục trặc khá nhiều, lúc bị virus thì mình phải lên google tìm cách cài lại win các thứ, rồi đôi lúc lap còn bị màn hình đen, lỗi ổ cứng và bựa hơn là cả tô nước sôi đổ lên máy huhu....,nhưng cũng nhờ những việc ấy mà mình có vài kiến thức cơ bản về máy tính (hên là mình có một chút kĩ năng tiếng anh nên tự search rồi sửa mấy lỗi lặt vặt), cho đến một hôm mình xem trên mạng và thời sự thấy họ đề cập đến nhóm hacker "ANONYMOUS"(thời đó ANONYMOUS rất nổi)
-				<img src="https://image.thanhnien.vn/768/uploaded/nthanhluan/2015_11_18/anonymous-image_fgnd.jpg"> 
+				<p class="py-6">Mình được tiếp xúc với điện thoại cảm ứng hơi muộn, lúc đó mình hay dùng điện thoại quay lung tung lắm ( tiếc là mấy video đó mất rồi ) rồi mình biết đến youtube, facebook và game nữa (thật ra game mình chơi từ hồi nhỏ trên điện thoại nokia rồi ), và cứ thế cho đến 3 năm sau mình xin được một cái laptop cũ của chị mình nhưng mà nó bị lỗi k kết nối mạng được, chị mình định vứt đi nhưng mình tiếc nên xin lại thử sửa, ai dè mò mẫm lung tung thì thế đéo nào nó lại được (do hồi xưa mình mù công nghệ nên k biết là do cài sai driver hay là tắt gì đó nên tưởng lỗi ), vậy là suốt ngày mình mò mẫm trên chiếc laptop (nhưng mà k phải mò mẫm học gì đâu mà là mò cách tải game đấy !) hồi đấy mình còn ngu ngơ vào mấy cái link rút gọn thấy chữ "TẢI VỀ" to đùng tưởng là để tải ai ngờ là CLICK-BAIT, mình tải về xong bị dính virus luôn cay thiệt chớ, nhưng mà cũng may thời đó toàn là virus quảng cáo thôi chớ may là chưa dính KEYLOGGER,RAT hay virus mã hóa gì cả (hên là chị mình k còn dùng máy nữa).trong thời gian sử dụng thì con lap của chị mình nó gặp trục trặc khá nhiều, lúc bị virus thì mình phải lên google tìm cách cài lại win các thứ, rồi đôi lúc lap còn bị màn hình đen, lỗi ổ cứng và bựa hơn là cả tô nước sôi đổ lên máy huhu....,nhưng cũng nhờ những việc ấy mà mình có vài kiến thức cơ bản về máy tính (hên là mình có một chút kĩ năng tiếng anh nên tự search rồi sửa mấy lỗi lặt vặt), cho đến một hôm mình xem trên mạng và thời sự thấy họ đề cập đến nhóm hacker "ANONYMOUS"(thời đó ANONYMOUS rất nổi)
+				
 
 
-				hm....,mình tò mò và tìm hiểu về khái niệm hacker, do mình thấy ngầu nên muốn bắt chước và trở thành hacker (lúc đó mình tưởng thế là ngầu), mình lên youtube thì có vài youtuber share mấy tool DDOS web (đánh sập website bằng phương thức "denial of service") những tool này đều là tool có sẵn, chỉ cần nhập tên miền web và số lượng pack cần gửi là done,
-				<img src="https://i.ytimg.com/vi/0N3fVtxz4X4/maxresdefault.jpg">
+				hm....,mình tò mò và tìm hiểu về khái niệm hacker, do mình thấy ngầu nên muốn bắt chước và trở thành hacker (lúc đó mình tưởng thế là ngầu), mình lên youtube thì có vài youtuber share mấy tool DDOS web (đánh sập website bằng phương thức "denial of service") những tool này đều là tool có sẵn, chỉ cần nhập tên miền web và số lượng pack cần gửi là done, 
+			</p>
+				<img src="https://cdn.techwireasia.com/wp-content/uploads/2023/07/Anonymous-hacker-group-scaled.jpg" height="75%" width="75%"> </img>
+				<p>
 				 lúc đó mình có thử với vài website nhỏ, đang vui mừng vì tưởng đã ddos thành công vì web không còn truy cập được nữa nhưng vì tuổi trẻ bồng bột mình đâu có biết là mấy tool ddos đó có virus đào bitcoin và nó tự chặn mấy website mà mình nhập để ddos thì nó lại vào file host của window chặn mấy web đó để mình k truy cập được web  nhằm đánh lừa rằng web đó đã bị sập nhưng thực chất là chưa sập, sớm phát hiện chiêu này mình đã lại cất công cài lại win thêm một lần nữa huhu..., hm... rồi một ngày mình quyết định trở thành một hacker thực thụ mà k cần phải dùng mấy cái tool ddos dởm ấy nữa, lại một lần nữa mình search google, đa số website đều đưa ra lời khuyên na ná như nhau như là phải biết kiến thức về mạng và phần cứng và một thứ nữa là ngôn ngữ lập trình gì gì ấy (ngôn ngữ lập trình ra phần mềm, game mà chúng ta thường sử dụng trên máy tính), hm...
 					- " chắc là dễ thôi mà haha" 
 				mình lạc quan và đi vào tìm hiểu sơ bộ về một số ngôn ngữ lập trình và cơ bản của nó và chán nản vì chúng phức tạp so với mình, người ta có câu -"chưa học bò mà đã lo học chạy.", y đúc như mình hồi đó muốn làm hacker tức thì nhưng không chịu tìm hiểu, rồi lúc đó mình bỏ cuộc vì mình quá choáng ngợp với lượng kiến thức khổng lồ mình phải học, rồi đến lớp 6
-				mình lại nảy ý định muốn làm game, lần này thì mình có tìm hiểu trên mạng và đã tìm được engine để làm game thích hợp rồi, bắt tay vào nghiên cứu và tìm hiểu cách sử dụng các thứ...
-				<img src="https://anonyviet.com/wp-content/uploads/2020/01/Godot-Engine-download.jpg">
+				mình lại nảy ý định muốn làm game, lần này thì mình có tìm hiểu trên mạng và đã tìm được engine để làm game thích hợp rồi, bắt tay vào nghiên cứu và tìm hiểu cách sử dụng các thứ...<p>
+				<img src="https://anonyviet.com/wp-content/uploads/2020/01/Godot-Engine-download.jpg" height="70%" width="70%">
+				<p>
 				 đang cao hứng thì gặp đến phần phải sử dụng đến code thì tụt cmn hứng :<, mình cố né tránh nên mình lên google tìm từ khóa "cách làm game mà không cần code", cũng có vài engine hỗ trợ điều đó nhưng nó không theo ý của mình được như code, quy chung lại thì vẫn là cần code, sau một hồi chật vật thì thôi mình lại chịu khó học code vậy, ở thời điểm này mình chưa tìm hiểu là nên học ngôn ngữ nào đầu tiên vì thế mà mình chọn đại một ngôn ngữ để học đó là " C# ", (đến tận bây giờ nghĩ lại thì ước gì hồi xưa mình chịu khó tìm hiểu nên học ngôn ngữ cơ bản nào trước thì có phải đỡ khổ cực hơn không ), thực chất ra nếu chưa học qua C,hay C++ thì sẽ khó để học với C# thế mà mình lại học ngay C#, và quả nhiên mình gặp ngay combo [học ko hiểu gì + cách học quá máy móc], vì đây là lần đầu mình mới tiếp xúc đến những thứ như biến và kiểu dữ liệu..v.v, học được tầm 3 ngày mình lại bỏ cuộc vì mất kiên nhẫn (lúc này tưởng chừng như code kiếc các thứ chả phù hợp với mình nữa). Vào đầu năm lớp 7 lúc đó mình có chơi một vài game mmorpg (thể loại game cày) thấy có nhiều tool auto game nhưng mà phải trả phí (mình thì k có tiền) cho nên mình lại lên mạng và tìm hiểu thì có AutoIT là làm tốt nhất về auto phần mềm hay game, mình quyết định học AutoIT và lần này thì hiệu quả hơn (vì kinh nghiệm 2 lần từng bỏ cuộc nên lần này áp dụng cách học hiệu quả hơn) , mình đã nắm được tất cả những cơ bản và cách thức hoạt động của nó, cảm thấy hơi gò bó nên sau đó mình lại chuyển lại học C# một lần nữa thì lần này mình đã nắm được cơ bản và các cấu trúc dữ liệu của nó
-				 <img src="https://s3.amazonaws.com/rails-camp-tutorials/blog/programming+memes/programming-or-googling.jpg">
+				</p>
+				 <img src="https://s3.amazonaws.com/rails-camp-tutorials/blog/programming+memes/programming-or-googling.jpg" width="800" height="600" class="sm\:bg-center">
+				 <p>
 				 ở thời điểm này mình tiến bộ được cũng do mình  hay tìm các blog của các ông dev chia sẻ và dạy tư duy lập trình để đọc và mình có luyện tập thuật toán qua các trang như edabit, hackerrank.v.v sau đó thì mình cũng học qua c++ luôn,khoảng thời gian đó mình học được rất là nhiều, khi đó mình đang thiên hướng về kĩ thuật đảo ngược và crack phần mềm [luyện tập unpack và crack phần mềm], và cho đến 2 năm sau thì mình mới bắt đầu tập tành chơi "CTF"<blockquote class="border-l-4 border-green-500 italic my-8 pl-8 md:pl-12">CTF (viết tắt của Capture The Flag) là một dạng cuộc thi kiến thức về bảo mật thông tin, thử thách các đội chơi tìm ra lời giải cho một vấn đề bất kỳ trong an ninh mạng. Thông thường trong một cuộc thi CTF, các đội chơi sẽ ganh đua nhau để tìm ra một Mật mã đặc biệt được giấu bên trong server, hoặc phía sau một trang web. Mật mã này chính là Flag. Đội nào hack vào hệ thống của đối thủ và tìm ra Flag nhanh hơn sẽ giành chiến thắng vòng thi. Đó là lí do cái tên Capture The Flag ra đời!</blockquote>
 				 lúc đó thì mình có học qua html, javascript.., học qua cách sử dụng hệ điều hành kali-linux, kiểm thử website bằng burpsuite,NMAPv.v, biết các kiến thức cơ bản của web application như BindSQL, SQL injection, DEFACE,CSS CROSS-SITE vân vân. Nắm và hiểu được những khái niệm cơ bản về rootkit ,payloads ,backdooor ,hijacking ,sniffer , MITM, và học qua phần memory, hợp ngữ "NASM, MASM, FASM" và nắm được các lỗi cơ bản của memory như buffer overflow, memory leak, nắm được cấu trúc của protection ring ("user mode", "kernel"...), tiếp đến là mình có tìm hiểu về mảng CRYPTOGRAPHY ( kĩ năng mật mã học) nắm cơ bản các thuật toán hash vân vân và mây mây. 
 
 
 
 				<ol>
+					<blockquote class="border-l-4 border-green-500 italic my-8 pl-8 md:pl-12">
 					<li class="py-3">Được cái này thì mất cái kia :<, khoảng năm đó
 					 học lực của mình giảm sút, do không tập trung học lắm, vì mình quá chú tâm vào học CNTT.</li>
 					<li class="py-3">HEHE, đến bây giờ khi xem lại những bộ phim về hacker, mình có thể nói nó khác với hiện thực một số chỗ, như về giao diện chẳng hạn, chả có dòng chứ xanh lè chạy nhấp nháy rồi thao tác bấm bàn phím loạn xạ rồi hiện dòng chữ "HACKED" đâu và hơn nữa hacker cùng là người chứ k phải robot mà cứ nhập lệnh mà k cần nghĩ được :>	.Ý ở đây mình chỉ nói vài phim chứ có vài serie vẫn tả thực 50-60% hack ngoài thực,nếu bạn muốn xem bộ phim nào tả thực nhất về hacker thì mình khuyên bạn nên xem serie phim "MR. ROBOT", video dưới đây là tóm tắt qua nội dung phần 1 của phim.
@@ -102,6 +130,7 @@
 							<source src="mrrobot.mp4" type="video/mp4">
 						</video>>
 					 mình từng xem hết cả 4 phần của phim và theo mình cảm nhận được thì bộ phim này miêu tả rất chân thực về hacking ngoài đời thật.</li>
+					</blockquote>
 					<li class="py-3">ĐANG VIẾT DỞ</li>
 				</ol>
 
@@ -197,41 +226,7 @@
 	</footer>
 
 
-<script>
-	/* Progress bar */
-	//Source: https://alligator.io/js/progress-bar-javascript-css-variables/
-	var h = document.documentElement,
-		  b = document.body,
-		  st = 'scrollTop',
-		  sh = 'scrollHeight',
-		  progress = document.querySelector('#progress'),
-		  scroll;
-	var scrollpos = window.scrollY;
-	var header = document.getElementById("header");
 
-	document.addEventListener('scroll', function() {
-
-		/*Refresh scroll % width*/
-		scroll = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
-		progress.style.setProperty('--scroll', scroll + '%');
-
-		/*Apply classes for slide in bar*/
-		scrollpos = window.scrollY;
-
-    if(scrollpos > 100){
-      header.classList.remove("hidden");
-	  header.classList.remove("fadeOutUp");
-	  header.classList.add("slideInDown");
-    }
-    else {
-	  header.classList.remove("slideInDown");
-      header.classList.add("fadeOutUp");
-	  header.classList.add("hidden");
-    }
-
-	});
-
-</script>
 
 </body>
 </html>
