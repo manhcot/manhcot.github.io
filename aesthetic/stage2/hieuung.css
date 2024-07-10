@@ -12,9 +12,9 @@ body{
 
 .player
 {
- left: 815px;
- top: 480px;
- position: absolute;
+ right: 46%;
+ top: 68%;
+ position: fixed;
  width: 250px;
  background: #f1f3f4;
  border-radius: 20px;
