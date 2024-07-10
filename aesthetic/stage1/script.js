@@ -63,17 +63,17 @@ function fakeMessage() {
   if ($('.message-input').val() != '') {
     return false;
   }
-  $('<div class="message loading new"><figure class="avatar"><img src="https://bit.ly/3pylKsd" /></figure><span></span></div>').appendTo($('.mCSB_container'));
+  $('<div class="message loading new"><figure class="avatar"><img src="https://scontent.fmel16-1.fna.fbcdn.net/v/t39.30808-6/359034088_1414333139360082_437272561717016683_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=TP2thoACIZAQ7kNvgFA6gzR&_nc_ht=scontent.fmel16-1.fna&oh=00_AYDfMRwX8hm0-Va7IZxYlZjmgtNRYjHIARgHVumwfsh7AQ&oe=6694A030" /></figure><span></span></div>').appendTo($('.mCSB_container'));
   updateScrollbar();
 
   setTimeout(function() {
     $('.message.loading').remove();
           if(Fake[i] == null)
       {
-        $('<div class="message new"><figure class="avatar"><img src="https://bit.ly/3pylKsd" /></figure>' +'...' + '</div>').appendTo($('.mCSB_container')).addClass('new');
+        $('<div class="message new"><figure class="avatar"><img src="https://scontent.fmel16-1.fna.fbcdn.net/v/t39.30808-6/359034088_1414333139360082_437272561717016683_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=TP2thoACIZAQ7kNvgFA6gzR&_nc_ht=scontent.fmel16-1.fna&oh=00_AYDfMRwX8hm0-Va7IZxYlZjmgtNRYjHIARgHVumwfsh7AQ&oe=6694A030" /></figure>' +'...' + '</div>').appendTo($('.mCSB_container')).addClass('new');
        return;
       }
-    $('<div class="message new"><figure class="avatar"><img src="https://bit.ly/3pylKsd" /></figure>' + Fake[i] + '</div>').appendTo($('.mCSB_container')).addClass('new');
+    $('<div class="message new"><figure class="avatar"><img src="https://scontent.fmel16-1.fna.fbcdn.net/v/t39.30808-6/359034088_1414333139360082_437272561717016683_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=TP2thoACIZAQ7kNvgFA6gzR&_nc_ht=scontent.fmel16-1.fna&oh=00_AYDfMRwX8hm0-Va7IZxYlZjmgtNRYjHIARgHVumwfsh7AQ&oe=6694A030" /></figure>' + Fake[i] + '</div>').appendTo($('.mCSB_container')).addClass('new');
     setDate();
     updateScrollbar();
     i++;
