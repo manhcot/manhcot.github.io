@@ -1,0 +1,1 @@
+https://assets.guns.lol/sparkle_green.gif //username effect
