@@ -1,0 +1,314 @@
+AntiVirus Installed: True
+Installed AntiVirus':
+   windowsdefender: %ProgramFiles%\Windows Defender\MsMpeng.exe
+AntiVirus Running: windowsdefender: %programfiles%\windows defender\msmpeng.exe
+
+[MainWindowViewModel] - ExecuteRefresh Entered
+[MainWindowViewModel] - Setting Process Access Rights:
+	PROCESS_QUERY_INFORMATION
+	PROCESS_VM_READ
+[MainWindowViewModel] - Checking Processes for Mono
+    Error Getting User Process: wininit - Access is denied
+	WmiPrvSE.exe
+	spoolsv.exe
+	msedge.exe
+	SearchApp.exe
+	msedge.exe
+	svchost.exe
+	svchost.exe
+	svchost.exe
+	RuntimeBroker.exe
+    Error Getting User Process: SgrmBroker - Access is denied
+	dnSpy.exe
+    Error Getting User Process: MsMpEng - Access is denied
+	audiodg.exe
+	RuntimeBroker.exe
+	Riot Client.exe
+	msedge.exe
+	cmd.exe
+	dwm.exe
+	RuntimeBroker.exe
+	svchost.exe
+	msedge.exe
+	Cloudflare WARP.exe
+	msedgewebview2.exe
+	svchost.exe
+	ApplicationFrameHost.exe
+	svchost.exe
+	svchost.exe
+	msedge.exe
+	vpnui.exe
+	FxSound.exe
+	vmware-vmx.exe
+	msedge.exe
+	svchost.exe
+	taskhostw.exe
+	RiotClientCrashHandler.exe
+	taskhostw.exe
+	plugin_host-3.3.exe
+	RazerAppEngine.exe
+	smi_gui.exe
+[ProcessUtils] GetMono - ERROR: Failed to read process memory
+	svchost.exe
+	svchost.exe
+	msedge.exe
+	msedgewebview2.exe
+	SnippingTool.exe
+	svchost.exe
+	svchost.exe
+	Discord.exe
+	msedge.exe
+	msedge.exe
+	svchost.exe
+	msedge.exe
+	svchost.exe
+	msedge.exe
+	msedge.exe
+	Taskmgr.exe
+	ShellExperienceHost.exe
+	RuntimeBroker.exe
+	WMIRegistrationService.exe
+	conhost.exe
+	vmware-usbarbitrator64.exe
+	msedge.exe
+	svchost.exe
+	vgtray.exe
+	svchost.exe
+	conhost.exe
+	GameManagerService3.exe
+	Discord.exe
+	msedge.exe
+	svchost.exe
+	vmware-authd.exe
+	msedge.exe
+	svchost.exe
+	vmware.exe
+	Microsoft.SharePoint.exe
+	svchost.exe
+	svchost.exe
+	msedge.exe
+	msedgewebview2.exe
+	dllhost.exe
+	svchost.exe
+	svchost.exe
+	python.exe
+	svchost.exe
+	svchost.exe
+	mksSandbox.exe
+	vpnagent.exe
+	msedge.exe
+	RuntimeBroker.exe
+	PerfWatson2.exe
+	RzEngineMon.exe
+	msedge.exe
+	msedge.exe
+	msedge.exe
+	svchost.exe
+	svchost.exe
+	Riot Client.exe
+	AdobeIPCBroker.exe
+	ServiceHub.IdentityHost.exe
+	svchost.exe
+	Adobe Crash Processor.exe
+    Error Getting User Process: Secure System - Access is denied
+	conhost.exe
+	svchost.exe
+	Adobe Desktop Service.exe
+	msedge.exe
+	svchost.exe
+	svchost.exe
+	svchost.exe
+	svchost.exe
+	ServiceHub.Host.dotnet.x64.exe
+	SearchProtocolHost.exe
+	crash_handler.exe
+	msedge.exe
+	msedge.exe
+	Riot Client.exe
+	vmnat.exe
+	msedge.exe
+	Creative Cloud UI Helper.exe
+	svchost.exe
+	vmnetdhcp.exe
+	NVDisplay.Container.exe
+	StartMenuExperienceHost.exe
+	svchost.exe
+	msedge.exe
+    Error Getting User Process: Memory Compression - Access is denied
+	msedgewebview2.exe
+	smi_gui.exe
+[ProcessUtils] GetMono - ERROR: Failed to read process memory
+	nvcontainer.exe
+	svchost.exe
+	svchost.exe
+	AdobeNotificationClient.exe
+	EVKey64.exe
+	msedge.exe
+	svchost.exe
+	BraveUpdate.exe
+	svchost.exe
+	svchost.exe
+	jhi_service.exe
+	NVDisplay.Container.exe
+	ServiceHub.RoslynCodeAnalysisService.exe
+	dllhost.exe
+	ctfmon.exe
+	Creative Cloud UI Helper.exe
+	OfficeClickToRun.exe
+	msedgewebview2.exe
+	razer_elevation_service.exe
+	Discord.exe
+	svchost.exe
+	conhost.exe
+	svchost.exe
+	msedge.exe
+	svchost.exe
+	svchost.exe
+	RazerAppEngine.exe
+	RazerAppEngine.exe
+	svchost.exe
+	msedge.exe
+    Error Getting User Process: smss - Access is denied
+	msedge.exe
+	msedge.exe
+	svchost.exe
+	svchost.exe
+	svchost.exe
+	fontdrvhost.exe
+	ms-teams.exe
+	svchost.exe
+	svchost.exe
+	fontdrvhost.exe
+	svchost.exe
+	RazerAppEngine.exe
+	svchost.exe
+	RazerAppEngine.exe
+	svchost.exe
+	winlogon.exe
+    Error Getting User Process: Registry - Access is denied
+	dllhost.exe
+	AdobeUpdateService.exe
+	CCXProcess.exe
+    Error Getting User Process: SecurityHealthService - Access is denied
+	ServiceHub.ThreadedWaitDialog.exe
+	MicrosoftEdgeUpdate.exe
+	svchost.exe
+	WmiPrvSE.exe
+	warp-svc.exe
+	Discord.exe
+	Discord.exe
+	svchost.exe
+	sihost.exe
+	msedge.exe
+	explorer.exe
+	svchost.exe
+	msedgewebview2.exe
+	conhost.exe
+	svchost.exe
+	svchost.exe
+	msedge.exe
+	cmd.exe
+	msedgewebview2.exe
+	svchost.exe
+	Riot Client.exe
+	svchost.exe
+	svchost.exe
+	svchost.exe
+	msedge.exe
+    Error Getting User Process: svchost - Access is denied
+	ServiceHub.VSDetouredHost.exe
+	CoreSync.exe
+	SearchApp.exe
+	svchost.exe
+	svchost.exe
+	Creative Cloud UI Helper.exe
+	CompPkgSrv.exe
+	ServiceHub.IndexingService.exe
+	svchost.exe
+	SearchIndexer.exe
+	msedgewebview2.exe
+	RazerAppEngine.exe
+	svchost.exe
+	RazerAppEngine.exe
+	svchost.exe
+	svchost.exe
+	svchost.exe
+	nvcontainer.exe
+	svchost.exe
+	svchost.exe
+	msedgewebview2.exe
+	svchost.exe
+	msedge.exe
+	lsass.exe
+	ms-teams.exe
+	RazerAppEngine.exe
+	svchost.exe
+	LsaIso.exe
+    ERROR SCANNING: LsaIso - Failed to enumerate process modules
+	TextInputHost.exe
+	Riot Client.exe
+	ServiceHub.IntellicodeModelService.exe
+	GigabyteUpdateService.exe
+	msedge.exe
+	svchost.exe
+	RazerAppEngine.exe
+	FileCoAuth.exe
+	msedge.exe
+	SearchFilterHost.exe
+	svchost.exe
+	nvcontainer.exe
+    Error Getting User Process: csrss - Access is denied
+	svchost.exe
+	msedge.exe
+	svchost.exe
+	dasHost.exe
+	vmware-tray.exe
+	svchost.exe
+	devenv.exe
+	msedge.exe
+	msedgewebview2.exe
+	msedgewebview2.exe
+	msedge.exe
+	svchost.exe
+	dasHost.exe
+	msedgewebview2.exe
+	node.exe
+    Error Getting User Process: svchost - Access is denied
+	Riot Client.exe
+	Creative Cloud Helper.exe
+	svchost.exe
+	RiotClientServices.exe
+	cmd.exe
+	msedge.exe
+	plugin_host-3.8.exe
+	svchost.exe
+	svchost.exe
+	Discord.exe
+    Error Getting User Process: services - Access is denied
+	msedge.exe
+    Error Getting User Process: MpDefenderCoreService - Access is denied
+	svchost.exe
+	svchost.exe
+	msedge.exe
+	OneDrive.exe
+	svchost.exe
+	msedge.exe
+	svchost.exe
+	Creative Cloud UI Helper.exe
+	Microsoft.ServiceHub.Controller.exe
+	msedge.exe
+	msedgewebview2.exe
+	msedge.exe
+	die.exe
+	sublime_text.exe
+	Creative Cloud.exe
+	RuntimeBroker.exe
+    Error Getting User Process: csrss - Access is denied
+    Error Getting User Process: System - Access is denied
+	msedge.exe
+	UltraViewer_Service.exe
+    Error Getting User Process: Idle - Access is denied
+
+FINISHED SCANNING PROCESSES...
+
+No Mono processess found:
