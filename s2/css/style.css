@@ -1,0 +1,393 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif; /* Use Poppins font */
+    margin: 0;
+    padding: 0;
+    background-color: #fff5e1; /* Light cream background */
+    color: #333; /* Dark gray text */
+    min-height: 100vh;          /* Ensure body takes full viewport height */
+    display: flex;              /* Use flex layout to stack header/main/footer */
+    flex-direction: column;     /* Stack children vertically */
+}
+
+/* Header Styles */
+header {
+  position: sticky;           /* Stick header to top on scroll */
+  top: 0;
+  z-index: 3;                 /* Make sure header is above other content */
+  background-color: #ff6f61;  /* Coral background */
+  display: flex;              /* Flex container */
+  align-items: center;        /* Vertical centering */
+  justify-content: space-between; /* Space between title and nav */
+  padding: 15px 20px;
+  color: white;               /* White text */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  height: 70px;               /* Fixed height for consistent alignment */
+}
+
+header h1 {
+  font-size: 1.7rem;
+  margin: 0;
+  font-weight: 400;           /* Normal weight */
+}
+
+/* Navigation Styles */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;               /* Take remaining horizontal space */
+}
+
+nav ul {
+  list-style: none;           /* Remove bullets */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;                  /* Spacing between nav items */
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  text-decoration: none;      /* Remove underline */
+  color: white;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 5px;         /* Rounded corners on links */
+  transition: background-color 0.3s; /* Smooth hover effect */
+}
+
+/* Highlight active menu item and on hover/focus */
+nav a.active,
+nav ul li a:hover,
+nav ul li a:focus {
+  background-color: #ff8c7f;  /* Lighter coral highlight */
+  outline: none;              /* Remove default focus outline */
+}
+
+/* Hide the checkbox input for nav toggle */
+#nav-toggle {
+  display: none;
+}
+
+/* Hamburger menu icon */
+.nav-toggle-label {
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;              /* Hidden on desktop */
+  color: white;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 900px) {
+  .nav-toggle-label {
+    display: block;           /* Show hamburger icon */
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  nav {
+    flex-grow: 0;             /* Disable horizontal flex growth */
+  }
+
+  nav ul {
+    display: none;            /* Hide menu initially */
+    flex-direction: column;   /* Stack menu items vertically */
+    position: absolute;
+    top: 100%;                /* Position below header */
+    left: 0;
+    width: 100vw;             /* Full viewport width */
+    background-color: rgba(255, 111, 97, 0.9); /* Semi-transparent coral background */
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    z-index: 2;               /* Above other content */
+  }
+
+  /* Show menu when nav toggle is checked */
+  #nav-toggle:checked ~ ul {
+    display: flex;
+  }
+
+  nav ul li {
+    width: 100%;              /* Full width menu items */
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle separator */
+  }
+
+  nav ul li a {
+    display: block;
+    width: 100%;              /* Make entire item clickable */
+  }
+}
+
+/* Main Content Styles */
+main h1 {
+    text-align: center;
+    color: #ff6f61;            /* Coral color for headings */
+}
+
+/* Grow main content to fill available space */
+main {
+    flex-grow: 1; 
+}
+
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2rem;
+    color: #ff6f61;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 20px;       /* Center paragraphs with bottom margin */
+}
+
+/* Introduction section with background image and overlay */
+.introduction {
+    background-image: url('../images/background.jpg'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;        /* For overlay positioning */
+}
+
+/* Dark overlay over the intro background */
+.introduction::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black */
+    z-index: 1;
+}
+
+/* Content inside intro section positioned above overlay */
+.intro-content {
+    position: relative;
+    z-index: 2;
+}
+
+.intro-content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Ice Cream Images Section */
+.ice-cream-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;           /* Wrap images on smaller screens */
+}
+
+.ice-cream-images img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;       /* Rounded corners on images */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s;
+}
+
+.ice-cream-images img:hover {
+    transform: scale(1.1);     /* Slight zoom on hover */
+}
+
+/* Ice cream item container */
+.ice-cream-item {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    max-width: 200px;
+}
+
+.ice-cream-item h3 {
+    font-size: 1.5rem;
+    color: #ff6f61;
+}
+
+.ice-cream-item p {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.ice-cream-item .credit {
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 8px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #ff6f61;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    bottom: 0;
+    display: block;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Form Styles */
+form {
+    max-width: 500px;          /* Max width of form */
+    min-width: 280px;          /* Min width for smaller screens */
+    width: 90%;                /* Responsive width */
+    margin: 40px auto;         /* Center form with vertical spacing */
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 12px;       /* Rounded corners */
+    box-shadow: 0 8px 20px rgba(255, 111, 97, 0.2); /* Soft shadow */
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+/* Fieldsets without borders, with spacing */
+form fieldset {
+    border: none;
+    margin-bottom: 20px;
+}
+
+/* Legend styling */
+form legend {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #ff6f61;
+    margin-bottom: 10px;
+}
+
+/* Labels */
+form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+/* Inputs and selects styling */
+form input[type="text"],
+form input[type="password"],
+form input[type="tel"],
+form input[type="month"],
+form input[type="email"],
+form select {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 1rem;
+    border: 1.8px solid #ff6f61; /* Coral border */
+    border-radius: 6px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+/* Focus state for inputs and selects */
+form input[type="text"]:focus,
+form input[type="password"]:focus,
+form input[type="tel"]:focus,
+form input[type="month"]:focus,
+form input[type="email"]:focus,
+form select:focus {
+    border-color: #ff8c7f; /* Lighter coral */
+    outline: none;
+}
+
+/* Radio and checkbox group paragraph styling */
+form fieldset p {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/* Radio and checkbox inputs inline with label */
+form label input[type="radio"],
+form label input[type="checkbox"] {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* Label inline display for radio/checkbox */
+form label {
+    display: inline-block;
+    margin-right: 15px;
+    font-weight: 400;
+}
+
+/* Submit button styles */
+form button[type="submit"] {
+    background-color: #ff6f61;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    width: 100%;              /* Full width button */
+}
+
+form button[type="submit"]:hover {
+    background-color: #ff856f; /* Slightly lighter coral */
+}
+
+/* Textarea styling */
+form textarea {
+  width: 100%;
+  max-width: 100%;
+  min-height: 80px;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1.8px solid #ff6f61;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+  resize: none;             /* Only vertical resize allowed */
+  overflow-y: auto;
+}
+
+form textarea:focus {
+  border-color: #ff8c7f;
+  outline: none;
+}
+
+/* Hide delivery address section initially */
+div#deliveryAddressSection {
+    display: none;
+}
+
+/* Hide credit card section initially */
+div#creditCardSection {
+    display: none;
+}

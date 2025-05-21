@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Sweet Life Ice Cream Shop</title> 
+
+    <!-- External CSS stylesheet -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Google Fonts: Poppins font family -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- jQuery library from CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="./js/script.js"></script>
+</head>
+<body>
+    <!-- Header containing site title and navigation menu -->
+    <header>
+        <h1>Sweet Life</h1> 
+
+        <nav>
+            <!-- Checkbox for toggling nav menu on smaller screens -->
+            <input type="checkbox" id="nav-toggle">
+            <!-- Label linked to checkbox acts as hamburger icon -->
+            <label for="nav-toggle" class="nav-toggle-label">&#9776;</label>
+            <!-- Navigation links -->
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="features.html">Features</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content: registration form -->
+    <main>
+        <!-- Form for user registration -->
+        <form id="registerForm" method="POST" action="http://mercury.swin.edu.au/it000000/cos10005/regtest.php" novalidate>
+            <!-- novalidate disables browser default validation for custom JS validation -->
+
+            <!-- Fieldset grouping personal info fields -->
+            <fieldset>
+                <legend>Personal Information</legend>
+
+                <!-- Username input -->
+                <label for="username">Username: *</label>
+                <input type="text" id="username" name="username" required>
+
+                <!-- Password input -->
+                <label for="password">Password: *</label>
+                <input type="password" id="password" name="password" minlength="9" required>
+
+                <!-- Retype Password input -->
+                <label for="password">Retype Password: *</label>
+                <input type="password" id="retypepsswd" name="retypepsswd" minlength="9" required>
+
+                <!-- Email input -->
+                <label for="email">Email: *</label>
+                <input type="email" id="email" name="email" required>
+
+                <!-- Gender radio buttons -->
+                <p>Gender: *</p>
+                <label><input type="radio" name="gender" value="Male" id="genderm" required> Male</label>
+                <label><input type="radio" name="gender" value="Female" id="genderf"> Female</label>
+                <label><input type="radio" name="gender" value="Other">Other</label>
+            </fieldset>
+
+            <!-- Fieldset grouping favorite ice cream flavors -->
+            <fieldset>
+                <legend>Favourite Ice Cream</legend>
+                <p>Select your favourite flavours: *</p>
+
+                <!-- Multiple checkbox inputs for flavors -->
+                <label>
+                  <input type="checkbox" name="flavour" value="Chocolate" id="ice1"> Chocolate
+                </label>
+                <label>
+                  <input type="checkbox" name="flavour" value="Vanilla" id="ice2"> Vanilla
+                </label>
+                <label>
+                  <input type="checkbox" name="flavour" value="Strawberry" id="3"> Strawberry
+                </label>
+                <label>
+                  <input type="checkbox" name="flavour" value="Mint" id="ice4"> Mint
+                </label>
+            </fieldset>
+
+            <!-- Fieldset for country selection -->
+            <fieldset>
+                <legend>Country</legend>
+
+                <!-- Dropdown select for country -->
+                <label for="country">Select your country: *</label>
+                <select id="country" name="country" required>
+                  <option value="">--Please choose an option--</option> <!-- Placeholder option -->
+                  <option value="Australia">Australia</option>
+                  <option value="USA">USA</option>
+                  <option value="Canada">Canada</option>
+                  <option value="Other">Other</option>
+                </select>
+            </fieldset>
+
+            <!-- Submit button to send form data -->
+            <button type="submit">Register</button>
+        </form>
+    </main>
+
+    <!-- Page footer -->
+    <footer>
+        <p>&copy; 2025 Sweet Life Ice Cream Shop. All rights reserved.</p>
+    </footer>
+</body>
+</html>
