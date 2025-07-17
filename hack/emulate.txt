@@ -1,0 +1,7 @@
+exceptional.jozeph.xyz
+3306
+color_bolt
+private
+P@ssw0rd@exceptional
+1.0.0
+0y 0m 0d 1h 0m
