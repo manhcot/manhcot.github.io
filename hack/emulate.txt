@@ -1,7 +1,0 @@
-mysql-322842fc-vuonx0-bd8f.e.aivencloud.com
-11757
-defaultdb
-avnadmin
-AVNS_rOxydlVvw695fbe_Ofe
-1.0.0
-0y 0m 0d 1h 0m
