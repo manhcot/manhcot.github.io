@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Lịch Sử Puzzle Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>📜 Lịch Sử Puzzle Quiz 🧩</h1>
+
+    <div id="game-container">
+        <!-- Question Box -->
+        <div id="question-box">
+            <h2 id="question-text"></h2>
+            <div id="answers"></div>
+        </div>
+
+        <!-- Puzzle Area -->
+        <div id="puzzle-area">
+            <div id="grid"></div>
+            <div id="sidebar">
+                <h3>Mảnh kế tiếp</h3>
+                <div id="next-piece" draggable="true"></div>
+                <button id="rotate-btn">⟳ Xoay 90°</button>
+                <p>Điểm: <span id="score">0</span></p>
+            </div>
+        </div>
+    </div>
+    <div id="wrong-answer-popup" class="hidden">
+      ❌ Câu trả lời sai, thử lại nhé!
+    </div>
+
+    <div id="overlay" class="hidden">
+        <div class="overlay-content">
+            <h2>Kết thúc trò chơi 🎉</h2>
+            <p>Điểm của bạn: <span id="final-score"></span></p>
+            <button id="replay-btn">Replay</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
