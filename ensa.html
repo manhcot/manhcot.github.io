@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ENSA Study Guide</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    background: #0F172A;
+    color: #E2E8F0;
+    min-height: 100vh;
+    padding: 16px;
+  }
+
+  .container { max-width: 800px; margin: 0 auto; }
+
+  .header { text-align: center; margin-bottom: 24px; padding: 20px 0; }
+  .header h1 { font-size: 26px; font-weight: 800; color: #F8FAFC; letter-spacing: -0.5px; }
+  .header p { color: #94A3B8; font-size: 14px; margin-top: 6px; }
+
+  .tab-bar {
+    display: flex; gap: 4px; margin-bottom: 20px;
+    background: #1E293B; border-radius: 10px; padding: 4px;
+  }
+  .tab-btn {
+    flex: 1; padding: 10px 8px; border: none; border-radius: 8px;
+    cursor: pointer; font-size: 13px; font-weight: 600;
+    transition: all 0.2s; background: transparent; color: #94A3B8;
+    font-family: inherit;
+  }
+  .tab-btn.active { background: #3B82F6; color: #fff; }
+
+  /* Overview */
+  .overview-card {
+    display: block; width: 100%; text-align: left;
+    border: 1px solid #334155; background: #1E293B; border-radius: 10px;
+    padding: 14px 16px; margin-bottom: 8px; cursor: pointer;
+    transition: all 0.2s; font-family: inherit; color: inherit;
+  }
+  .overview-card-top { display: flex; justify-content: space-between; align-items: center; }
+  .overview-lec { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+  .overview-title { color: #F1F5F9; font-size: 15px; font-weight: 700; margin-top: 2px; }
+  .overview-arrow { color: #64748B; font-size: 20px; }
+  .overview-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .overview-tag { font-size: 11px; padding: 3px 8px; border-radius: 6px; font-weight: 600; }
+
+  .big-picture {
+    margin-top: 24px; padding: 16px; background: #1E293B;
+    border-radius: 10px; border: 1px solid #334155;
+  }
+  .big-picture-title { font-size: 14px; font-weight: 700; color: #F8FAFC; margin-bottom: 10px; }
+  .big-picture-text { font-size: 13px; color: #94A3B8; line-height: 1.7; }
+
+  /* Study Cards */
+  .search-wrap { position: relative; margin-bottom: 16px; }
+  .search-input {
+    width: 100%; padding: 12px 16px 12px 40px;
+    background: #1E293B; border: 1px solid #334155; border-radius: 10px;
+    color: #F1F5F9; font-size: 14px; outline: none; font-family: inherit;
+  }
+  .search-input::placeholder { color: #64748B; }
+  .search-input:focus { border-color: #3B82F6; }
+  .search-icon {
+    position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+    color: #64748B; font-size: 16px; pointer-events: none;
+  }
+
+  .lecture-btn {
+    width: 100%; text-align: left; border: 1px solid #334155;
+    background: #1E293B; padding: 14px 16px; cursor: pointer;
+    transition: all 0.15s; font-family: inherit; color: inherit;
+    border-radius: 10px;
+  }
+  .lecture-btn.open { border-radius: 10px 10px 0 0; }
+  .lecture-top { display: flex; justify-content: space-between; align-items: center; }
+  .lecture-lec { font-size: 11px; font-weight: 700; }
+  .lecture-title { color: #F1F5F9; font-size: 15px; font-weight: 700; margin-top: 2px; }
+  .lecture-right { display: flex; align-items: center; gap: 8px; }
+  .lecture-count { font-size: 11px; color: #64748B; font-weight: 600; }
+  .lecture-arrow { color: #64748B; font-size: 16px; transition: transform 0.2s; display: inline-block; }
+  .lecture-arrow.open { transform: rotate(90deg); }
+
+  .lecture-body {
+    border: 1px solid #334155; border-top: none;
+    border-radius: 0 0 10px 10px; background: #151D2E; padding: 8px;
+  }
+
+  .topic-btn {
+    width: 100%; text-align: left; background: #1E293B; border: none;
+    border-radius: 8px; padding: 10px 14px; cursor: pointer;
+    color: #CBD5E1; font-size: 13px; font-weight: 700;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: inherit;
+  }
+  .topic-meta { font-size: 11px; color: #64748B; font-weight: 400; }
+
+  .fact-card {
+    border-radius: 8px; padding: 12px 14px; margin-bottom: 4px;
+    cursor: pointer; transition: all 0.15s;
+  }
+  .fact-card.hidden { background: #192133; border-left: 3px solid #334155; }
+  .fact-card.revealed { background: #1E293B; }
+  .fact-question { font-size: 13px; font-weight: 600; color: #E2E8F0; line-height: 1.5; }
+  .fact-answer {
+    margin-top: 8px; font-size: 13px; color: #94A3B8; line-height: 1.7;
+    padding-top: 8px; border-top: 1px solid #334155;
+  }
+  .fact-hint { font-size: 11px; color: #475569; margin-top: 4px; }
+
+  .no-results { text-align: center; padding: 40px; color: #64748B; font-size: 14px; }
+
+  /* Compare */
+  .compare-intro { color: #94A3B8; font-size: 13px; margin-bottom: 16px; line-height: 1.6; }
+
+  .compare-table {
+    margin-bottom: 16px; border: 1px solid #334155;
+    border-radius: 10px; overflow: hidden;
+  }
+  .compare-title {
+    background: #1E293B; padding: 12px 16px;
+    font-weight: 700; font-size: 14px; color: #F1F5F9;
+  }
+  .compare-scroll { overflow-x: auto; }
+  .compare-scroll table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .compare-scroll td {
+    padding: 10px 12px; vertical-align: top; line-height: 1.5;
+  }
+  .compare-scroll tr { border-top: 1px solid #1E293B; }
+  .compare-scroll td:first-child {
+    color: #CBD5E1; font-weight: 600; background: #1E293B; width: 25%;
+  }
+  .compare-scroll td:not(:first-child) { color: #94A3B8; background: #151D2E; }
+  .compare-scroll td:not(:last-child) { border-right: 1px solid #1E293B; }
+
+  .traps { margin-top: 16px; padding: 16px; background: #1E293B; border-radius: 10px; border: 1px solid #334155; }
+  .traps-title { font-size: 14px; font-weight: 700; color: #F8FAFC; margin-bottom: 10px; }
+  .traps-body { font-size: 13px; color: #94A3B8; line-height: 1.8; }
+  .traps-body .trap { margin-bottom: 8px; }
+  .traps-body .trap:last-child { margin-bottom: 0; }
+  .trap-label { color: #F59E0B; font-weight: 600; }
+
+  .footer { text-align: center; padding: 24px 0 12px; color: #475569; font-size: 11px; }
+
+  .lecture-wrap { margin-bottom: 8px; }
+  .topic-wrap { margin-bottom: 6px; }
+  .facts-list { padding: 4px 0; }
+
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>ENSA Study Guide</h1>
+    <p id="subtitle"></p>
+  </div>
+
+  <div class="tab-bar">
+    <button class="tab-btn active" data-tab="overview">Overview</button>
+    <button class="tab-btn" data-tab="study">Study Cards</button>
+    <button class="tab-btn" data-tab="compare">Compare</button>
+  </div>
+
+  <div id="tab-overview" class="tab-content active"></div>
+  <div id="tab-study" class="tab-content"></div>
+  <div id="tab-compare" class="tab-content"></div>
+
+  <div class="footer">ENSA 2026s1 &middot; Swinburne &middot; Study Guide from Lectures 1&ndash;11</div>
+</div>
+
+<script>
+const studyData = [
+  {
+    id: 1, title: "DNS, DHCP & IPAM", lecture: "Lecture 1", color: "#3B82F6",
+    topics: [
+      { heading: "DNS Fundamentals", facts: [
+        { q: "What is a DNS Zone?", a: "A database on a DNS server that supports name resolution for a portion of the DNS namespace, starting with a domain (e.g. contoso.com). Contains DNS records." },
+        { q: "Two types of DNS zone storage?", a: "Text file (stored on the server) and Active Directory Integrated (stored on domain controllers using multi-master replication)." },
+        { q: "Key DNS record types?", a: "SOA (Start of Authority), NS (Name Server), A (Host – maps name to IPv4), AAAA (IPv6), CNAME (Alias), MX (Mail Exchange), SRV (Service Location), PTR (Reverse lookup)." },
+        { q: "What are Root Hints?", a: "A list of root DNS servers that a DNS server can use to resolve queries for zones it doesn't host. Used for iterative queries." },
+        { q: "What is a Conditional Forwarder?", a: "A DNS server setting that forwards queries for a specific domain to a designated DNS server, rather than using root hints." },
+        { q: "What is a Stub Zone?", a: "A copy of a zone containing only the SOA, NS, and A records needed to identify the authoritative DNS servers for that zone. Used to keep delegations up to date." },
+      ]},
+      { heading: "DHCP Fundamentals", facts: [
+        { q: "What does DHCP do?", a: "Automatically assigns IP addresses and configuration to clients, eliminating common network configuration errors." },
+        { q: "DHCP Lease Generation process (DORA)?", a: "1) Client broadcasts DHCPDISCOVER, 2) Server(s) respond with DHCPOFFER, 3) Client broadcasts DHCPREQUEST to selected server, 4) Selected server sends DHCPACK." },
+        { q: "Why must DHCP server be authorized?", a: "DHCP Authorization registers the DHCP server service in Active Directory to prevent rogue DHCP servers from issuing invalid configurations." },
+        { q: "DHCP features since Windows Server 2016?", a: "Support for IPv6, DHCP on Server Core, DHCP Authorization in AD." },
+      ]},
+      { heading: "IPAM (IP Address Management)", facts: [
+        { q: "What is IPAM?", a: "A feature (since Server 2012) for deploying, monitoring, and administering IP infrastructure. Manages all aspects of DHCP and DNS servers, even across multiple AD DS forests." },
+        { q: "IPAM Server requirements?", a: "Must be a domain member but CANNOT be a domain controller. Should be a single-purpose server. Requires domain account logon." },
+        { q: "IPAM Components?", a: "IPAM Server (collects data from managed DNS/DHCP servers, manages Windows Internal Database), IPAM Client (Windows 8+ or Server 2012+ with RSAT), Managed Servers (DCs, NPS, DNS, DHCP servers)." },
+        { q: "Can IPAM manage IPv6?", a: "Only if IPv6 is enabled on the IPAM server itself." },
+      ]},
+    ]
+  },
+  {
+    id: 2, title: "AD DS Fundamentals", lecture: "Lecture 2", color: "#8B5CF6",
+    topics: [
+      { heading: "What is Active Directory?", facts: [
+        { q: "Core AD services?", a: "LDAP, DNS-based naming, Kerberos-based authentication (single sign-on), authorization & auditing, central administration and delegation, policy-based management." },
+        { q: "AD DS Database Partitions (4)?", a: "Schema (forest-level, rarely changes), Configuration (forest-level, rarely changes), Domain (domain-level, changes frequently – contains objects), Application (configurable replication, e.g. AD-integrated DNS zones)." },
+      ]},
+      { heading: "Global Catalog & RODC", facts: [
+        { q: "What is the Global Catalog (GC)?", a: "A searchable representation of every object in the forest with a subset of attributes. Stores Universal group memberships. The first DC must be a GC server. Best practice: designate at least one GC in each site." },
+        { q: "What is a Read-Only Domain Controller (RODC)?", a: "A DC that holds a read-only copy of the AD database. Used in branch offices with poor physical security. Cannot write changes back to AD." },
+      ]},
+      { heading: "Operations Master (FSMO) Roles", facts: [
+        { q: "Forest-wide Operations Masters (2)?", a: "Schema Master (controls schema updates) and Domain Naming Master (controls adding/removing domains in the forest)." },
+        { q: "Domain-wide Operations Masters (3)?", a: "PDC Emulator (time source, password changes, GPO editing), Infrastructure Master (maintains inter-domain references/SID resolution), RID Master (provides blocks of unique IDs to DCs)." },
+        { q: "What tool manages FSMO roles?", a: "ntdsutil – also handles AD DS database maintenance, DC metadata, and DSRM password reset." },
+      ]},
+      { heading: "Domain & Forest Functional Levels", facts: [
+        { q: "What do functional levels control?", a: "They enable domain- or forest-wide AD features while maintaining backward compatibility. Depend on the version of DCs in the domain/forest." },
+        { q: "Key difference between domain and forest functional levels?", a: "Forest functional level affects ALL domains within the forest. Domain functional level affects only that domain." },
+        { q: "Can you lower functional levels?", a: "Generally no – raising is a one-way operation (with some exceptions in newer versions)." },
+      ]},
+      { heading: "AD Administrative Tools", facts: [
+        { q: "AD Administrative Snap-ins?", a: "AD Users and Computers, AD Sites and Services, AD Domains and Trusts, AD Schema." },
+        { q: "How to install snap-ins on non-DCs?", a: "Use RSAT (Remote Server Administration Tools) via Windows Update." },
+        { q: "AD Recycle Bin?", a: "Feature (Server 2008 R2+) that allows restoring deleted AD objects without authoritative restore. Alternative to authoritative restore." },
+      ]},
+    ]
+  },
+  {
+    id: 3, title: "AD DS Design: Trusts, Sites & Replication", lecture: "Lecture 3", color: "#EC4899",
+    topics: [
+      { heading: "Trust Types", facts: [
+        { q: "Parent-Child Trust?", a: "Automatically created when a new child domain is added. Two-way transitive." },
+        { q: "Tree-Root Trust?", a: "Automatically created when a new domain tree is added to a forest. Two-way transitive." },
+        { q: "Forest Trust?", a: "Manually created between forest root domains. Can be one-way or two-way. Transitive to all domains within the trusting forest. Requires forest functional level Server 2003+." },
+        { q: "External Trust?", a: "Manually created between domains in different forests (or with non-AD domains). Non-transitive, one-way or two-way." },
+        { q: "Shortcut Trust?", a: "Non-transitive, one-way or two-way, between domains in the SAME forest but different trees. Improves authentication performance." },
+        { q: "Realm Trust?", a: "Between an AD domain and a non-Windows Kerberos realm. Can be transitive or non-transitive." },
+      ]},
+      { heading: "Trust Authentication Scopes", facts: [
+        { q: "Three scopes of trust authentication?", a: "Selective authentication, Domain-wide authentication, and Forest-wide authentication. Configured on external and forest trusts." },
+        { q: "Forest Trust requirements?", a: "Both must be forest root domains, forest functional level Server 2003+, DNS must work between forests, requires Domain Admins or Enterprise Admins permissions." },
+      ]},
+      { heading: "AD DS Sites", facts: [
+        { q: "What is a Site?", a: "A logical representation of a geographic area – a high-speed network boundary for replication optimization and service localization." },
+        { q: "Why create Sites?", a: "Replication management (control inter-site replication), Service localization (DCs, DFS, printers), Group Policy application (GPOs linked to sites)." },
+        { q: "What is a Site Link?", a: "Defines the logical replication link between sites for inter-site replication. Configured with costs and frequencies." },
+        { q: "Default site link?", a: "DEFAULTIPSITELINK – created at forest creation. New domains/DCs join this unless manually assigned." },
+      ]},
+      { heading: "Replication", facts: [
+        { q: "Intra-site vs Inter-site replication?", a: "Intra-site: between DCs in the SAME site (fast, frequent, uncompressed). Inter-site: between DCs in DIFFERENT sites (controlled by site links, compressed, scheduled)." },
+        { q: "KCC (Knowledge Consistency Checker)?", a: "Automatic process that builds and maintains the replication topology within and between sites." },
+      ]},
+    ]
+  },
+  {
+    id: 4, title: "Group Policy (GPO)", lecture: "Lecture 4", color: "#F59E0B",
+    topics: [
+      { heading: "GPO Basics", facts: [
+        { q: "What is a GPO?", a: "A Group Policy Object containing enforced policy settings that users cannot change. Has two components: Group Policy Container (stored in AD DS, provides version info) and Group Policy Template (stored in SYSVOL, contains actual settings)." },
+        { q: "Where is GPT stored?", a: "In the shared SYSVOL folder (default location). Will NOT replicate if moved from default location." },
+        { q: "Two default GPOs?", a: "Default Domain Policy (pre-linked to domain, applies to all domain users and non-DCs – security & power settings) and Default Domain Controller Policy (pre-linked to Domain Controllers OU, applies to DCs only – user rights)." },
+      ]},
+      { heading: "GPO Processing", facts: [
+        { q: "GPO processing order (LSDOU)?", a: "Local → Site → Domain → OU. Last applied wins (most specific wins)." },
+        { q: "How do GPOs apply?", a: "DCs store GPOs. The Group Policy Client service on the client downloads required GPOs. Client-Side Extensions then process the settings." },
+        { q: "What is GPO Enforcement (No Override)?", a: "Prevents lower-level GPOs from overriding the enforced GPO's settings. An enforced GPO at domain level overrides conflicting OU-level GPOs." },
+        { q: "What is Block Inheritance?", a: "Set on an OU to block GPOs from parent containers. However, Enforced GPOs still apply even when inheritance is blocked." },
+      ]},
+      { heading: "GPO Filtering & Targeting", facts: [
+        { q: "Security Filtering?", a: "Controls which users/groups/computers a GPO applies to. Default is Authenticated Users. Can be customized to specific Global groups." },
+        { q: "WMI Filtering?", a: "Uses WMI queries to determine if a GPO applies based on system attributes (e.g., OS version, hardware)." },
+        { q: "GPO Settings vs. Links?", a: "Settings are the actual GPO configurations (stored in Group Policy Objects container). Links attach a GPO to a Site, Domain, or OU." },
+      ]},
+      { heading: "Slow Links & Special Settings", facts: [
+        { q: "Slow Link Detection?", a: "If link speed < 500 Kbps, client processes GPOs differently (disables certain settings). Caching can apply cached GPO versions." },
+        { q: "Loopback Processing?", a: "Applies user GPO settings based on the COMPUTER the user logs into, not their OU. Two modes: Merge (combines both) and Replace (ignores user's OU settings)." },
+      ]},
+    ]
+  },
+  {
+    id: 5, title: "Network Connectivity & Remote Access", lecture: "Lecture 5", color: "#10B981",
+    topics: [
+      { heading: "VPN Fundamentals", facts: [
+        { q: "What is a VPN?", a: "A point-to-point connection between private network components through a public network (Internet). Scenarios: Remote Access and Site-to-Site." },
+        { q: "Three VPN characteristics?", a: "Authentication (identity verification), Encryption (data security in transit), Encapsulation (tunneling protocols wrap private data in public headers)." },
+      ]},
+      { heading: "VPN Tunneling Protocols", facts: [
+        { q: "PPTP?", a: "Widely supported but LEAST secure. For both Remote Access and S2S. Uses MS-CHAPv2 or EAP-TLS for auth/encryption." },
+        { q: "L2TP/IPsec?", a: "Combines PPTP and L2F. Requires IPsec in transport mode for encryption." },
+        { q: "SSTP?", a: "Uses SSL/TLS (port 443). Passes through most firewalls/NATs easily." },
+        { q: "IKEv2?", a: "Supports MOBIKE – maintains VPN connection when switching networks (Wi-Fi to cellular). Best for mobile devices." },
+      ]},
+      { heading: "DirectAccess (DA)", facts: [
+        { q: "What is DirectAccess?", a: "Seamless, transparent, always-on connectivity to the corporate network. No user action needed – connects automatically." },
+        { q: "DA Components?", a: "Network Location Server (NLS – determines if client is internal/external via HTTPS), DNS/NRPT (determines which DNS to use), AD DS (authentication + GPOs), PKI (optional, required for Win7 clients)." },
+        { q: "DA Server Requirements?", a: "Domain member but NOT a DC. At least one NIC on internal network. Public IPv4 for Internet adapter (edge topology). Windows Firewall enabled on all profiles. Remote Access server role installed." },
+        { q: "Always On VPN (Win10/Server 2016)?", a: "Successor to DA with broader support. Features: seamless connectivity, Infrastructure Tunnel, manage-out capability, supports servers behind NAT, machine certificate auth." },
+      ]},
+      { heading: "NPS & RADIUS", facts: [
+        { q: "What is NPS?", a: "Network Policy Server (since Server 2012 R2). Functions as RADIUS server (centralized auth/authorization/accounting) or RADIUS proxy (forwards requests to other RADIUS servers)." },
+        { q: "RADIUS clients?", a: "Network access points – Remote Access Servers (DA, VPN), Wired Access Points, Wireless Access Points." },
+        { q: "Connection Request Policy?", a: "Determines whether NPS processes the request locally or forwards it to another RADIUS server." },
+        { q: "Network Policy?", a: "Defines access permissions: Grant or Deny access. Configures connection type (Remote Desktop Gateway, VPN-Dial up)." },
+      ]},
+    ]
+  },
+  {
+    id: 6, title: "DFS, BranchCache & FSRM", lecture: "Lecture 6", color: "#EF4444",
+    topics: [
+      { heading: "Distributed File System (DFS)", facts: [
+        { q: "What is DFS?", a: "A set of technologies to organize multiple distributed SMB file shares into a unified distributed file system. Location is transparent to users. Provides redundancy while minimizing WAN traffic." },
+        { q: "DFS Components?", a: "DFS Namespace (provides the unified virtual folder structure) and DFS Replication (keeps folder targets synchronized)." },
+        { q: "Domain-based vs Stand-alone Namespace?", a: "Domain-based: config stored in AD, supports multiple namespace servers for high availability, name tied to domain. Stand-alone: stored on a single server, no AD integration, less fault-tolerant." },
+        { q: "DFS Scenarios?", a: "Data Collection (branch → hub), Data Sharing (sync between branches), Data Distribution (hub → branches to publish latest files)." },
+      ]},
+      { heading: "BranchCache", facts: [
+        { q: "When to use BranchCache vs DFS?", a: "BranchCache caches content locally at branch offices to reduce WAN usage. Better for read-heavy access. DFS provides file replication and unified namespace." },
+        { q: "Hosted Cache Mode?", a: "For larger branches. A dedicated local server caches content. Configured via GPO or auto-discovery with service connection points." },
+        { q: "Distributed Cache Mode?", a: "For smaller branches. Cache distributed among client computers (no local server). Clients must be on the same subnet." },
+        { q: "Content types supported?", a: "Web server (install BranchCache feature), File server (install BranchCache for Network Files role service + enable on shared folders), Application server using BITS." },
+      ]},
+      { heading: "FSRM (File Server Resource Manager)", facts: [
+        { q: "FSRM capabilities?", a: "Quota Management, File Screening, Storage Reports, File Classifications, File Management Tasks." },
+        { q: "Quota template defines?", a: "A space limit, type of quota (hard or soft), and notifications when limit is approached." },
+        { q: "Hard vs Soft quota?", a: "Hard: prevents users from exceeding the limit. Soft: monitors and sends notifications but allows exceeding." },
+      ]},
+      { heading: "Data Deduplication", facts: [
+        { q: "What is Data Deduplication?", a: "A Windows Server feature that optimizes storage on non-system volumes by finding and eliminating duplicate chunks of data." },
+      ]},
+    ]
+  },
+  {
+    id: 7, title: "High Availability: NLB & Failover Clustering", lecture: "Lecture 7", color: "#6366F1",
+    topics: [
+      { heading: "Network Load Balancing (NLB)", facts: [
+        { q: "What is NLB?", a: "A scalable, high-availability feature (since Server 2012). Distributes traffic across multiple servers using virtual IP addresses and a shared name. Provides fault tolerance and enhanced performance." },
+        { q: "NLB Cluster size?", a: "2 to 32 servers (called hosts). Each runs a separate copy of the application." },
+        { q: "Best suited for?", a: "Stateless applications (mission-critical web servers, FTP servers, SSH/Remote Desktop servers)." },
+        { q: "NLB Hardware Requirements?", a: "Hosts should be similar in capabilities. All on the same subnet. Minimal network latency. NICs must all use either multicast or unicast." },
+        { q: "NLB Software Requirements?", a: "All hosts should run same version/edition of Windows Server. All need static IP addresses. Identical admin user account in local Administrators group." },
+        { q: "Heartbeat & Convergence?", a: "Hosts exchange heartbeat messages. If a host fails to respond, convergence occurs – remaining hosts redistribute the traffic." },
+        { q: "NLB Configuration elements?", a: "Host parameters (what each node does), Cluster parameters (cluster-wide settings), Port rules (which services are balanced and how)." },
+      ]},
+      { heading: "Failover Clustering", facts: [
+        { q: "When to use Failover Clustering?", a: "For stateful applications (databases, file servers, Hyper-V). Provides automatic failover if a node fails." },
+        { q: "NLB vs Failover Clustering?", a: "NLB: stateless apps, load distribution, all nodes active. Failover: stateful apps, one active node with standby nodes, automatic failover." },
+        { q: "Failover Cluster Components?", a: "Cluster Service (manages resources), Cluster Network (IP-based, supports IPv4/IPv6), Cluster Nodes, Shared Storage, Applications." },
+        { q: "Quorum?", a: "A voting mechanism that determines if a cluster has enough members to operate. Prevents 'split-brain' scenarios." },
+        { q: "Cluster Shared Volumes (CSV)?", a: "Allows multiple nodes to simultaneously access the same storage volume. Required for Hyper-V guest clustering." },
+        { q: "Guest Clustering?", a: "A failover cluster made of VMs (not physical hosts). Hyper-V nodes must be physical. VM storage must be on shared storage configured as CSV." },
+        { q: "Cloud Witness (Server 2016)?", a: "Uses an Azure storage account as a quorum witness. Useful for stretched clusters or clusters without shared storage." },
+      ]},
+    ]
+  },
+  {
+    id: 8, title: "WSUS (Update Management)", lecture: "Lecture 8", color: "#F97316",
+    topics: [
+      { heading: "WSUS Architecture", facts: [
+        { q: "What is WSUS?", a: "Windows Server Update Services – downloads updates from Microsoft Update and distributes them to network clients in a controlled manner." },
+        { q: "Upstream vs Downstream WSUS?", a: "Upstream: downloads from Microsoft Update on the Internet. Downstream: downloads from upstream WSUS servers." },
+        { q: "Autonomous vs Replica mode?", a: "Autonomous: each site's admin evaluates and approves updates independently. Replica: upstream admins approve, downstream servers just distribute approved updates." },
+      ]},
+      { heading: "WSUS Deployment", facts: [
+        { q: "How are WSUS clients configured?", a: "Via Group Policy (GPO for Windows Update). The GPO is linked to the OU containing the client computers." },
+        { q: "Computer Groups?", a: "WSUS organizes clients into Computer Groups to control which updates are deployed to which computers." },
+        { q: "How to force client detection?", a: "Run wuauclt.exe /detectnow /reportnow on the client to force it to report to WSUS and check for new updates." },
+        { q: "Update approval process?", a: "Admin reviews updates → approves for specific computer groups → clients download and install approved updates." },
+      ]},
+    ]
+  },
+  {
+    id: 9, title: "AD CS, PKI & EFS", lecture: "Lecture 9", color: "#14B8A6",
+    topics: [
+      { heading: "PKI & AD CS Overview", facts: [
+        { q: "What is PKI?", a: "Public Key Infrastructure – a system of hardware, software, policies, and procedures that create, manage, and revoke digital certificates. Uses CAs to bind public keys with user identities." },
+        { q: "What is AD CS?", a: "Active Directory Certificate Services – a server role for issuing and managing digital certificates as part of PKI." },
+      ]},
+      { heading: "AD CS Role Services", facts: [
+        { q: "Certification Authority (CA)?", a: "Manages issuing, validating, and revoking certificates. Hierarchy of CAs provides HA and distributes workload." },
+        { q: "Certificate Enrollment Web Service?", a: "Allows computers (Win7+) to connect to CA through web services. Acts as proxy to CA for downloading root certs, requesting/renewing certificates, retrieving CRLs." },
+        { q: "Certificate Enrollment Policy Web Service?", a: "Enables retrieval of certificate enrollment policy information." },
+        { q: "CA Web Enrollment?", a: "Provides certificate issuing/renewal for non-Windows devices, non-domain members, or devices not directly connected to the network." },
+        { q: "Network Device Enrollment Service?", a: "Enables devices like routers and switches to obtain certificates from AD CS." },
+        { q: "Online Responder?", a: "Manages OCSP validation and revocation checking." },
+      ]},
+      { heading: "Certificate Templates", facts: [
+        { q: "What are Certificate Templates?", a: "Preconfigured rules and formats for certificate enrollment that simplify CA administration. Managed via Certificate Templates snap-in." },
+        { q: "Version 2 templates?", a: "Introduced in Server 2003. Support auto-enrollment. Created automatically with CA role. Can be modified or used as a base." },
+        { q: "Server 2016 supports how many template versions?", a: "Four template versions with different features." },
+      ]},
+      { heading: "EFS (Encrypting File System)", facts: [
+        { q: "How EFS works?", a: "Uses public key to encrypt files. Only the encrypter's private key (or the EFS Recovery Agent's key) can decrypt. Private key is accessible ONLY to its owner." },
+        { q: "EFS Recovery Agent?", a: "A designated account that can decrypt any EFS-encrypted file. Critical for organizations – prevents data loss if a user leaves or loses their key." },
+      ]},
+    ]
+  },
+  {
+    id: 10, title: "AD FS & AD RMS", lecture: "Lecture 10", color: "#A855F7",
+    topics: [
+      { heading: "AD FS (Active Directory Federation Services)", facts: [
+        { q: "What is AD FS?", a: "Enables Internet-facing B2B applications between organizations. Based on federation trusts. Allows SSO to apps/services in Azure, on-premises, or partner networks without multiple usernames/passwords." },
+        { q: "AD FS is ___-based?", a: "Claims-based – provides a scalable authentication model for Internet-facing applications." },
+        { q: "Claims-based Authentication?", a: "Users authenticate to AD and receive a claim/token. A trusted identity provider issues the token, which is presented to the relying party as proof of identity." },
+        { q: "To implement claims-based auth, configure:", a: "A claims provider trust AND a relying party trust." },
+        { q: "AD FS Configuration – two org types?", a: "Account organization (claim provider, contains user accounts – like trusted domain) and Resource organization (relying party, owns the resources – like trusting domain)." },
+        { q: "Single organization?", a: "The organization is BOTH the account organization and resource organization." },
+        { q: "Authentication Policies (Server 2012 R2+)?", a: "Define acceptable authentication mechanisms. Support multi-factor authentication for securing federation trust access." },
+      ]},
+      { heading: "AD RMS (Active Directory Rights Management Services)", facts: [
+        { q: "What is AD RMS?", a: "Provides extra security to documents. Minimizes unauthorized data transmission/leakage. Keeps confidential info within the organization. Protects data at rest and in transit." },
+        { q: "AD RMS integration?", a: "Integrates with Microsoft Exchange, SharePoint, and Office suite. Only works with AD RMS-aware applications." },
+        { q: "AD RMS Client?", a: "Built into Windows 7 and later. Devices that are not AD RMS-aware CANNOT access protected content." },
+        { q: "AD RMS Certificates & Licenses?", a: "Server Licensor Certificate (issued when deploying AD RMS cluster), Machine Certificate (identifies a computer/device), Rights Account Certificate (identifies a specific user), Publishing License (defines applied rights), End-user License (grants access to protected content), Client Licensor (enables user to publish protected content)." },
+        { q: "AD RMS Template Properties?", a: "Content expiration, Use license expiration, Browser add-on viewing, Require new use license each time, Revocation policies." },
+        { q: "AD RMS Backup?", a: "If VM: back up entire VM using Windows Backup with Hyper-V. If physical: back up entire machine including system state and all databases." },
+      ]},
+    ]
+  },
+  {
+    id: 11, title: "Dynamic Access Control (DAC)", lecture: "Lecture 11", color: "#06B6D4",
+    topics: [
+      { heading: "DAC Overview", facts: [
+        { q: "What is DAC?", a: "Dynamic Access Control (originally 'claims-based access control'). Available since Server 2012. Provides automatic mechanism to secure and control access using predefined expressions." },
+        { q: "DAC Functionality?", a: "Apply access control based on: resource classification, device being used for access, and user-specific Active Directory attributes." },
+        { q: "DAC vs traditional ACLs?", a: "Traditional: static, manual permissions per resource. DAC: dynamic, expression-based, automatic, real-time control using claims and resource properties." },
+        { q: "DAC Components?", a: "Claim Types (AD attributes used for access decisions), Resource Properties (tags/classifications on files), Central Access Rules (expression-based access conditions), Central Access Policies (collections of rules deployed via GPO)." },
+        { q: "How are Central Access Policies deployed?", a: "Through Group Policy (GPO) to file servers." },
+      ]},
+    ]
+  }
+];
+
+const bigPictureMap = [
+  { category: "Infrastructure Services", items: ["DNS", "DHCP", "IPAM"], lectures: [1], color: "#3B82F6" },
+  { category: "Identity & Directory", items: ["AD DS", "Forest/Domain/OU", "FSMO Roles", "GC/RODC"], lectures: [2], color: "#8B5CF6" },
+  { category: "AD Design", items: ["Trusts", "Sites", "Replication"], lectures: [3], color: "#EC4899" },
+  { category: "Policy Management", items: ["GPO", "LSDOU", "Filtering", "Loopback"], lectures: [4], color: "#F59E0B" },
+  { category: "Remote Access", items: ["VPN", "DirectAccess", "NPS/RADIUS", "Always On VPN"], lectures: [5], color: "#10B981" },
+  { category: "File & Storage Services", items: ["DFS", "BranchCache", "FSRM", "Dedup"], lectures: [6], color: "#EF4444" },
+  { category: "High Availability", items: ["NLB", "Failover Clustering", "CSV", "Guest Clustering"], lectures: [7], color: "#6366F1" },
+  { category: "Update Management", items: ["WSUS", "Upstream/Downstream", "Computer Groups"], lectures: [8], color: "#F97316" },
+  { category: "Certificates & Encryption", items: ["PKI", "AD CS", "EFS", "Certificate Templates"], lectures: [9], color: "#14B8A6" },
+  { category: "Federation & Rights", items: ["AD FS", "AD RMS", "Claims-based Auth", "SSO"], lectures: [10], color: "#A855F7" },
+  { category: "Dynamic Access", items: ["DAC", "Claims", "Central Access Policies"], lectures: [11], color: "#06B6D4" },
+];
+
+const quickCompare = [
+  { title: "NLB vs Failover Clustering", rows: [
+    ["Purpose", "Load balancing (distribute traffic)", "Automatic failover (standby takeover)"],
+    ["Best for", "Stateless apps (web servers)", "Stateful apps (databases, Hyper-V, file servers)"],
+    ["Max nodes", "2–32 hosts", "Up to 64 nodes"],
+    ["Storage", "No shared storage needed", "Requires shared storage"],
+    ["All nodes active?", "Yes – all serve traffic", "No – active/passive (or active/active for some roles)"],
+  ]},
+  { title: "DFS vs BranchCache", rows: [
+    ["Purpose", "Unified namespace + file replication", "Local caching to reduce WAN usage"],
+    ["When to use", "Users need access to same files across sites", "Branch users access central files frequently"],
+    ["Architecture", "DFS Namespace + DFS Replication", "Hosted Cache or Distributed Cache mode"],
+    ["Storage", "Full copies replicated to targets", "Cached on demand at branch"],
+  ]},
+  { title: "AD FS vs AD RMS", rows: [
+    ["Purpose", "SSO & federation between organizations", "Document-level rights protection"],
+    ["Mechanism", "Claims-based authentication tokens", "Publishing/Use licenses on documents"],
+    ["Scope", "Cross-organization identity", "Within-organization data security"],
+    ["Key concept", "Federation trust (Account org ↔ Resource org)", "Rights templates (expiration, access levels)"],
+  ]},
+  { title: "Hosted Cache vs Distributed Cache (BranchCache)", rows: [
+    ["Server needed?", "Yes – dedicated local server", "No – peer-to-peer among clients"],
+    ["Branch size", "Larger branches", "Smaller branches"],
+    ["Subnet", "Can span subnets", "All clients on same subnet"],
+    ["Configuration", "GPO or auto-discovery via SCP", "GPO – default mode"],
+  ]},
+  { title: "VPN Protocols Compared", rows: [
+    ["PPTP", "Widely supported, least secure", "MS-CHAPv2 or EAP-TLS"],
+    ["L2TP/IPsec", "Combines PPTP + L2F, requires IPsec", "Machine certificates or PSK"],
+    ["SSTP", "SSL/TLS, port 443, firewall-friendly", "SSL certificates"],
+    ["IKEv2", "MOBIKE (network switching), mobile-ideal", "Machine certificates"],
+  ]},
+];
+
+// State
+let activeTab = "overview";
+let expandedLecture = null;
+const expandedTopics = {};
+const shownAnswers = {};
+let searchQuery = "";
+
+const totalFacts = studyData.reduce((sum, lec) =>
+  sum + lec.topics.reduce((s, t) => s + t.facts.length, 0), 0);
+
+document.getElementById("subtitle").textContent =
+  `${studyData.length} lectures · ${totalFacts} key facts · MCQ ready`;
+
+// Tab switching
+document.querySelectorAll(".tab-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    activeTab = btn.dataset.tab;
+    document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
+    document.getElementById("tab-" + activeTab).classList.add("active");
+  });
+});
+
+function esc(str) {
+  const d = document.createElement("div");
+  d.textContent = str;
+  return d.innerHTML;
+}
+
+// Render Overview
+function renderOverview() {
+  const el = document.getElementById("tab-overview");
+  let html = `<p style="color:#94A3B8;font-size:13px;margin-bottom:16px;line-height:1.6">
+    How the unit fits together — each row is one lecture topic area. Tap any to jump to its study cards.
+  </p>`;
+
+  bigPictureMap.forEach(cat => {
+    const tags = cat.items.map(item =>
+      `<span class="overview-tag" style="background:${cat.color}18;color:${cat.color}">${esc(item)}</span>`
+    ).join("");
+    html += `<button class="overview-card" style="border-left:4px solid ${cat.color}" data-lec="${cat.lectures[0]}">
+      <div class="overview-card-top">
+        <div>
+          <span class="overview-lec" style="color:${cat.color}">Lec ${cat.lectures[0]}</span>
+          <div class="overview-title">${esc(cat.category)}</div>
+        </div>
+        <span class="overview-arrow">→</span>
+      </div>
+      <div class="overview-tags">${tags}</div>
+    </button>`;
+  });
+
+  html += `<div class="big-picture">
+    <div class="big-picture-title">Security Big Picture</div>
+    <p class="big-picture-text">
+      <span style="color:#10B981;font-weight:600">Authorized Access</span> = Availability via redundancy → DFS, NLB, Failover Clustering<br>
+      <span style="color:#EF4444;font-weight:600">Unauthorized Access</span> = Prevention/restriction → EFS, AD RMS, GPO, DAC<br>
+      <span style="color:#3B82F6;font-weight:600">Tools</span> = IPAM, GPMC, AD CS, AD FS, WSUS, NPS
+    </p>
+  </div>`;
+
+  el.innerHTML = html;
+
+  el.querySelectorAll(".overview-card").forEach(card => {
+    card.addEventListener("click", () => {
+      expandedLecture = parseInt(card.dataset.lec);
+      document.querySelector('[data-tab="study"]').click();
+      renderStudy();
+    });
+  });
+}
+
+// Render Study Cards
+function renderStudy() {
+  const el = document.getElementById("tab-study");
+  const q = searchQuery.toLowerCase().trim();
+
+  let data = studyData;
+  if (q) {
+    data = studyData.map(lec => ({
+      ...lec,
+      topics: lec.topics.map(topic => ({
+        ...topic,
+        facts: topic.facts.filter(f =>
+          f.q.toLowerCase().includes(q) || f.a.toLowerCase().includes(q)
+        )
+      })).filter(t => t.facts.length > 0)
+    })).filter(lec => lec.topics.length > 0);
+  }
+
+  let html = `<div class="search-wrap">
+    <input type="text" class="search-input" id="search-input"
+      placeholder="Search any concept, keyword, or term..."
+      value="${esc(searchQuery)}">
+    <span class="search-icon">🔍</span>
+  </div>`;
+
+  if (data.length === 0) {
+    html += `<div class="no-results">No results for "${esc(searchQuery)}". Try a different keyword.</div>`;
+  } else {
+    data.forEach(lec => {
+      const isOpen = expandedLecture === lec.id;
+      const factCount = lec.topics.reduce((s, t) => s + t.facts.length, 0);
+
+      html += `<div class="lecture-wrap">
+        <button class="lecture-btn${isOpen ? " open" : ""}" style="border-left:4px solid ${lec.color}" data-lid="${lec.id}">
+          <div class="lecture-top">
+            <div>
+              <span class="lecture-lec" style="color:${lec.color}">${esc(lec.lecture)}</span>
+              <div class="lecture-title">${esc(lec.title)}</div>
+            </div>
+            <div class="lecture-right">
+              <span class="lecture-count">${factCount} cards</span>
+              <span class="lecture-arrow${isOpen ? " open" : ""}">▶</span>
+            </div>
+          </div>
+        </button>`;
+
+      if (isOpen) {
+        html += `<div class="lecture-body">`;
+        lec.topics.forEach((topic, ti) => {
+          const topicKey = `${lec.id}-${ti}`;
+          const topicOpen = expandedTopics[topicKey] !== false;
+
+          html += `<div class="topic-wrap">
+            <button class="topic-btn" data-tkey="${topicKey}">
+              <span>${esc(topic.heading)}</span>
+              <span class="topic-meta">${topic.facts.length} Q&amp;A ${topicOpen ? "▾" : "▸"}</span>
+            </button>`;
+
+          if (topicOpen) {
+            html += `<div class="facts-list">`;
+            topic.facts.forEach((fact, fi) => {
+              const factKey = `${lec.id}-${ti}-${fi}`;
+              const revealed = !!shownAnswers[factKey];
+              html += `<div class="fact-card ${revealed ? "revealed" : "hidden"}" style="${revealed ? "border-left:3px solid " + lec.color : ""}" data-fkey="${factKey}">
+                <div class="fact-question">${esc(fact.q)}</div>
+                ${revealed
+                  ? `<div class="fact-answer">${esc(fact.a)}</div>`
+                  : `<div class="fact-hint">Tap to reveal answer</div>`
+                }
+              </div>`;
+            });
+            html += `</div>`;
+          }
+          html += `</div>`;
+        });
+        html += `</div>`;
+      }
+      html += `</div>`;
+    });
+  }
+
+  el.innerHTML = html;
+
+  const searchInput = document.getElementById("search-input");
+  if (searchInput) {
+    searchInput.addEventListener("input", (e) => {
+      searchQuery = e.target.value;
+      renderStudy();
+      const inp = document.getElementById("search-input");
+      if (inp) { inp.focus(); inp.selectionStart = inp.selectionEnd = inp.value.length; }
+    });
+  }
+
+  el.querySelectorAll(".lecture-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const lid = parseInt(btn.dataset.lid);
+      expandedLecture = expandedLecture === lid ? null : lid;
+      renderStudy();
+    });
+  });
+
+  el.querySelectorAll(".topic-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const key = btn.dataset.tkey;
+      expandedTopics[key] = expandedTopics[key] === false ? true : false;
+      renderStudy();
+    });
+  });
+
+  el.querySelectorAll(".fact-card").forEach(card => {
+    card.addEventListener("click", () => {
+      const key = card.dataset.fkey;
+      shownAnswers[key] = !shownAnswers[key];
+      renderStudy();
+    });
+  });
+}
+
+// Render Compare
+function renderCompare() {
+  const el = document.getElementById("tab-compare");
+  let html = `<p class="compare-intro">Side-by-side comparisons — the most MCQ-tested distinctions.</p>`;
+
+  quickCompare.forEach(table => {
+    html += `<div class="compare-table">
+      <div class="compare-title">${esc(table.title)}</div>
+      <div class="compare-scroll"><table><tbody>`;
+    table.rows.forEach(row => {
+      html += `<tr>`;
+      row.forEach(cell => { html += `<td>${esc(cell)}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div></div>`;
+  });
+
+  html += `<div class="traps">
+    <div class="traps-title">MCQ Traps to Watch</div>
+    <div class="traps-body">
+      <div class="trap"><span class="trap-label">GPO order:</span> Local → Site → Domain → OU (last applied wins). Enforced GPOs override Block Inheritance.</div>
+      <div class="trap"><span class="trap-label">IPAM server:</span> Must be domain member but CANNOT be a domain controller.</div>
+      <div class="trap"><span class="trap-label">DA server:</span> Domain member but NOT a DC. Needs Windows Firewall on ALL profiles.</div>
+      <div class="trap"><span class="trap-label">Forest trust:</span> Between forest ROOT domains only. Requires forest functional level 2003+.</div>
+      <div class="trap"><span class="trap-label">NLB:</span> All hosts need STATIC IPs and same subnet. For STATELESS apps.</div>
+      <div class="trap"><span class="trap-label">WSUS Autonomous vs Replica:</span> Autonomous = each admin approves. Replica = upstream approves, downstream follows.</div>
+      <div class="trap"><span class="trap-label">AD RMS aware:</span> Only works with AD RMS-aware apps. Non-aware devices CANNOT access protected content.</div>
+      <div class="trap"><span class="trap-label">AD FS:</span> Account org = claim provider (has users). Resource org = relying party (has resources).</div>
+      <div class="trap"><span class="trap-label">BranchCache Distributed:</span> All clients must be on the SAME subnet.</div>
+    </div>
+  </div>`;
+
+  el.innerHTML = html;
+}
+
+renderOverview();
+renderStudy();
+renderCompare();
+</script>
+</body>
+</html>
