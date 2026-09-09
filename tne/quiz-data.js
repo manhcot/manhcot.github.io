@@ -1209,70 +1209,128 @@ const QUIZ_DATA = {
         },
         {
           id: 12,
-          title: "Module 12: Securing Networks (Review)",
-          objective: "Review of network security fundamentals.",
+          title: "Module 12: IPS Operation and Implementation",
+          objective: "Explain how signatures are used to detect malicious network traffic.",
           questions: [
             {
               type: "mcq",
-              question: "Which organization maintains the interactive Cyberthreat Real-Time Map?",
-              options: ["Cisco Talos", "Kaspersky", "Microsoft", "Symantec"],
-              answer: 1,
-              explanation: "Kaspersky maintains the interactive Cyberthreat Real-Time Map display of current network attacks. The attack data is submitted from Kaspersky network security products deployed worldwide. The Cisco Talos Intelligence Group website provides comprehensive security and threat intelligence."
-            },
-            {
-              type: "mcq",
-              question: "What does an Adaptive Security Appliance (ASA) provide?",
+              question: "What are the three distinctive attributes of IPS signatures?",
               options: [
-                "Stateful firewall features and secure VPN tunnels",
-                "Antivirus protection",
-                "Email filtering",
-                "Load balancing"
-              ],
-              answer: 0,
-              explanation: "An Adaptive Security Appliance (ASA) provides stateful firewall features and establishes secure Virtual Private Network (VPN) tunnels to various destinations. In WANs, the main site is protected by an ASA to ensure secure transport for data in motion as it travels between sites over the public network."
-            },
-            {
-              type: "mcq",
-              question: "Which security measure is used in SOHO networks for wireless connections?",
-              options: ["WEP", "WPA2", "TKIP", "AES-256"],
-              answer: 1,
-              explanation: "Wireless hosts in a SOHO network connect using WPA2 data encryption technology. The SOHO is secured with a consumer-grade wireless router providing integrated firewall features. The Layer 2 switch uses port security, and hosts typically have antivirus and antimalware software installed."
-            },
-            {
-              type: "mcq",
-              question: "What is hyperjacking?",
-              options: [
-                "An attacker hijacks a VM hypervisor and uses it as a launch point to attack other devices",
-                "An attack that overloads a web server with requests",
-                "A type of password cracking technique",
-                "A method for bypassing firewall rules"
-              ],
-              answer: 0,
-              explanation: "Hyperjacking is when an attacker hijacks a VM hypervisor (VM controlling software) and then uses it as a launch point to attack other devices on the data center network. It is one of three VM-specific targeted attacks, along with Instant On Activation and Antivirus Storms."
-            },
-            {
-              type: "mcq",
-              question: "What is the Borderless Network concept developed by Cisco?",
-              options: [
-                "A network without any routers",
-                "Access to resources from many locations, on many device types, using various connectivity methods",
-                "A network with no security boundaries",
-                "A wireless-only network architecture"
+                "Source, destination, and protocol",
+                "Type, trigger, and action",
+                "Pattern, anomaly, and policy",
+                "Atomic, composite, and stateful"
               ],
               answer: 1,
-              explanation: "Cisco developed the Borderless Network to accommodate BYOD. In a Borderless Network, access to resources can be initiated by users from many locations, on many types of end devices, using various connectivity methods. Cisco devices support MDM features including Data Encryption, PIN Enforcement, Data Wipe, DLP, and Jailbreak/Root Detection."
+              explanation: "Signatures have three distinctive attributes: (1) Type - Atomic or Composite; (2) Trigger - also called the alarm, this is what causes the signature to fire; (3) Action - what the IPS will do when the signature is triggered. IPS sensors examine data flows using many different signatures to detect known attacks."
+            },
+            {
+              type: "mcq",
+              question: "What is the difference between an atomic signature and a composite signature?",
+              options: [
+                "Atomic signatures are smaller; composite signatures are larger",
+                "Atomic signatures need only one packet; composite signatures require multiple packets and state information",
+                "Atomic signatures are faster; composite signatures are more accurate",
+                "Atomic signatures are for IPv4; composite signatures are for IPv6"
+              ],
+              answer: 1,
+              explanation: "Atomic Signature: a single packet, activity, or event identifies an attack. The IPS does not need to maintain state information and traffic analysis can be performed very quickly and efficiently. Composite Signature: also called a stateful signature because the IPS requires several pieces of data to match an attack signature. The IPS must maintain state information called the event horizon."
+            },
+            {
+              type: "mcq",
+              question: "What is a false positive in IPS terminology?",
+              options: [
+                "The IPS correctly detects an attack",
+                "The IPS generates an alarm for normal user traffic that should not have triggered an alarm",
+                "The IPS fails to detect a known attack",
+                "The IPS blocks legitimate traffic intentionally"
+              ],
+              answer: 1,
+              explanation: "False positive (Undesirable): the IPS generates an alarm after processing normal user traffic that should not have triggered an alarm. The IPS must be tuned to change these to true negatives. False positives are costly because they must be investigated. Benign activity that results in a false positive is sometimes called a benign trigger."
+            },
+            {
+              type: "mcq",
+              question: "What is a false negative in IPS terminology?",
+              options: [
+                "The IPS generates an alarm for normal traffic",
+                "The IPS correctly identifies an attack",
+                "The IPS fails to generate an alarm and known attacks are not being detected",
+                "The IPS blocks all traffic"
+              ],
+              answer: 2,
+              explanation: "False negative (Dangerous): the IPS fails to generate an alarm and known attacks are not being detected. This means exploits are not being detected by the security systems in place. These incidents could go undetected for a long time, and ongoing data loss and damage could result. The goal is to tune the IPS to generate true positive alarms instead."
+            },
+            {
+              type: "mcq",
+              question: "What are the four IPS signature trigger categories?",
+              options: [
+                "Atomic, composite, stateful, and hybrid",
+                "Pattern-based, anomaly-based, policy-based, and honey pot-based detection",
+                "Active, passive, inline, and promiscuous",
+                "Network, host, wireless, and application"
+              ],
+              answer: 1,
+              explanation: "Four general IPS signature trigger categories: (1) Pattern-based detection (signature-based) - looks for specific patterns; (2) Anomaly-based detection - looks for deviations from normal traffic patterns; (3) Policy-based detection - looks for violations of security policies; (4) Honey pot-based detection - uses decoy systems to attract and detect attacks."
+            },
+            {
+              type: "mcq",
+              question: "What are the three options available to provide intrusion prevention services?",
+              options: [
+                "Firewall, ACL, and VPN",
+                "Cisco Firepower NGIPS, Cisco Snort IPS, and External Snort IPS Server",
+                "IDS, IPS, and Firewall",
+                "HIPS, NIPS, and WIPS"
+              ],
+              answer: 1,
+              explanation: "Three options: (1) Cisco Firepower Next-Generation IPS (NGIPS) - dedicated in-line threat prevention appliances; (2) Cisco Snort IPS - IPS service enabled on ISR 4000 series routers; (3) External Snort IPS Server - similar to Cisco Snort IPS but requires a promiscuous (SPAN) port and an external Snort IDS/IPS server."
+            },
+            {
+              type: "mcq",
+              question: "What are the three Snort IPS security policies provided by Cisco Talos, in order from least to most protection?",
+              options: [
+                "Security, balanced, connectivity",
+                "Connectivity, balanced, security",
+                "Basic, standard, advanced",
+                "Low, medium, high"
+              ],
+              answer: 1,
+              explanation: "Three Snort IPS policies: (1) Connectivity - least protection, prioritizes connectivity over security (~1,000 rules); (2) Balanced - default policy, recommended for initial deployments, balances security and performance (~8,000 rules); (3) Security - most protection, for organizations exceptionally concerned about security, lower bandwidth but higher security requirements (~12,000 rules)."
+            },
+            {
+              type: "mcq",
+              question: "What command configures the UTD (United Threat Defense) standard engine?",
+              options: [
+                "snort engine standard",
+                "utd engine standard",
+                "ips engine standard",
+                "threat engine standard"
+              ],
+              answer: 1,
+              explanation: "The 'utd engine standard' command configures the United Threat Defense (UTD) standard engine and enters UTD standard engine configuration mode. Use 'threat-inspection' to configure threat inspection: 'threat protection' for IPS mode or 'threat detection' for IDS mode. Use 'logging host' and 'logging syslog' for logging."
             },
             {
               type: "fill",
-              question: "Cloud computing separates the ______ from the hardware, while virtualization separates the ______ from the hardware.",
-              answer: "application operating system",
-              explanation: "Cloud computing separates the application from the hardware, while virtualization separates the operating system from the hardware. Virtualization is the foundation of cloud computing. Data centers increasingly use virtual machines (VMs) to provide server services, allowing multiple operating systems on a single hardware platform."
+              question: "A ______ ______ is also called a stateful signature because the IPS requires several pieces of data to match an attack signature.",
+              answer: "composite signature",
+              explanation: "A composite signature is also called a stateful signature because the IPS requires several pieces of data to match an attack signature. The IPS must maintain state information which is referred to as the event horizon. The length of an event horizon varies from one signature to the next. Atomic signatures, by contrast, need only a single packet."
             },
             {
               type: "fill",
-              question: "Elements of the defense-in-depth design include VPN, ASA firewall, IPS, Layer 3 switches, Layer 2 switches, ESA/WSA, ______ server, and hosts.",
-              answer: "AAA",
-              explanation: "Elements of the defense-in-depth design include VPN, ASA firewall, IPS, Layer 3 switches, Layer 2 switches, ESA/WSA (Email/Web Security Appliance), AAA server, and hosts. This multi-layer approach ensures comprehensive defense at different layers of the network."
+              question: "A ______ ______ occurs when the IPS generates an alarm because it correctly detected known attack traffic.",
+              answer: "true positive",
+              explanation: "True positive (Desirable): the IPS generates an alarm because it detected known attack traffic. The alert has been verified to be an actual security incident and indicates the IPS rule worked correctly. True negative (also desirable): normal network traffic does not generate an alarm because the traffic is clear of threats."
+            },
+            {
+              type: "fill",
+              question: "Snort IPS uses two VirtualPortGroup interfaces: VPG0 for ______ traffic and VPG1 for ______ traffic.",
+              answer: "management user",
+              explanation: "VPG0 is for management traffic to exchange information with IPS servers (signature updates, external log server). It requires a routable IP address. VPG1 is for user traffic that should be inspected. It should not be routable and uses a non-routable private IP address. User traffic is forwarded to the Snort engine via VPG1, inspected, then either rejected or forwarded back."
+            },
+            {
+              type: "fill",
+              question: "An ______ ______ is a file that contains a compressed, installable version of a virtual machine, used to deploy Snort IPS.",
+              answer: "OVA file",
+              explanation: "An Open Virtualization Archive (OVA) is a file that contains a compressed, installable version of a virtual machine. The service OVA file is not bundled with Cisco IOS XE Release images. Although OVA files may be preinstalled in flash, it is recommended to download the latest from Cisco.com. Install with 'virtual-service install name package file-url media file-system'."
             }
           ]
         }
