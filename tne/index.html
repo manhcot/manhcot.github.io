@@ -1,767 +1,193 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Network Security Quiz — Interactive Flashcards</title>
-<script src="quiz-data.js"></script>
+<!-- saved from url=(0109)file:///C:/Users/m4nhc0t/Downloads/TEST%202/Network_Security_Test2_Modules_13-21_Visual_Study_Guide.html#quiz -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Network Security Test 2 | Modules 13–21</title>
 <style>
-:root {
-  --bg: #0a0e1a;
-  --bg-card: #131a2e;
-  --bg-card-hover: #1a2340;
-  --primary: #00d4ff;
-  --primary-glow: rgba(0,212,255,0.15);
-  --secondary: #7b2ff7;
-  --secondary-glow: rgba(123,47,247,0.15);
-  --success: #00e676;
-  --danger: #ff3d71;
-  --warning: #ffaa00;
-  --text: #e8eaf6;
-  --text-dim: #8892b0;
-  --border: rgba(255,255,255,0.08);
-  --radius: 16px;
-  --shadow: 0 8px 32px rgba(0,0,0,0.4);
-}
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  min-height:100vh;
-  overflow-x:hidden;
-}
-body::before{
-  content:'';position:fixed;top:0;left:0;width:100%;height:100%;
-  background:
-    radial-gradient(ellipse at 20% 10%,var(--secondary-glow),transparent 50%),
-    radial-gradient(ellipse at 80% 90%,var(--primary-glow),transparent 50%),
-    radial-gradient(ellipse at 50% 50%,rgba(123,47,247,0.05),transparent 70%);
-  z-index:-1;pointer-events:none;
-}
-/* Header */
-header{
-  text-align:center;padding:40px 20px 20px;
-  position:relative;
-}
-header h1{
-  font-size:2.5rem;font-weight:800;
-  background:linear-gradient(135deg,var(--primary),var(--secondary));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
-  letter-spacing:-1px;
-}
-header p{color:var(--text-dim);margin-top:8px;font-size:1.1rem}
-.stats-bar{
-  display:flex;justify-content:center;gap:24px;margin-top:20px;flex-wrap:wrap;
-}
-.stat-pill{
-  background:var(--bg-card);border:1px solid var(--border);
-  border-radius:12px;padding:10px 24px;display:flex;align-items:center;gap:10px;
-}
-.stat-pill .label{color:var(--text-dim);font-size:.85rem}
-.stat-pill .value{font-size:1.3rem;font-weight:700;color:var(--primary)}
-.stat-pill .value.danger{color:var(--danger)}
-.stat-pill .value.success{color:var(--success)}
+:root{--bg:#0a1020;--panel:#121c30;--panel2:#192640;--ink:#eaf1ff;--muted:#aab8d2;--line:#30415f;--blue:#83caff;--teal:#7ce3c3;--gold:#ffd27e;--red:#ff9ba5;--purple:#c9adff}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at top,#1a2a49,#0a1020 65%);color:var(--ink);font:16px/1.62 system-ui,Segoe UI,Arial,sans-serif}.layout{display:grid;grid-template-columns:255px minmax(0,1fr);min-height:100vh}.side{position:sticky;top:0;height:100vh;overflow:auto;padding:20px 14px;background:#0c1425;border-right:1px solid var(--line)}.brand{font-weight:900;font-size:1.15rem}.brand span{color:var(--teal)}.muted,.intro{color:var(--muted)}.side nav{margin-top:18px}.side nav a{display:block;color:#d6e2f8;text-decoration:none;padding:7px 9px;border-radius:8px;font-size:.9rem}.side nav a:hover{background:var(--panel2)}button,.btn{background:var(--panel2);color:var(--ink);border:1px solid var(--line);padding:9px 12px;border-radius:9px;cursor:pointer}.side button{width:100%;margin-top:8px}.main{max-width:1250px;width:100%;padding:32px clamp(16px,4vw,50px) 70px;margin:auto}.hero{background:linear-gradient(125deg,#1a3152,#191d3b 65%,#124038);border:1px solid #3b5477;border-radius:20px;padding:clamp(22px,4vw,42px)}.eyebrow{font-size:.78rem;letter-spacing:.13em;text-transform:uppercase;color:var(--teal);font-weight:800}.hero h1{font-size:clamp(2rem,4vw,3.3rem);line-height:1.08;margin:.4em 0}.chips{display:flex;gap:8px;flex-wrap:wrap}.chip,.tag{display:inline-block;border:1px solid #435b7e;background:#102039;border-radius:99px;padding:4px 10px;font-size:.82rem}.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin:20px 0}.search{flex:1;min-width:210px;background:#101a2d;border:1px solid var(--line);color:var(--ink);padding:11px;border-radius:9px}.section{margin-top:42px;scroll-margin-top:15px}.section h2{font-size:1.8rem;line-height:1.2}.module{margin:16px 0;border:1px solid var(--line);border-radius:15px;overflow:hidden;background:#10192b}.mh{padding:16px 19px;background:linear-gradient(90deg,#1a2945,#131c30);border-bottom:1px solid var(--line)}.mh h3{margin:0;font-size:1.25rem}.mh p{margin:4px 0 0;color:var(--muted)}.mb{padding:18px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card{background:#152138;border:1px solid var(--line);border-radius:12px;padding:14px}.card h4{color:var(--blue);margin:0 0 7px}.callout,.memory{border-left:4px solid var(--teal);background:#102b30;padding:12px 14px;border-radius:0 9px 9px 0;margin:14px 0}.warn{border-left-color:var(--gold);background:#302819}.danger{border-left-color:var(--red);background:#321c29}.memory strong{color:var(--gold)}table{border-collapse:collapse;width:100%;margin:12px 0;font-size:.92rem}td,th{border:1px solid var(--line);padding:9px;text-align:left;vertical-align:top}th{background:#22324f}tr:nth-child(even) td{background:#131e32}code,pre{font-family:Consolas,monospace}code{color:#bfe7ff;background:#081322;padding:2px 5px;border-radius:4px}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#070d18;color:#bce6ff;border:1px solid #263754;border-radius:10px;padding:13px;font-size:.87rem}.diagram{padding:12px;background:#0b1424;border:1px solid var(--line);border-radius:12px;margin:14px 0;overflow:auto}.diagram svg{width:100%;min-width:490px;max-height:260px;display:block}.caption{text-align:center;color:var(--muted);font-size:.82rem}.flow{display:flex;align-items:stretch;gap:8px;flex-wrap:wrap;margin:14px 0}.node{flex:1;min-width:120px;background:#172742;border:1px solid #486184;border-radius:10px;padding:11px;text-align:center}.arrow{align-self:center;color:var(--teal);font-weight:bold;font-size:1.2rem}details{margin:9px 0;border:1px solid var(--line);border-radius:10px;background:#121d31}summary{cursor:pointer;padding:11px 13px;font-weight:750}details .inside{padding:0 14px 13px}.progress{height:7px;background:#273651;border-radius:10px;overflow:hidden}.bar{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--teal))}.q{border:1px solid var(--line);border-radius:11px;padding:13px;margin:11px 0;background:#121c30}.q label{display:block;padding:4px;cursor:pointer}.feedback{font-size:.9rem}.good{color:var(--teal)}.bad{color:var(--red)}.footer{border-top:1px solid var(--line);padding-top:18px;margin-top:40px;color:var(--muted);font-size:.9rem}@media(max-width:820px){.layout{grid-template-columns:1fr}.side{position:relative;height:auto;border-right:0;border-bottom:1px solid var(--line)}.side nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.main{padding-top:18px}.grid{grid-template-columns:1fr}}@media print{body{background:white;color:#111;font-size:11pt}.side,.toolbar,.no-print{display:none!important}.layout{display:block}.main{padding:0;max-width:none}.hero,.module,.card,.diagram,details,.callout,.memory{background:white!important;color:#111!important;box-shadow:none;border-color:#aaa;break-inside:avoid}.muted,.intro,.mh p,.caption{color:#444!important}th{background:#eee!important;color:#111}td{background:white!important;color:#111}pre{background:#f7f7f7;color:#111;border-color:#aaa}.card h4{color:#111}.section{margin-top:20px}}
+</style></head><body><div class="layout"><aside class="side"><div class="brand">NETSEC <span>VISUAL NOTES</span></div><div class="muted">Test 2 • Modules 13–21</div><button onclick="window.print()">Print / Save as PDF</button><button onclick="allDetails(true)">Expand revision checks</button><button onclick="allDetails(false)">Collapse revision checks</button><nav><a href="file:///C:/Users/m4nhc0t/Downloads/TEST%202/Network_Security_Test2_Modules_13-21_Visual_Study_Guide.html#start">Start here</a><a href="file:///C:/Users/m4nhc0t/Downloads/TEST%202/Network_Security_Test2_Modules_13-21_Visual_Study_Guide.html#m13">13 • Endpoint security</a><a href="file:///C:/Users/m4nhc0t/Downloads/TEST%202/Network_Security_Test2_Modules_13-21_Visual_Study_Guide.html#m14">14 • Layer 2 security</a><a href="file:///C:/Users/m4nhc0t/Downloads/TEST%202/Network_Security_Test2_Modules_13-21_Visual_Study_Guide.html#m15">15 • Crypto fundamentals</a><a href="file:///C:/Users/m4nhc0t/Downloads/TEST%202/Network_Security_Test2_Modules_13-21_Visual_Study_Guide.html#m16">16 • Crypto services</a><a href="file:///C:/Users/m4nhc0t/Downloads/TEST%202/Network_Security_Test2_Modules_13-21_Visual_Study_Guide.html#m17">17 • Public-key / PKI</a><a href="file:///C:/Users/m4nhc0t/Downloads/TEST%202/Network_Security_Test2_Modules_13-21_Visual_Study_Guide.html#m18">18 • VPNs</a><a href="file:///C:/Users/m4nhc0t/Downloads/TEST%202/Network_Security_Test2_Modules_13-21_Visual_Study_Guide.html#m19">19 • IPsec configuration</a><a href="file:///C:/Users/m4nhc0t/Downloads/TEST%202/Network_Security_Test2_Modules_13-21_Visual_Study_Guide.html#m20">20 • ASA introduction</a><a href="file:///C:/Users/m4nhc0t/Downloads/TEST%202/Network_Security_Test2_Modules_13-21_Visual_Study_Guide.html#m21">21 • ASA configuration</a><a href="file:///C:/Users/m4nhc0t/Downloads/TEST%202/Network_Security_Test2_Modules_13-21_Visual_Study_Guide.html#compare">Comparison tables</a><a href="file:///C:/Users/m4nhc0t/Downloads/TEST%202/Network_Security_Test2_Modules_13-21_Visual_Study_Guide.html#commands">Command sheet</a><a href="file:///C:/Users/m4nhc0t/Downloads/TEST%202/Network_Security_Test2_Modules_13-21_Visual_Study_Guide.html#quiz">Practice quiz</a></nav><p class="muted">Search the page to filter topics. Double-click a revision-check heading to mark it reviewed.</p></aside><main class="main">
+<section class="hero" id="start"><div class="eyebrow">Detailed revision • diagrams • CLI • self-test</div><h1>Network Security<br>Test 2 Study Guide</h1><p>This visual-first guide covers Cisco Networking Security v1.0 Modules 13–21. It focuses on definitions, attack mechanisms, mitigation logic, configuration patterns, verification commands, and commonly confused concepts.</p><div class="chips"><span class="chip">9 modules</span><span class="chip">Visual diagrams</span><span class="chip">Cisco CLI examples</span><span class="chip">Comparison tables</span><span class="chip">20-question quiz</span></div></section>
+<div class="toolbar"><input class="search" id="search" placeholder="Search: DAI, HMAC, IKE, NAT, BPDU Guard…"><button onclick="clearSearch()">Clear search</button></div><div class="muted">Revision checks completed: <span id="progText">0 / 9</span></div><div class="progress"><div class="bar" id="progBar" style="width: 0%;"></div></div>
+<div id="sections">
+<section class="section" id="m13" data-search="endpoint security antivirus antimalware host firewall AMP ESA WSA NAC ISE 802.1X supplicant authenticator RADIUS EAP EAPOL"><h2>Module 13 — Endpoint Security</h2><p class="intro">Protect the device itself, then decide whether the device is allowed onto the network.</p>
+<div class="module"><div class="mh"><h3>13.1 Endpoint protection tools</h3><p>Defence in depth: several controls cover different threats.</p></div><div class="mb"><div class="grid"><div class="card"><h4>Host-based tools</h4><ul><li><b>Antivirus / antimalware:</b> detects, blocks, and removes malicious software.</li><li><b>Host firewall:</b> filters traffic entering or leaving an endpoint.</li><li><b>Spam filtering / blocklisting:</b> reduces unwanted email and access to known-bad destinations.</li><li><b>AMP (Advanced Malware Protection):</b> detects and analyses suspicious files and malware activity.</li><li><b>Disk encryption:</b> tools such as BitLocker help protect data on lost or stolen devices.</li></ul></div><div class="card"><h4>Network-assisted tools</h4><ul><li><b>ESA:</b> Email Security Appliance; email threat protection.</li><li><b>WSA:</b> Web Security Appliance; web traffic inspection / control.</li><li><b>NAC:</b> Network Admission Control; checks whether endpoints meet network policy.</li><li><b>Cisco ISE:</b> combines AAA and NAC policy functions.</li></ul></div></div><div class="callout"><b>Security posture checking:</b> assesses a connecting device's compliance (for example, required security software or updates). Depending on policy, a non-compliant endpoint can be denied or restricted to remediation access.</div></div></div>
+<div class="module"><div class="mh"><h3>13.2 802.1X port-based authentication</h3><p>Know the roles and which protocol is used on each link.</p></div><div class="mb"><div class="diagram"><svg viewBox="0 0 850 190" role="img" aria-label="802.1X client switch RADIUS diagram"><defs><marker id="a13" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6Z" fill="#7ce3c3"></path></marker></defs><rect x="20" y="40" width="220" height="85" rx="12" fill="#172742" stroke="#83caff"></rect><rect x="315" y="40" width="220" height="85" rx="12" fill="#172742" stroke="#7ce3c3"></rect><rect x="610" y="40" width="220" height="85" rx="12" fill="#172742" stroke="#c9adff"></rect><g fill="#eaf1ff" text-anchor="middle"><text x="130" y="68" font-size="16" font-weight="700">Supplicant</text><text x="130" y="92" font-size="13">Client requests access</text><text x="425" y="68" font-size="16" font-weight="700">Authenticator</text><text x="425" y="92" font-size="13">Switch / controls port</text><text x="720" y="68" font-size="16" font-weight="700">RADIUS server</text><text x="720" y="92" font-size="13">Checks credentials / policy</text></g><path d="M240 78 H315" stroke="#7ce3c3" stroke-width="2.5" marker-end="url(#a13)"></path><path d="M535 78 H610" stroke="#7ce3c3" stroke-width="2.5" marker-end="url(#a13)"></path><text x="277" y="61" fill="#7ce3c3" font-size="12" text-anchor="middle">EAPOL</text><text x="572" y="61" fill="#7ce3c3" font-size="12" text-anchor="middle">RADIUS</text><text x="425" y="158" fill="#aab8d2" font-size="13" text-anchor="middle">The switch mediates access; the client normally does not speak RADIUS directly to the server.</text></svg><div class="caption">802.1X roles and message paths</div></div><table><tbody><tr><th>Term</th><th>Meaning</th><th>Memory cue</th></tr><tr><td>Supplicant</td><td>Client device / software requesting access.</td><td>Wants to get in.</td></tr><tr><td>Authenticator</td><td>Usually the switch / switch port mediating access.</td><td>Controls the door.</td></tr><tr><td>Authentication server</td><td>Usually RADIUS; validates credentials and policy.</td><td>Makes the decision.</td></tr><tr><td>EAP</td><td>Extensible Authentication Protocol framework.</td><td>Authentication framework.</td></tr><tr><td>EAPOL</td><td>EAP over LAN between supplicant and authenticator.</td><td>Client ↔ switch.</td></tr><tr><td>RADIUS</td><td>Authentication messages between authenticator and server.</td><td>Switch ↔ server.</td></tr></tbody></table><div class="memory"><b>Port control:</b> <code>auto</code> = 802.1X controls authorisation; <code>force-authorized</code> = authorised without 802.1X; <code>force-unauthorized</code> = remains unauthorised.</div><pre>aaa new-model
+aaa authentication dot1x default group radius
+radius server RAD1
+ address ipv4 192.0.2.10 auth-port 1812 acct-port 1813
+ key YOUR_SHARED_SECRET
+dot1x system-auth-control
+interface GigabitEthernet1/0/10
+ switchport mode access
+ authentication port-control auto
+ dot1x pae authenticator</pre><div class="callout warn">Command syntax can differ by IOS / platform and RADIUS configuration style. Prioritise the syntax in your course lab.</div><details class="rev" open=""><summary title="Double-click to mark/unmark as reviewed">Revision check — Module 13</summary><div class="inside"><ol><li>Who is the authenticator? <b>Switch / switch port.</b></li><li>Which link uses EAPOL? <b>Supplicant to authenticator.</b></li><li>Which link uses RADIUS? <b>Authenticator to server.</b></li><li>What does NAC check? <b>Endpoint compliance with access policy.</b></li></ol></div></details></div></div></section>
 
-/* Week selector */
-.week-selector{
-  max-width:1100px;margin:30px auto;padding:0 20px;
-}
-.week-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;
-}
-.week-card{
-  background:var(--bg-card);border:1px solid var(--border);
-  border-radius:var(--radius);padding:24px;cursor:pointer;
-  transition:all .3s ease;position:relative;overflow:hidden;
-}
-.week-card::before{
-  content:'';position:absolute;top:0;left:0;width:4px;height:100%;
-  background:linear-gradient(180deg,var(--primary),var(--secondary));
-  opacity:0;transition:opacity .3s;
-}
-.week-card:hover{background:var(--bg-card-hover);transform:translateY(-4px);box-shadow:var(--shadow)}
-.week-card:hover::before{opacity:1}
-.week-card.active{border-color:var(--primary);box-shadow:0 0 24px var(--primary-glow)}
-.week-card.active::before{opacity:1}
-.week-card .week-num{font-size:.8rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:2px}
-.week-card .week-title{font-size:1.4rem;font-weight:700;margin:8px 0}
-.week-card .week-modules{font-size:.85rem;color:var(--text-dim);line-height:1.6}
-.week-card .week-badge{
-  display:inline-block;background:var(--primary-glow);color:var(--primary);
-  border-radius:20px;padding:4px 12px;font-size:.75rem;margin-top:8px;
-}
+<section class="section" id="m14" data-search="layer 2 security port security MAC flooding sticky protect restrict shutdown VLAN hopping double tagging DTP private VLAN DHCP starvation spoofing snooping DAI ARP IPSG STP BPDU Guard Root Guard Loop Guard"><h2>Module 14 — Layer 2 Security Considerations</h2><p class="intro">For every attack, learn: attacker action → what breaks → mitigation.</p>
+<div class="module"><div class="mh"><h3>14.1 MAC flooding and port security</h3><p>MAC flooding attempts to overwhelm the switch's MAC / CAM address table.</p></div><div class="mb"><div class="flow"><div class="node"><b>Attacker</b><br>Many fake source MACs</div><div class="arrow">→</div><div class="node"><b>MAC table pressure</b><br>Table fills with bogus entries</div><div class="arrow">→</div><div class="node"><b>Possible flooding</b><br>Unknown unicast frames may be flooded</div></div><p><b>Port security</b> limits the source MAC addresses allowed on a switch port.</p><table><tbody><tr><th>Learning mode</th><th>How it works</th><th>Use / caution</th></tr><tr><td>Static secure MAC</td><td>Administrator configures allowed MAC.</td><td>Predictable, but requires maintenance.</td></tr><tr><td>Dynamic secure MAC</td><td>Switch learns addresses dynamically; entries may not persist after reload.</td><td>Easy to configure, less persistent.</td></tr><tr><td>Sticky secure MAC</td><td>Learned addresses are added to running configuration.</td><td>Save configuration if persistence is needed.</td></tr></tbody></table><table><tbody><tr><th>Violation mode</th><th>Effect</th><th>Memory cue</th></tr><tr><td><code>protect</code></td><td>Drops violating traffic; generally quiet with less notification.</td><td>Quiet drop.</td></tr><tr><td><code>restrict</code></td><td>Drops traffic and increments violation counter; can log / notify.</td><td>Drop + report.</td></tr><tr><td><code>shutdown</code></td><td>Port becomes error-disabled after violation.</td><td>Shuts port.</td></tr></tbody></table><pre>interface GigabitEthernet1/0/10
+ switchport mode access
+ switchport port-security
+ switchport port-security maximum 2
+ switchport port-security mac-address sticky
+ switchport port-security violation restrict
+!
+show port-security interface GigabitEthernet1/0/10
+show port-security address</pre><div class="callout warn">For shutdown-mode violations, identify and remove the cause before recovering the port. Re-enabling a port while an unauthorised device remains connected does not fix the security issue.</div></div></div>
+<div class="module"><div class="mh"><h3>14.2 VLAN hopping, DTP and double tagging</h3></div><div class="mb"><div class="grid"><div class="card"><h4>Switch spoofing / DTP</h4><p>Attacker tries to negotiate a trunk with a switch port using Dynamic Trunking Protocol (DTP). A trunk can carry multiple VLANs.</p><p><b>Mitigation:</b> configure user ports as access ports and disable DTP negotiation where appropriate.</p></div><div class="card"><h4>Double tagging</h4><p>Attacker crafts a frame with two VLAN tags. Under specific native-VLAN and trunk conditions, one switch strips the first tag and the remaining tag may direct traffic to another VLAN.</p><p><b>Mitigation:</b> do not use the default VLAN as native, keep native VLANs consistent, and disable trunk negotiation on access ports.</p></div></div><pre>interface GigabitEthernet1/0/10
+ switchport mode access
+ switchport nonegotiate
+!
+interface GigabitEthernet1/0/48
+ switchport mode trunk
+ switchport trunk native vlan 999</pre><div class="callout">VLAN hopping targets Layer 2 VLAN separation. Inter-VLAN routing is a Layer 3 function and a different issue.</div></div></div>
+<div class="module"><div class="mh"><h3>14.3 Private VLANs (PVLANs)</h3><p>Isolation within a primary VLAN.</p></div><div class="mb"><table><tbody><tr><th>Port type</th><th>Communication</th><th>Example</th></tr><tr><td>Promiscuous</td><td>Can communicate with all associated PVLAN ports.</td><td>Gateway / firewall / shared service.</td></tr><tr><td>Isolated</td><td>Cannot communicate at Layer 2 with other isolated or community ports; can reach promiscuous port.</td><td>Customer endpoint requiring isolation.</td></tr><tr><td>Community</td><td>Communicates with same-community ports and promiscuous ports, but not other communities.</td><td>Servers in one group.</td></tr></tbody></table><div class="callout warn">PVLAN proxy attacks can exploit communication through a promiscuous port; ACLs can mitigate these attacks.</div></div></div>
+<div class="module"><div class="mh"><h3>14.4 DHCP attacks and DHCP snooping</h3><p>Two attacks; one core mitigation feature.</p></div><div class="mb"><table><tbody><tr><th>Attack</th><th>Attacker action</th><th>Impact</th></tr><tr><td>DHCP starvation</td><td>Sends many DHCP requests, often using spoofed MACs.</td><td>Consumes address pool; legitimate clients may fail to get leases (DoS).</td></tr><tr><td>DHCP spoofing</td><td>Connects a rogue DHCP server.</td><td>Clients may receive malicious gateway, DNS, or other parameters.</td></tr></tbody></table><div class="diagram"><svg viewBox="0 0 850 175" role="img" aria-label="DHCP snooping trust model"><rect x="20" y="35" width="210" height="78" rx="11" fill="#172742" stroke="#83caff"></rect><rect x="320" y="35" width="210" height="78" rx="11" fill="#172742" stroke="#7ce3c3"></rect><rect x="620" y="35" width="210" height="78" rx="11" fill="#302819" stroke="#ffd27e"></rect><g fill="#eaf1ff" text-anchor="middle"><text x="125" y="64" font-size="16" font-weight="700">PC access ports</text><text x="125" y="87" font-size="13">Untrusted</text><text x="425" y="64" font-size="16" font-weight="700">Switch</text><text x="425" y="87" font-size="13">DHCP snooping</text><text x="725" y="64" font-size="16" font-weight="700">Legitimate server</text><text x="725" y="87" font-size="13">Trusted uplink</text></g><path d="M230 74 H320 M530 74 H620" stroke="#7ce3c3" stroke-width="3"></path><text x="425" y="145" fill="#aab8d2" text-anchor="middle" font-size="13">Server-originated DHCP messages should enter only through trusted paths.</text></svg><div class="caption">DHCP snooping trust model</div></div><p><b>DHCP snooping</b> marks ports trusted / untrusted, blocks server messages arriving on untrusted ports, and builds a binding table (IP, MAC, VLAN, interface, lease).</p><pre>ip dhcp snooping
+ip dhcp snooping vlan 10
+interface GigabitEthernet1/0/1
+ ip dhcp snooping trust
+interface GigabitEthernet1/0/5
+ ip dhcp snooping limit rate 10
+!
+show ip dhcp snooping
+show ip dhcp snooping binding</pre><div class="memory"><b>Trust the path to the legitimate DHCP server, not ordinary user access ports.</b> Trusting the wrong port defeats the protection.</div></div></div>
+<div class="module"><div class="mh"><h3>14.5 ARP spoofing, DAI and IP Source Guard</h3></div><div class="mb"><div class="grid"><div class="card"><h4>ARP spoofing / poisoning</h4><p>Attacker sends forged ARP messages claiming the attacker's MAC belongs to another IP (often the gateway). Traffic may be redirected for a man-in-the-middle attack.</p><h4>DAI — Dynamic ARP Inspection</h4><p>Intercepts ARP on untrusted ports and validates IP-to-MAC information against trusted bindings; invalid ARP can be dropped and logged.</p></div><div class="card"><h4>IP address spoofing</h4><p>A host uses an IP address it is not authorised to use, potentially impersonating a neighbour.</p><h4>IPSG — IP Source Guard</h4><p>Filters IP traffic on untrusted ports using source IP/MAC binding information. It applies to IP packets generally, not only ARP.</p></div></div><div class="flow"><div class="node">Enable DHCP snooping globally</div><div class="arrow">→</div><div class="node">Enable on selected VLANs</div><div class="arrow">→</div><div class="node">Enable DAI / IPSG</div><div class="arrow">→</div><div class="node">Trust only infrastructure ports</div></div><pre>ip dhcp snooping
+ip dhcp snooping vlan 10
+ip arp inspection vlan 10
+interface GigabitEthernet1/0/1
+ ip dhcp snooping trust
+ ip arp inspection trust
+!
+show ip arp inspection
+show ip dhcp snooping binding</pre><div class="callout warn">DAI commonly relies on DHCP snooping bindings. Static-IP hosts may need appropriate ARP ACL / static-binding planning; otherwise valid ARP may be dropped.</div></div></div>
+<div class="module"><div class="mh"><h3>14.6 STP attacks and protections</h3><p>STP prevents Layer 2 loops while retaining redundant links.</p></div><div class="mb"><div class="diagram"><svg viewBox="0 0 850 210" role="img" aria-label="STP root bridge and redundant switches"><rect x="320" y="15" width="210" height="55" rx="10" fill="#17372f" stroke="#7ce3c3" stroke-width="2"></rect><rect x="60" y="130" width="200" height="55" rx="10" fill="#172742" stroke="#83caff"></rect><rect x="590" y="130" width="200" height="55" rx="10" fill="#172742" stroke="#83caff"></rect><g fill="#eaf1ff" text-anchor="middle"><text x="425" y="38" font-size="16" font-weight="700">Root bridge</text><text x="425" y="55" font-size="12">Best (lowest) bridge ID</text><text x="160" y="153" font-size="15" font-weight="700">Switch A</text><text x="160" y="170" font-size="12">Access / distribution</text><text x="690" y="153" font-size="15" font-weight="700">Switch B</text><text x="690" y="170" font-size="12">Access / distribution</text></g><path d="M355 70 L230 130 M495 70 L620 130" stroke="#83caff" stroke-width="3"></path><path d="M260 157 H590" stroke="#ffd27e" stroke-width="2.5" stroke-dasharray="8 6"></path><text x="425" y="145" fill="#ffd27e" font-size="12" text-anchor="middle">Redundant link may block</text><text x="425" y="203" fill="#aab8d2" font-size="12" text-anchor="middle">STP maintains a loop-free logical topology.</text></svg><div class="caption">Simplified redundant STP topology</div></div><table><tbody><tr><th>Feature</th><th>Purpose</th><th>Key warning</th></tr><tr><td><b>PortFast</b></td><td>Moves edge port quickly to forwarding.</td><td>Use on end-device ports, not switch-to-switch links.</td></tr><tr><td><b>BPDU Guard</b></td><td>Error-disables a PortFast edge port if it receives a BPDU.</td><td>Protects against a switch being plugged into a user port.</td></tr><tr><td><b>Root Guard</b></td><td>Prevents a port accepting superior BPDUs that would make an unexpected neighbour root.</td><td>Port may enter root-inconsistent state.</td></tr><tr><td><b>Loop Guard</b></td><td>Helps prevent a non-designated port incorrectly forwarding when BPDUs stop arriving.</td><td>Protects against certain BPDU-loss / unidirectional-link conditions.</td></tr></tbody></table><pre>interface range GigabitEthernet1/0/1-24
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/48
+ spanning-tree guard root
+!
+show spanning-tree</pre><div class="callout danger"><b>Oral-exam scenario:</b> PC is replaced by a switch on a PortFast + BPDU Guard port. The new switch sends a BPDU → BPDU Guard detects it → the port becomes error-disabled. Check interface / STP / errdisable status. Remove the rogue switch before recovering the port.</div></div></div><details class="rev" open=""><summary title="Double-click to mark/unmark as reviewed">Revision check — Module 14</summary><div class="inside"><ol><li>MAC flooding targets? <b>MAC/CAM table.</b></li><li>Which port-security mode drops and reports? <b>Restrict.</b></li><li>Starvation vs spoofing? <b>Starvation consumes leases; spoofing supplies false DHCP info.</b></li><li>DAI checks? <b>ARP claims against IP-to-MAC bindings.</b></li><li>IPSG vs DAI? <b>IPSG filters IP traffic generally, not only ARP.</b></li><li>BPDU Guard action? <b>Error-disable port when BPDU is received on protected edge port.</b></li></ol></div></details></section>
 
-/* Module selector */
-.module-selector{
-  max-width:1100px;margin:20px auto;padding:0 20px;
-  display:none;
-}
-.module-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;
-}
-.module-card{
-  background:var(--bg-card);border:1px solid var(--border);
-  border-radius:var(--radius);padding:24px;cursor:pointer;
-  transition:all .3s ease;
-}
-.module-card:hover{background:var(--bg-card-hover);transform:translateY(-2px);box-shadow:var(--shadow)}
-.module-card .mod-num{font-size:.8rem;color:var(--secondary);text-transform:uppercase;letter-spacing:1px}
-.module-card .mod-title{font-size:1.2rem;font-weight:700;margin:8px 0}
-.module-card .mod-obj{font-size:.85rem;color:var(--text-dim)}
-.module-card .mod-questions{
-  display:inline-block;background:var(--secondary-glow);color:var(--secondary);
-  border-radius:20px;padding:4px 12px;font-size:.75rem;margin-top:10px;
-}
+<section class="section" id="m15" data-search="cryptography substitution transposition one-time pad brute force ciphertext-only known-plaintext chosen-plaintext chosen-ciphertext meet-in-middle frequency analysis"><h2>Module 15 — Cryptographic Services: Fundamentals</h2><p class="intro">Focus on what a cipher changes, one-time-pad requirements, and what information an attacker has.</p><div class="module"><div class="mh"><h3>15.1 Substitution vs transposition</h3></div><div class="mb"><div class="grid"><div class="card"><h4>Substitution</h4><p>Replaces a plaintext symbol with another symbol. Example: Caesar shift A → D, B → E.</p></div><div class="card"><h4>Transposition</h4><p>Rearranges symbol positions but does not change the symbols themselves. Example: ABCD → CADB.</p></div></div><div class="callout">Modern cryptography should rely on sound algorithms and protected keys, not on an algorithm being secret.</div></div></div><div class="module"><div class="mh"><h3>15.2 One-time pad (OTP)</h3></div><div class="mb"><p>A correctly used one-time pad can provide perfect secrecy only if every condition is met:</p><ol><li>Key is truly random.</li><li>Key is at least as long as the message.</li><li>Key remains secret.</li><li>Key is used once only.</li><li>Key is distributed and stored securely.</li></ol><div class="callout warn">Reusing an OTP key violates the one-time-use condition and can expose relationships between messages.</div></div></div><div class="module"><div class="mh"><h3>15.3 Cryptanalytic attacks</h3></div><div class="mb"><table><tbody><tr><th>Attack</th><th>Attacker has / can do</th><th>Memory clue</th></tr><tr><td>Brute force</td><td>Tries possible keys until a plausible result appears.</td><td>Try every key.</td></tr><tr><td>Ciphertext-only</td><td>Has ciphertext only.</td><td>Encrypted output only.</td></tr><tr><td>Known-plaintext</td><td>Has plaintext and its matching ciphertext.</td><td>Known pair.</td></tr><tr><td>Chosen-plaintext</td><td>Chooses plaintext and obtains its ciphertext.</td><td>Choose input, observe encryption.</td></tr><tr><td>Chosen-ciphertext</td><td>Chooses ciphertext and obtains decrypted plaintext, within the attack model.</td><td>Choose encrypted input, observe decryption.</td></tr><tr><td>Frequency analysis</td><td>Uses letter / symbol frequencies and language patterns.</td><td>Statistical patterns.</td></tr><tr><td>Meet-in-the-middle</td><td>Stores intermediate results to reduce work on certain multiple-encryption schemes.</td><td>Search from both ends.</td></tr></tbody></table><details class="rev" open=""><summary title="Double-click to mark/unmark as reviewed">Revision check — Module 15</summary><div class="inside"><ol><li>Which cipher rearranges positions? <b>Transposition.</b></li><li>Name two OTP requirements. <b>Random key, message-length key, secrecy, one-time use, secure handling.</b></li><li>Known vs chosen plaintext? <b>Known is already available; chosen is selected by attacker.</b></li></ol></div></details></div></div></section>
 
-/* Quiz area */
-.quiz-area{
-  max-width:800px;margin:30px auto;padding:0 20px;display:none;
-}
-.quiz-header{
-  display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:12px;
-}
-.quiz-progress{
-  font-size:.9rem;color:var(--text-dim);
-}
-.quiz-progress span{color:var(--primary);font-weight:700}
-.progress-bar{
-  width:100%;height:6px;background:var(--bg-card);border-radius:3px;margin:12px 0 24px;overflow:hidden;
-}
-.progress-fill{
-  height:100%;background:linear-gradient(90deg,var(--primary),var(--secondary));
-  border-radius:3px;transition:width .4s ease;width:0%;
-}
-.question-card{
-  background:var(--bg-card);border:1px solid var(--border);
-  border-radius:var(--radius);padding:32px;
-  animation:fadeIn .4s ease;
-}
-@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-.q-type-badge{
-  display:inline-block;padding:4px 14px;border-radius:20px;font-size:.75rem;font-weight:600;margin-bottom:16px;
-}
-.q-type-badge.mcq{background:var(--primary-glow);color:var(--primary)}
-.q-type-badge.fill{background:var(--secondary-glow);color:var(--secondary)}
-.q-text{font-size:1.3rem;font-weight:600;line-height:1.5;margin-bottom:24px}
-.q-text .blank{
-  display:inline-block;min-width:120px;border-bottom:2px dashed var(--primary);
-  color:var(--primary);font-weight:700;padding:0 8px;text-align:center;
-}
-.options{display:flex;flex-direction:column;gap:12px}
-.option{
-  background:var(--bg);border:2px solid var(--border);border-radius:12px;
-  padding:16px 20px;cursor:pointer;transition:all .2s ease;
-  display:flex;align-items:center;gap:14px;font-size:1rem;
-}
-.option:hover{border-color:var(--primary);background:var(--bg-card-hover)}
-.option .opt-letter{
-  width:32px;height:32px;border-radius:50%;background:var(--bg-card);
-  display:flex;align-items:center;justify-content:center;font-weight:700;
-  flex-shrink:0;border:2px solid var(--border);transition:all .2s;
-}
-.option:hover .opt-letter{border-color:var(--primary);color:var(--primary)}
-.option.selected{border-color:var(--primary);background:var(--primary-glow)}
-.option.selected .opt-letter{background:var(--primary);color:var(--bg);border-color:var(--primary)}
-.option.correct{border-color:var(--success);background:rgba(0,230,118,0.08)}
-.option.correct .opt-letter{background:var(--success);color:var(--bg);border-color:var(--success)}
-.option.wrong{border-color:var(--danger);background:rgba(255,61,113,0.08)}
-.option.wrong .opt-letter{background:var(--danger);color:var(--bg);border-color:var(--danger)}
-.option.disabled{cursor:default;pointer-events:none}
-.fill-input-container{margin-top:16px}
-.fill-input{
-  width:100%;background:var(--bg);border:2px solid var(--border);
-  border-radius:12px;padding:16px 20px;color:var(--text);
-  font-size:1.1rem;transition:all .2s;outline:none;
-}
-.fill-input:focus{border-color:var(--primary);box-shadow:0 0 16px var(--primary-glow)}
-.fill-input.correct{border-color:var(--success);background:rgba(0,230,118,0.08)}
-.fill-input.wrong{border-color:var(--danger);background:rgba(255,61,113,0.08)}
+<section class="section" id="m16" data-search="cryptographic services confidentiality integrity authentication non-repudiation hash HMAC MD5 SHA AES DES 3DES RC4 RSA Diffie Hellman IKE keyspace block stream"><h2>Module 16 — Cryptographic Services</h2><p class="intro">Match each security goal to the mechanism that supports it.</p><div class="module"><div class="mh"><h3>16.1 Security goals</h3></div><div class="mb"><table><tbody><tr><th>Goal</th><th>Question</th><th>Typical mechanism</th></tr><tr><td>Confidentiality</td><td>Can an unauthorised party read the data?</td><td>Encryption.</td></tr><tr><td>Integrity</td><td>Was data altered?</td><td>Hash, HMAC, or digital signature depending on requirement.</td></tr><tr><td>Origin authentication</td><td>Did it come from expected source?</td><td>HMAC or signature / authenticated protocol.</td></tr><tr><td>Non-repudiation</td><td>Can the signer plausibly deny signing?</td><td>Digital signature plus reliable identity and key control.</td></tr></tbody></table><div class="memory"><b>Hash alone ≠ proof of sender identity.</b> HMAC uses a shared secret; a digital signature uses asymmetric keys.</div></div></div><div class="module"><div class="mh"><h3>16.2 Hash, HMAC and keyspace</h3></div><div class="mb"><div class="grid"><div class="card"><h4>Cryptographic hash</h4><p>Maps arbitrary-length input to a fixed-length digest. A secure hash aims to make it hard to reverse the digest or find collisions. MD5 and SHA-1 are legacy for modern collision-resistance needs; SHA-2 and SHA-3 are newer families.</p></div><div class="card"><h4>HMAC</h4><p>Combines a shared secret with a hash construction to provide message integrity and authentication for parties that share the secret. It does not provide public-key non-repudiation.</p></div></div><p><b>Keyspace:</b> an ideal n-bit key has <code>2^n</code> possible values. Adding one bit doubles the keyspace: <code>2^(n+1) = 2 × 2^n</code>.</p><div class="callout">Example: 129-bit keyspace has twice as many possibilities as a 128-bit keyspace.</div></div></div><div class="module"><div class="mh"><h3>16.3 Symmetric vs asymmetric; block vs stream</h3></div><div class="mb"><table><tbody><tr><th>Feature</th><th>Symmetric</th><th>Asymmetric</th></tr><tr><td>Keys</td><td>Same shared secret for encryption/decryption.</td><td>Public/private key pair; operation depends on algorithm and use.</td></tr><tr><td>Performance</td><td>Generally efficient for bulk data.</td><td>Generally more computationally expensive.</td></tr><tr><td>Challenge</td><td>Securely share the secret.</td><td>Authenticate the public key's identity binding.</td></tr><tr><td>Examples</td><td>AES; DES/3DES and RC4 are legacy.</td><td>RSA; Diffie–Hellman for key agreement.</td></tr></tbody></table><div class="grid"><div class="card"><h4>Block cipher</h4><p>Processes fixed-size blocks. AES is a modern example; modes determine how blocks are handled.</p></div><div class="card"><h4>Stream cipher</h4><p>Combines data with a keystream. RC4 is historical and considered insecure for modern use.</p></div></div><div class="callout warn">Diffie–Hellman does not encrypt the entire message. It helps peers establish shared key material over an insecure channel.</div><details class="rev" open=""><summary title="Double-click to mark/unmark as reviewed">Revision check — Module 16</summary><div class="inside"><ol><li>Confidentiality mechanism? <b>Encryption.</b></li><li>What does HMAC provide? <b>Integrity and authentication between shared-secret holders.</b></li><li>Does plain hash prove sender identity? <b>No.</b></li><li>Effect of one extra key bit? <b>Doubles keyspace.</b></li><li>Efficient bulk encryption? <b>Symmetric encryption.</b></li></ol></div></details></div></div></section>
 
-/* Buttons */
-.btn{
-  padding:14px 32px;border:none;border-radius:12px;font-size:1rem;font-weight:600;
-  cursor:pointer;transition:all .2s ease;display:inline-flex;align-items:center;gap:8px;
-}
-.btn-primary{
-  background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;
-}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px var(--primary-glow)}
-.btn-primary:disabled{opacity:.4;cursor:not-allowed;transform:none}
-.btn-secondary{
-  background:var(--bg-card);color:var(--text);border:1px solid var(--border);
-}
-.btn-secondary:hover{background:var(--bg-card-hover);border-color:var(--primary)}
-.btn-success{
-  background:linear-gradient(135deg,var(--success),#00c853);color:#000;
-}
-.btn-success:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,230,118,0.2)}
-.quiz-actions{
-  display:flex;justify-content:space-between;align-items:center;margin-top:24px;gap:12px;flex-wrap:wrap;
-}
+<section class="section" id="m17" data-search="public key cryptography digital signature CA RA PKI certificate CRL OCSP chain of trust private public key"><h2>Module 17 — Public-Key Cryptography and PKI</h2><p class="intro">Public/private keys, digital signatures, and certificates work together to establish trust.</p><div class="module"><div class="mh"><h3>17.1 Digital signatures</h3></div><div class="mb"><div class="diagram"><svg viewBox="0 0 850 205" role="img" aria-label="Digital signature creation and verification"><rect x="20" y="38" width="250" height="115" rx="12" fill="#172742" stroke="#7ce3c3"></rect><rect x="580" y="38" width="250" height="115" rx="12" fill="#172742" stroke="#83caff"></rect><g fill="#eaf1ff" text-anchor="middle"><text x="145" y="65" font-size="16" font-weight="700">Sender</text><text x="145" y="88" font-size="13">Hash message</text><text x="145" y="108" font-size="13">Sign digest with</text><text x="145" y="127" font-size="13">private key</text><text x="705" y="65" font-size="16" font-weight="700">Receiver</text><text x="705" y="88" font-size="13">Hash received message</text><text x="705" y="108" font-size="13">Verify using sender's</text><text x="705" y="127" font-size="13">public key</text></g><path d="M270 96 H580" stroke="#7ce3c3" stroke-width="3"></path><path d="M560 87 L580 96 L560 105" fill="none" stroke="#7ce3c3" stroke-width="3"></path><text x="425" y="81" fill="#7ce3c3" text-anchor="middle" font-size="13">Message + signature</text><text x="425" y="126" fill="#aab8d2" text-anchor="middle" font-size="12">Verify integrity and authenticity</text><text x="425" y="185" fill="#aab8d2" text-anchor="middle" font-size="13">Signing is not the same as encrypting for confidentiality.</text></svg><div class="caption">Simplified digital-signature flow</div></div><ul><li>Sender signs using sender's <b>private key</b>.</li><li>Receiver verifies using sender's <b>public key</b>.</li><li>Signature supports integrity and authentication; non-repudiation also depends on identity and private-key control.</li><li>A signature does not automatically make the message confidential.</li></ul></div></div><div class="module"><div class="mh"><h3>17.2 Public Key Infrastructure (PKI)</h3></div><div class="mb"><table><tbody><tr><th>Component</th><th>Role</th></tr><tr><td>PKI</td><td>People, policies, processes, and technology for managing public-key certificates and trust.</td></tr><tr><td>CA — Certificate Authority</td><td>Issues and digitally signs certificates.</td></tr><tr><td>RA — Registration Authority</td><td>Assists identity verification / certificate request processing.</td></tr><tr><td>Digital certificate</td><td>Binds a subject identity to a public key and is signed by an issuer.</td></tr><tr><td>CRL</td><td>Certificate Revocation List: published list of revoked certificates.</td></tr><tr><td>OCSP</td><td>Online Certificate Status Protocol: queries certificate status from a responder.</td></tr><tr><td>Chain of trust</td><td>Trust flows from trusted root through intermediates to end-entity certificate.</td></tr></tbody></table><div class="flow"><div class="node">Trusted root CA</div><div class="arrow">→</div><div class="node">Intermediate CA (optional)</div><div class="arrow">→</div><div class="node">Server / user certificate</div></div><div class="callout warn">A certificate's presence alone is not enough. Validate the chain, validity dates, identity / name, intended use, and revocation status as appropriate.</div><details class="rev" open=""><summary title="Double-click to mark/unmark as reviewed">Revision check — Module 17</summary><div class="inside"><ol><li>Which key signs? <b>Sender's private key.</b></li><li>Which key verifies? <b>Sender's public key.</b></li><li>CA vs RA? <b>CA issues/signs; RA helps verify identity / process requests.</b></li><li>CRL vs OCSP? <b>Revoked-certificate list vs online status query.</b></li></ol></div></details></div></div></section>
 
-/* Explanation */
-.explanation-box{
-  margin-top:24px;padding:24px;border-radius:12px;
-  background:rgba(0,212,255,0.05);border-left:4px solid var(--primary);
-  animation:fadeIn .3s ease;
-}
-.explanation-box.wrong{background:rgba(255,61,113,0.05);border-left-color:var(--danger)}
-.explanation-box.correct{background:rgba(0,230,118,0.05);border-left-color:var(--success)}
-.explanation-box h4{
-  font-size:.85rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;
-  display:flex;align-items:center;gap:8px;
-}
-.explanation-box h4.correct-h{color:var(--success)}
-.explanation-box h4.wrong-h{color:var(--danger)}
-.explanation-box h4.neutral-h{color:var(--primary)}
-.explanation-box p{font-size:.95rem;line-height:1.7;color:var(--text-dim)}
-.explanation-box .answer-reveal{
-  margin-top:12px;padding:12px 16px;background:var(--bg);border-radius:8px;
-  font-size:1rem;color:var(--text);
-}
-.explanation-box .answer-reveal strong{color:var(--primary)}
+<section class="section" id="m18" data-search="VPN site-to-site remote access IPsec AH ESP transport tunnel IKE phase 1 phase 2 Diffie Hellman PSK"><h2>Module 18 — VPNs</h2><p class="intro">VPNs protect communication over untrusted networks. IPsec operates at the IP layer.</p><div class="module"><div class="mh"><h3>18.1 VPN topologies</h3></div><div class="mb"><div class="grid"><div class="card"><h4>Remote-access VPN</h4><p>A single remote user / device securely connects to an organisation's network, using client software or another supported remote-access method.</p><span class="tag">User → network</span></div><div class="card"><h4>Site-to-site IPsec VPN</h4><p>Gateways protect traffic between networks. Sending gateway encapsulates / encrypts; receiving gateway decrypts and forwards into destination LAN.</p><span class="tag">Network → network</span></div></div></div></div><div class="module"><div class="mh"><h3>18.2 IPsec functions, AH and ESP</h3></div><div class="mb"><table><tbody><tr><th>Function / protocol</th><th>What it provides</th><th>Important note</th></tr><tr><td>Confidentiality</td><td>Encryption prevents unauthorised reading.</td><td>ESP commonly provides it.</td></tr><tr><td>Integrity</td><td>Detects changes to protected data.</td><td>Uses integrity algorithms / authenticated encryption.</td></tr><tr><td>Origin authentication</td><td>Checks expected peer identity.</td><td>IKE can use PSKs or certificates.</td></tr><tr><td>AH — Authentication Header</td><td>Integrity and origin authentication for protected IP fields.</td><td>No confidentiality; NAT can conflict with AH integrity.</td></tr><tr><td>ESP — Encapsulating Security Payload</td><td>Confidentiality and can provide integrity / authentication.</td><td>Commonly used for VPNs.</td></tr><tr><td>Diffie–Hellman</td><td>Establishes shared secret material over insecure channel.</td><td>Choose suitable DH group.</td></tr></tbody></table><div class="grid"><div class="card"><h4>Transport mode</h4><p>Protects the payload of the original IP packet while the original IP header remains the outer IP header. Often host-to-host.</p></div><div class="card"><h4>Tunnel mode</h4><p>Encapsulates the entire original IP packet in a new packet with a new outer IP header. Common gateway-to-gateway mode.</p></div></div><div class="diagram"><svg viewBox="0 0 850 210" role="img" aria-label="IPsec transport and tunnel packet layouts"><text x="15" y="25" fill="#83caff" font-size="16" font-weight="700">Transport mode</text><rect x="15" y="38" width="155" height="42" rx="6" fill="#244361" stroke="#83caff"></rect><rect x="170" y="38" width="135" height="42" rx="6" fill="#294e47" stroke="#7ce3c3"></rect><rect x="305" y="38" width="205" height="42" rx="6" fill="#4b3d62" stroke="#c9adff"></rect><g fill="#eaf1ff" font-size="12" text-anchor="middle"><text x="92" y="63">Original IP header</text><text x="237" y="63">IPsec header</text><text x="407" y="63">Protected payload</text></g><text x="15" y="118" fill="#83caff" font-size="16" font-weight="700">Tunnel mode</text><rect x="15" y="131" width="130" height="42" rx="6" fill="#244361" stroke="#83caff"></rect><rect x="145" y="131" width="120" height="42" rx="6" fill="#294e47" stroke="#7ce3c3"></rect><rect x="265" y="131" width="145" height="42" rx="6" fill="#244361" stroke="#83caff"></rect><rect x="410" y="131" width="180" height="42" rx="6" fill="#4b3d62" stroke="#c9adff"></rect><g fill="#eaf1ff" font-size="11" text-anchor="middle"><text x="80" y="147">New outer</text><text x="80" y="162">IP header</text><text x="205" y="155">IPsec header</text><text x="337" y="147">Original IP</text><text x="337" y="162">header</text><text x="500" y="155">Original payload</text></g><text x="620" y="60" fill="#aab8d2" font-size="12">Original IP header stays outermost</text><text x="615" y="154" fill="#aab8d2" font-size="12">Whole original packet inside</text><text x="425" y="197" fill="#aab8d2" font-size="12" text-anchor="middle">Tunnel mode adds an IP header; it does not encapsulate the Ethernet frame.</text></svg><div class="caption">Conceptual packet layout; exact fields depend on protocol and configuration.</div></div></div></div><div class="module"><div class="mh"><h3>18.3 IKE phases — classic IKEv1 course model</h3></div><div class="mb"><div class="flow"><div class="node"><b>Phase 1</b><br>Authenticate peers and establish protected IKE / ISAKMP channel.</div><div class="arrow">→</div><div class="node"><b>Phase 2</b><br>Negotiate IPsec SAs / parameters for protected data traffic.</div><div class="arrow">→</div><div class="node"><b>Data transfer</b><br>ESP / IPsec protects matching traffic.</div></div><p>Phase 1 proposal fields commonly include encryption, hash / integrity, authentication, DH group, and lifetime. Phase 2 negotiates IPsec SA / transform parameters and traffic selectors.</p><div class="memory"><b>Memory cue:</b> Phase 1 protects negotiation; Phase 2 establishes IPsec protection for user data. This is the classic IKEv1 model; IKEv2 has a different exchange structure.</div><details class="rev" open=""><summary title="Double-click to mark/unmark as reviewed">Revision check — Module 18</summary><div class="inside"><ol><li>Which VPN connects sites? <b>Site-to-site.</b></li><li>Which protocol encrypts? <b>ESP.</b></li><li>Which mode wraps the original IP packet? <b>Tunnel.</b></li><li>Diffie–Hellman role? <b>Establish shared secret material.</b></li><li>Phase 1 vs Phase 2? <b>Protect/authenticate IKE; then negotiate IPsec SAs.</b></li></ol></div></details></div></div></section>
 
-/* Results */
-.results-screen{
-  max-width:600px;margin:40px auto;padding:0 20px;text-align:center;display:none;
-}
-.results-card{
-  background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
-  padding:48px 32px;animation:fadeIn .5s ease;
-}
-.results-card .score-circle{
-  width:140px;height:140px;border-radius:50%;margin:0 auto 24px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:2.5rem;font-weight:800;position:relative;
-}
-.results-card .score-circle.high{background:conic-gradient(var(--success) 0deg,var(--bg) 0deg)}
-.results-card .score-circle.mid{background:conic-gradient(var(--warning) 0deg,var(--bg) 0deg)}
-.results-card .score-circle.low{background:conic-gradient(var(--danger) 0deg,var(--bg) 0deg)}
-.results-card .score-circle::before{
-  content:'';position:absolute;inset:8px;border-radius:50%;background:var(--bg-card);
-}
-.results-card .score-circle span{position:relative;z-index:1}
-.results-card h2{font-size:1.8rem;margin-bottom:8px}
-.results-card .result-msg{color:var(--text-dim);margin-bottom:32px;font-size:1.1rem}
-.results-card .result-stats{
-  display:flex;justify-content:center;gap:32px;margin-bottom:32px;flex-wrap:wrap;
-}
-.results-card .result-stat{text-align:center}
-.results-card .result-stat .num{font-size:2rem;font-weight:700}
-.results-card .result-stat .lbl{font-size:.8rem;color:var(--text-dim);text-transform:uppercase}
-.results-card .result-stat .num.correct{color:var(--success)}
-.results-card .result-stat .num.wrong{color:var(--danger)}
+<section class="section" id="m19" data-search="IPsec configuration crypto ACL interesting traffic transform set crypto map ISAKMP pre-shared key HAGLE show crypto map show crypto isakmp sa show crypto ipsec sa GRE"><h2>Module 19 — IPsec Configuration Concepts</h2><p class="intro">Learn the configuration sequence and which verification command checks each stage.</p><div class="module"><div class="mh"><h3>19.1 Configuration workflow</h3></div><div class="mb"><div class="flow"><div class="node">1. ACL: identify interesting traffic</div><div class="arrow">→</div><div class="node">2. IKE Phase 1 policy</div><div class="arrow">→</div><div class="node">3. Peer authentication / PSK</div></div><div class="flow"><div class="node">4. IPsec transform set</div><div class="arrow">→</div><div class="node">5. Crypto map: peer + ACL + transform</div><div class="arrow">→</div><div class="node">6. Apply map to interface</div></div><p><b>Interesting-traffic ACL:</b> defines which source/destination traffic should trigger IPsec protection. Peer ACLs normally mirror each other: local subnet ↔ remote subnet.</p><div class="memory"><b>HAGLE mnemonic (course context):</b> <b>H</b>ash / integrity, <b>A</b>uthentication, <b>G</b>roup (DH), <b>L</b>ifetime, <b>E</b>ncryption. Follow the exact order and terminology from your slides.</div><pre>! Illustrative IOS-style pattern — replace addresses, secret and algorithms
+access-list 110 permit ip 10.10.10.0 0.0.0.255 10.20.20.0 0.0.0.255
+!
+crypto isakmp policy 10
+ encr aes
+ hash sha
+ authentication pre-share
+ group 14
+ lifetime 86400
+!
+crypto isakmp key YOUR_PSK address 203.0.113.2
+!
+crypto ipsec transform-set VPN-SET esp-aes esp-sha-hmac
+!
+crypto map VPN-MAP 10 ipsec-isakmp
+ set peer 203.0.113.2
+ set transform-set VPN-SET
+ match address 110
+!
+interface GigabitEthernet0/0
+ crypto map VPN-MAP</pre><div class="callout warn">Illustrative teaching pattern, not a production-ready configuration. Supported algorithms and syntax vary by platform; use your lab's specified values.</div></div></div><div class="module"><div class="mh"><h3>19.2 Verify the tunnel</h3></div><div class="mb"><table><tbody><tr><th>Command</th><th>What it checks</th></tr><tr><td><code>show crypto map</code></td><td>Map entries, peer, transform set, matched ACL.</td></tr><tr><td><code>show crypto isakmp sa</code></td><td>IKEv1 Phase 1 / ISAKMP SA state.</td></tr><tr><td><code>show crypto ipsec sa</code></td><td>IPsec SA details and packet counters (encaps/encrypt/decaps/decrypt).</td></tr><tr><td><code>show access-lists</code></td><td>Whether interesting-traffic ACL matches.</td></tr><tr><td><code>show running-config</code></td><td>Configuration exists and crypto map is applied to intended interface.</td></tr></tbody></table><div class="callout"><b>Troubleshooting order:</b> peer reachability → matching IKE policy → PSK/authentication → matching Phase 2 transform / selectors → ACL subnets and direction → crypto map applied to correct interface → generate traffic that matches ACL.</div></div></div><div class="module"><div class="mh"><h3>19.3 GRE with IPsec</h3></div><div class="mb"><p>GRE can encapsulate traffic such as multicast / routing-protocol traffic in common designs. GRE supplies tunnel encapsulation; IPsec protects the GRE traffic.</p><div class="flow"><div class="node">Original routed / multicast traffic</div><div class="arrow">→</div><div class="node">GRE encapsulation</div><div class="arrow">→</div><div class="node">IPsec protection</div><div class="arrow">→</div><div class="node">Untrusted network</div></div><details class="rev" open=""><summary title="Double-click to mark/unmark as reviewed">Revision check — Module 19</summary><div class="inside"><ol><li>What does interesting-traffic ACL do? <b>Identifies traffic to protect.</b></li><li>Which command shows IPsec packet counters? <b><code>show crypto ipsec sa</code>.</b></li><li>Why mirror peer ACLs? <b>Local and remote subnets reverse direction on the other peer.</b></li><li>Why GRE + IPsec? <b>GRE carries supported tunnel traffic; IPsec protects it.</b></li></ol></div></details></div></div></section>
 
-/* Back button */
-.back-btn{
-  position:fixed;top:20px;left:20px;z-index:100;
-  background:var(--bg-card);border:1px solid var(--border);
-  border-radius:10px;padding:10px 16px;color:var(--text);
-  cursor:pointer;font-size:.9rem;transition:all .2s;display:none;
-}
-.back-btn:hover{background:var(--bg-card-hover);border-color:var(--primary)}
-.back-btn.show{display:block}
+<section class="section" id="m20" data-search="ASA introduction security levels inside outside DMZ stateful firewall NAT VPN routing management"><h2>Module 20 — Cisco ASA: Introduction</h2><p class="intro">Understand ASA roles, interface security levels, and the direction of traffic.</p><div class="module"><div class="mh"><h3>20.1 ASA role and security levels</h3></div><div class="mb"><ul><li>ASA can provide stateful firewalling, NAT, VPN, routing, and related security functions.</li><li>Routed interfaces have security levels from 0 to 100.</li><li>Typical convention: inside = 100, outside = 0, DMZ = intermediate.</li></ul><div class="diagram"><svg viewBox="0 0 850 190" role="img" aria-label="ASA security levels inside outside"><rect x="20" y="45" width="200" height="85" rx="12" fill="#17372f" stroke="#7ce3c3" stroke-width="2"></rect><rect x="325" y="45" width="200" height="85" rx="12" fill="#172742" stroke="#83caff" stroke-width="2"></rect><rect x="630" y="45" width="200" height="85" rx="12" fill="#302819" stroke="#ffd27e" stroke-width="2"></rect><g fill="#eaf1ff" text-anchor="middle"><text x="120" y="72" font-size="16" font-weight="700">Inside</text><text x="120" y="97" font-size="13">Security level 100</text><text x="425" y="72" font-size="16" font-weight="700">ASA firewall</text><text x="425" y="97" font-size="13">Stateful inspection</text><text x="730" y="72" font-size="16" font-weight="700">Outside / Internet</text><text x="730" y="97" font-size="13">Security level 0</text></g><path d="M220 87 H325 M525 87 H630" stroke="#7ce3c3" stroke-width="3"></path><text x="272" y="70" fill="#7ce3c3" font-size="12" text-anchor="middle">Higher → lower</text><text x="578" y="70" fill="#ffd27e" font-size="12" text-anchor="middle">Lower → higher</text><text x="425" y="162" fill="#aab8d2" font-size="12" text-anchor="middle">Default security-level behaviour is not the complete access policy.</text></svg><div class="caption">Typical ASA interface security-level model</div></div><table><tbody><tr><th>Direction</th><th>Typical default concept</th><th>Example</th></tr><tr><td>Higher → lower</td><td>Generally allowed by default in classic ASA model unless other policy blocks it.</td><td>Inside to outside.</td></tr><tr><td>Lower → higher</td><td>Not automatically allowed; explicit policy / ACL generally required.</td><td>Outside to inside.</td></tr><tr><td>Same security level</td><td>Do not assume communication is allowed; it depends on configuration.</td><td>Verify settings.</td></tr></tbody></table><div class="callout warn">Security levels are not a replacement for understanding ACLs, NAT, connection state, and ASA version/configuration.</div></div></div><div class="module"><div class="mh"><h3>20.2 Setup checklist</h3></div><div class="mb"><ol><li>Identify interfaces and assign names such as inside, outside, dmz.</li><li>Set interface IPs and appropriate security levels.</li><li>Configure routing.</li><li>Configure NAT according to design.</li><li>Apply access rules for traffic that must be explicitly permitted.</li><li>Restrict management access and prefer secure management protocols.</li><li>Verify interface state, routes, NAT, ACLs, and active connections.</li></ol><pre>! Conceptual ASA interface pattern; syntax varies by release
+interface GigabitEthernet1/1
+ nameif outside
+ security-level 0
+ ip address 203.0.113.1 255.255.255.0
+ no shutdown
+!
+interface GigabitEthernet1/2
+ nameif inside
+ security-level 100
+ ip address 10.10.10.1 255.255.255.0
+ no shutdown</pre><details class="rev" open=""><summary title="Double-click to mark/unmark as reviewed">Revision check — Module 20</summary><div class="inside"><ol><li>Typical inside / outside levels? <b>100 / 0.</b></li><li>Does a route alone permit lower-to-higher traffic? <b>No.</b></li><li>What else may be required? <b>Routing, NAT, access policy, secure management.</b></li></ol></div></details></div></div></section>
 
-/* Flashcard mode toggle */
-.mode-toggle{
-  max-width:1100px;margin:0 auto 20px;padding:0 20px;
-  display:flex;justify-content:center;gap:12px;
-}
-.mode-btn{
-  padding:10px 24px;border-radius:10px;border:1px solid var(--border);
-  background:var(--bg-card);color:var(--text-dim);cursor:pointer;
-  font-size:.9rem;font-weight:600;transition:all .2s;
-}
-.mode-btn.active{border-color:var(--primary);color:var(--primary);background:var(--primary-glow)}
-.mode-btn:hover{border-color:var(--primary)}
+<section class="section" id="m21" data-search="ASA configuration network object object group ACL subnet mask access-group NAT dynamic NAT PAT static NAT identity NAT policy NAT AAA MPF class-map policy-map service-policy show xlate show nat"><h2>Module 21 — Cisco ASA: Configuration</h2><p class="intro">Learn the configuration building blocks and the difference between defining a rule and applying it.</p><div class="module"><div class="mh"><h3>21.1 ASA access control lists</h3></div><div class="mb"><p>ACL entries define which traffic matches a rule. An ACL created but not applied to an interface may not affect traffic as intended.</p><div class="callout danger"><b>Important syntax distinction:</b> ASA ACL examples commonly use a <b>subnet mask</b> (e.g. <code>255.255.255.0</code>) after a network address, unlike classic IOS ACL wildcard masks (e.g. <code>0.0.0.255</code>). Follow your course's ASA syntax.</div><pre>! Illustrative ASA-style example
+access-list OUTSIDE-IN extended permit tcp any host 10.10.10.20 eq 443
+access-group OUTSIDE-IN in interface outside
+!
+show access-list
+show running-config access-group</pre><p><b>Direction:</b> <code>in interface outside</code> evaluates traffic entering the ASA through the outside interface.</p></div></div><div class="module"><div class="mh"><h3>21.2 Network objects and object groups</h3></div><div class="mb"><div class="grid"><div class="card"><h4>Network object</h4><p>Names a host or subnet. Reuse improves readability and maintenance of ACL / NAT policy.</p></div><div class="card"><h4>Object group</h4><p>Groups multiple hosts, networks, services, or ports so policy can be expressed efficiently.</p></div></div><pre>object network INSIDE-NET
+ subnet 10.10.10.0 255.255.255.0
+!
+object network WEB-SERVER
+ host 10.10.10.20</pre></div></div><div class="module"><div class="mh"><h3>21.3 NAT types</h3></div><div class="mb"><table><tbody><tr><th>Type</th><th>Concept</th><th>Typical use</th></tr><tr><td>Dynamic NAT</td><td>Maps inside local addresses to addresses from a pool.</td><td>Internal hosts share a public-address pool.</td></tr><tr><td>PAT / overload</td><td>Many hosts share one / few outside IPs, distinguished by transport ports.</td><td>Inside users share outside address.</td></tr><tr><td>Static NAT</td><td>Persistent one-to-one mapping.</td><td>Consistent server mapping.</td></tr><tr><td>Identity NAT</td><td>Address maps to itself for matching traffic.</td><td>Exempt selected flows from translation, often VPN-related.</td></tr><tr><td>Policy NAT</td><td>Translation depends on extra match conditions such as destination.</td><td>Different translation by destination / traffic.</td></tr></tbody></table><div class="callout"><b>NAT and ACL are different:</b> NAT changes address / port information; ACL controls whether matching traffic is permitted. A correct NAT rule does not automatically permit inbound connections.</div><pre>show nat
+show nat detail
+show xlate</pre><p><code>show xlate</code> displays translation entries. <code>show nat</code> and <code>show nat detail</code> inspect configured NAT rules and details / hit information.</p></div></div><div class="module"><div class="mh"><h3>21.4 AAA and management</h3></div><div class="mb"><ul><li><b>Authentication:</b> who are you?</li><li><b>Authorization:</b> what are you allowed to do?</li><li><b>Accounting:</b> what actions / sessions should be recorded?</li></ul><p>Use local or external AAA as required, restrict management sources, and prefer secure management protocols.</p></div></div><div class="module"><div class="mh"><h3>21.5 Modular Policy Framework (MPF)</h3><p>Identify traffic → define handling → activate policy.</p></div><div class="mb"><div class="flow"><div class="node"><b>Class map</b><br>Matches traffic</div><div class="arrow">→</div><div class="node"><b>Policy map</b><br>Defines actions</div><div class="arrow">→</div><div class="node"><b>Service policy</b><br>Activates policy</div></div><table><tbody><tr><th>Element</th><th>Question</th></tr><tr><td>Class map</td><td>Which traffic matches?</td></tr><tr><td>Policy map</td><td>What action / inspection applies?</td></tr><tr><td>Service policy</td><td>Where is policy activated?</td></tr></tbody></table><div class="memory"><b>Memory cue:</b> Class = classify; Policy = prescribe; Service-policy = switch on / attach.</div></div></div><div class="module"><div class="mh"><h3>21.6 Verification mindset</h3></div><div class="mb"><table><tbody><tr><th>Check</th><th>Useful command / evidence</th></tr><tr><td>Interfaces / security levels</td><td><code>show running-config interface</code>; interface summary commands vary.</td></tr><tr><td>Routes</td><td><code>show route</code></td></tr><tr><td>ACL rules / application</td><td><code>show access-list</code>; inspect <code>access-group</code>.</td></tr><tr><td>NAT / translations</td><td><code>show nat</code>, <code>show nat detail</code>, <code>show xlate</code></td></tr><tr><td>Connections</td><td><code>show conn</code></td></tr><tr><td>Full configuration</td><td><code>show running-config</code></td></tr></tbody></table><div class="callout warn">ASA commands vary by release. Use the command reference and syntax shown in the lab for your specific platform.</div><details class="rev" open=""><summary title="Double-click to mark/unmark as reviewed">Revision check — Module 21</summary><div class="inside"><ol><li>What applies an ASA ACL to an interface? <b><code>access-group ... in interface ...</code></b></li><li>ASA subnet mask vs IOS wildcard? <b>ASA ACL examples use subnet masks; classic IOS ACLs use wildcard masks.</b></li><li>What does PAT allow? <b>Many inside hosts share an address using ports to distinguish flows.</b></li><li>MPF order? <b>Class map matches, policy map defines actions, service policy activates.</b></li><li>Current translations command? <b><code>show xlate</code>.</b></li></ol></div></details></div></div></section>
 
-/* Flashcard */
-.flashcard-container{
-  max-width:600px;margin:40px auto;perspective:1200px;padding:0 20px;display:none;
-}
-.flashcard{
-  width:100%;min-height:320px;position:relative;cursor:pointer;
-  transform-style:preserve-3d;transition:transform .6s;
-}
-.flashcard.flipped{transform:rotateY(180deg)}
-.flashcard-front,.flashcard-back{
-  position:absolute;width:100%;min-height:320px;backface-visibility:hidden;
-  background:var(--bg-card);border:1px solid var(--border);
-  border-radius:var(--radius);padding:40px 32px;
-  display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
-}
-.flashcard-back{
-  transform:rotateY(180deg);
-  background:linear-gradient(135deg,var(--bg-card),var(--bg-card-hover));
-  border-color:var(--primary);
-}
-.flashcard .fc-type{
-  font-size:.75rem;text-transform:uppercase;letter-spacing:2px;
-  color:var(--text-dim);margin-bottom:16px;
-}
-.flashcard .fc-question{font-size:1.3rem;font-weight:600;line-height:1.5}
-.flashcard .fc-hint{margin-top:20px;font-size:.85rem;color:var(--text-dim)}
-.flashcard .fc-answer{
-  font-size:1.5rem;font-weight:700;color:var(--primary);margin-bottom:16px;
-}
-.flashcard .fc-explanation{font-size:.95rem;color:var(--text-dim);line-height:1.6;text-align:left}
-.flashcard-nav{
-  display:flex;justify-content:center;gap:16px;margin-top:24px;align-items:center;
-}
-.flashcard-nav .fc-counter{color:var(--text-dim);font-size:.9rem;min-width:80px;text-align:center}
-.fc-btn{
-  width:48px;height:48px;border-radius:50%;border:1px solid var(--border);
-  background:var(--bg-card);color:var(--text);cursor:pointer;
-  display:flex;align-items:center;justify-content:center;font-size:1.2rem;
-  transition:all .2s;
-}
-.fc-btn:hover{border-color:var(--primary);color:var(--primary);background:var(--bg-card-hover)}
-.fc-btn:disabled{opacity:.3;cursor:not-allowed}
+<section class="section" id="compare" data-search="comparison port security DHCP snooping DAI IPSG hash HMAC signature AH ESP transport tunnel ASA ACL NAT MPF"><h2>Fast comparison tables</h2><p class="intro">Use these tables to answer “differentiate between” and multiple-choice questions.</p><div class="module"><div class="mh"><h3>Layer 2 protection tools</h3></div><div class="mb"><table><tbody><tr><th>Tool</th><th>Primary target</th><th>How it helps</th></tr><tr><td>Port security</td><td>MAC flooding / unauthorised MACs</td><td>Limits allowed source MACs on a port.</td></tr><tr><td>DHCP snooping</td><td>Starvation / rogue DHCP server</td><td>Trusted/untrusted ports; builds binding table.</td></tr><tr><td>DAI</td><td>ARP spoofing / poisoning</td><td>Validates ARP claims against bindings.</td></tr><tr><td>IPSG</td><td>IP source spoofing</td><td>Filters IP packets using source binding info.</td></tr><tr><td>BPDU Guard</td><td>Unexpected BPDU on edge port</td><td>Error-disables protected edge port.</td></tr><tr><td>Root Guard</td><td>Unexpected superior root information</td><td>Stops port accepting superior BPDUs as root path.</td></tr><tr><td>Loop Guard</td><td>Potential loop after missing BPDUs</td><td>Prevents certain ports from incorrectly forwarding.</td></tr></tbody></table></div></div><div class="module"><div class="mh"><h3>Cryptography and IPsec</h3></div><div class="mb"><table><tbody><tr><th>Concept A</th><th>Concept B</th><th>Difference</th></tr><tr><td>Hash</td><td>HMAC</td><td>Plain hash has no secret; HMAC combines a shared secret with hash construction.</td></tr><tr><td>HMAC</td><td>Digital signature</td><td>Shared secret vs asymmetric key pair / public verification.</td></tr><tr><td>AH</td><td>ESP</td><td>AH integrity/authentication, no encryption; ESP commonly encrypts and can provide integrity/authentication.</td></tr><tr><td>Transport</td><td>Tunnel</td><td>Transport protects payload with original IP header outermost; tunnel wraps whole original IP packet in a new IP packet.</td></tr><tr><td>IKE Phase 1</td><td>IKE Phase 2</td><td>Classic IKEv1: establish protected IKE relationship; negotiate IPsec SAs for data.</td></tr><tr><td>Symmetric</td><td>Asymmetric</td><td>Shared secret / efficient bulk encryption vs public/private pair / signatures and key establishment.</td></tr></tbody></table></div></div><div class="module"><div class="mh"><h3>ASA: ACL, NAT and MPF</h3></div><div class="mb"><table><tbody><tr><th>Feature</th><th>Purpose</th><th>Exam trap</th></tr><tr><td>ACL</td><td>Matches and controls traffic.</td><td>Creating ACL ≠ applying it; use access-group.</td></tr><tr><td>NAT</td><td>Translates addresses / ports.</td><td>NAT alone does not mean connection is permitted.</td></tr><tr><td>MPF</td><td>Classifies traffic and applies handling / inspection policy.</td><td>Class matches; policy defines; service-policy activates.</td></tr><tr><td>Security level</td><td>Contributes to default inter-interface policy.</td><td>Higher-to-lower typically allowed by default; lower-to-higher not automatically allowed.</td></tr></tbody></table></div></div></section>
 
-/* Responsive */
-@media(max-width:600px){
-  header h1{font-size:1.8rem}
-  .q-text{font-size:1.1rem}
-  .question-card{padding:20px}
-  .week-grid{grid-template-columns:1fr}
-  .module-grid{grid-template-columns:1fr}
-}
-</style>
-</head>
-<body>
+<section class="section" id="commands" data-search="command reference port security DHCP snooping DAI spanning tree 802.1X IPsec ASA"><h2>Command reference sheet</h2><p class="intro">Quick scan before a lab or oral test. Exact availability can vary by IOS / ASA release.</p><div class="module"><div class="mb"><h3>Endpoint / 802.1X</h3><pre>aaa authentication dot1x default group radius
+dot1x system-auth-control
+authentication port-control auto
+dot1x pae authenticator</pre><h3>Port security</h3><pre>switchport port-security
+switchport port-security maximum 2
+switchport port-security mac-address sticky
+switchport port-security violation restrict
+show port-security interface GigabitEthernet1/0/10
+show port-security address</pre><h3>VLAN / DHCP / ARP</h3><pre>switchport mode access
+switchport nonegotiate
+switchport trunk native vlan 999
+ip dhcp snooping
+ip dhcp snooping vlan 10
+ip dhcp snooping trust
+ip dhcp snooping limit rate 10
+show ip dhcp snooping
+show ip dhcp snooping binding
+ip arp inspection vlan 10
+ip arp inspection trust
+show ip arp inspection</pre><h3>STP</h3><pre>spanning-tree portfast
+spanning-tree bpduguard enable
+spanning-tree guard root
+show spanning-tree</pre><h3>IPsec</h3><pre>show crypto map
+show crypto isakmp sa
+show crypto ipsec sa
+show access-lists</pre><h3>ASA</h3><pre>show route
+show access-list
+show running-config access-group
+show nat
+show nat detail
+show xlate
+show conn
+show running-config</pre></div></div></section>
 
-<div class="back-btn" id="backBtn" onclick="goBack()">← Back</div>
-
-<header>
-  <h1>🔐 Network Security Quiz</h1>
-  <p>Interactive Flashcards & Quiz — Learn All Concepts</p>
-  <div class="stats-bar">
-    <div class="stat-pill">
-      <span class="label">Answered</span>
-      <span class="value" id="statAnswered">0</span>
-    </div>
-    <div class="stat-pill">
-      <span class="label">Correct</span>
-      <span class="value success" id="statCorrect">0</span>
-    </div>
-    <div class="stat-pill">
-      <span class="label">Accuracy</span>
-      <span class="value" id="statAccuracy">—</span>
-    </div>
-  </div>
-</header>
-
-<div class="mode-toggle" id="modeToggle" style="display:none">
-  <button class="mode-btn active" onclick="setMode('quiz')">📝 Quiz Mode</button>
-  <button class="mode-btn" onclick="setMode('flashcard')">🎴 Flashcard Mode</button>
-</div>
-
-<!-- Week Selector -->
-<div class="week-selector" id="weekSelector">
-  <div class="week-grid" id="weekGrid"></div>
-</div>
-
-<!-- Module Selector -->
-<div class="module-selector" id="moduleSelector">
-  <div class="module-grid" id="moduleGrid"></div>
-</div>
-
-<!-- Quiz Area -->
-<div class="quiz-area" id="quizArea">
-  <div class="quiz-header">
-    <div class="quiz-progress" id="quizProgress">Question <span>1</span> of <span>10</span></div>
-  </div>
-  <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-  <div id="questionContainer"></div>
-  <div class="quiz-actions" id="quizActions" style="display:none">
-    <button class="btn btn-secondary" onclick="quitQuiz()">Quit</button>
-    <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()" disabled>Next →</button>
-  </div>
-</div>
-
-<!-- Flashcard Area -->
-<div class="flashcard-container" id="flashcardContainer">
-  <div class="flashcard" id="flashcard" onclick="flipCard()">
-    <div class="flashcard-front" id="fcFront"></div>
-    <div class="flashcard-back" id="fcBack"></div>
-  </div>
-  <div class="flashcard-nav">
-    <button class="fc-btn" id="fcPrev" onclick="prevCard()">←</button>
-    <span class="fc-counter" id="fcCounter">1 / 10</span>
-    <button class="fc-btn" id="fcNext" onclick="nextCard()">→</button>
-  </div>
-</div>
-
-<!-- Results -->
-<div class="results-screen" id="resultsScreen">
-  <div class="results-card">
-    <div class="score-circle" id="scoreCircle"><span id="scorePercent">0%</span></div>
-    <h2 id="resultTitle">Quiz Complete!</h2>
-    <p class="result-msg" id="resultMsg"></p>
-    <div class="result-stats">
-      <div class="result-stat">
-        <div class="num correct" id="resCorrect">0</div>
-        <div class="lbl">Correct</div>
-      </div>
-      <div class="result-stat">
-        <div class="num wrong" id="resWrong">0</div>
-        <div class="lbl">Wrong</div>
-      </div>
-      <div class="result-stat">
-        <div class="num" id="resTotal">0</div>
-        <div class="lbl">Total</div>
-      </div>
-    </div>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-      <button class="btn btn-primary" onclick="retryQuiz()">🔄 Retry</button>
-      <button class="btn btn-secondary" onclick="goHome()">🏠 Home</button>
-    </div>
-  </div>
-</div>
-
+<section class="section" id="quiz" data-search="practice quiz test questions answers modules 13 14 15 16 17 18 19 20 21"><h2>Practice quiz — 20 questions</h2><p class="intro">Select one answer per question, then mark your answers to see explanations.</p><div class="toolbar no-print"><button onclick="markQuiz()">Mark my answers</button><button onclick="resetQuiz()">Reset quiz</button><span class="tag" id="score">Not marked</span></div><div id="quizQuestions"><div class="q"><p><b>1. In wired 802.1X, which device usually acts as authenticator?</b></p><label><input type="radio" name="q0" value="0"> A. Client PC</label><label><input type="radio" name="q0" value="1"> B. Access switch</label><label><input type="radio" name="q0" value="2"> C. Certificate Authority</label><label><input type="radio" name="q0" value="3"> D. DNS server</label><div class="feedback" id="f0" hidden=""></div></div><div class="q"><p><b>2. EAPOL carries authentication traffic between which roles?</b></p><label><input type="radio" name="q1" value="0"> A. Switch and RADIUS server</label><label><input type="radio" name="q1" value="1"> B. Supplicant and authenticator</label><label><input type="radio" name="q1" value="2"> C. CA and RA</label><label><input type="radio" name="q1" value="3"> D. Two VPN gateways</label><div class="feedback" id="f1" hidden=""></div></div><div class="q"><p><b>3. Which port-security mode drops traffic and increments the violation counter?</b></p><label><input type="radio" name="q2" value="0"> A. protect</label><label><input type="radio" name="q2" value="1"> B. restrict</label><label><input type="radio" name="q2" value="2"> C. shutdown</label><label><input type="radio" name="q2" value="3"> D. auto</label><div class="feedback" id="f2" hidden=""></div></div><div class="q"><p><b>4. A MAC flooding attack targets the switch’s…</b></p><label><input type="radio" name="q3" value="0"> A. Routing table</label><label><input type="radio" name="q3" value="1"> B. PC ARP cache</label><label><input type="radio" name="q3" value="2"> C. MAC/CAM address table</label><label><input type="radio" name="q3" value="3"> D. Certificate store</label><div class="feedback" id="f3" hidden=""></div></div><div class="q"><p><b>5. Which attack uses a rogue DHCP server to give false gateway/DNS information?</b></p><label><input type="radio" name="q4" value="0"> A. DHCP starvation</label><label><input type="radio" name="q4" value="1"> B. DHCP spoofing</label><label><input type="radio" name="q4" value="2"> C. MAC flooding</label><label><input type="radio" name="q4" value="3"> D. STP root attack</label><div class="feedback" id="f4" hidden=""></div></div><div class="q"><p><b>6. Which feature validates ARP against IP-to-MAC bindings?</b></p><label><input type="radio" name="q5" value="0"> A. IP Source Guard</label><label><input type="radio" name="q5" value="1"> B. PortFast</label><label><input type="radio" name="q5" value="2"> C. DAI</label><label><input type="radio" name="q5" value="3"> D. PAT</label><div class="feedback" id="f5" hidden=""></div></div><div class="q"><p><b>7. How does IPSG differ from DAI?</b></p><label><input type="radio" name="q6" value="0"> A. IPSG checks only ARP</label><label><input type="radio" name="q6" value="1"> B. IPSG filters IP packets generally, not only ARP</label><label><input type="radio" name="q6" value="2"> C. IPSG encrypts packets</label><label><input type="radio" name="q6" value="3"> D. IPSG is an IKE phase</label><div class="feedback" id="f6" hidden=""></div></div><div class="q"><p><b>8. A BPDU arrives on a PortFast + BPDU Guard port. Expected result?</b></p><label><input type="radio" name="q7" value="0"> A. Port automatically becomes trunk</label><label><input type="radio" name="q7" value="1"> B. Port becomes error-disabled</label><label><input type="radio" name="q7" value="2"> C. Switch reboots</label><label><input type="radio" name="q7" value="3"> D. VLAN is deleted</label><div class="feedback" id="f7" hidden=""></div></div><div class="q"><p><b>9. Which cipher rearranges symbol positions?</b></p><label><input type="radio" name="q8" value="0"> A. Substitution</label><label><input type="radio" name="q8" value="1"> B. Transposition</label><label><input type="radio" name="q8" value="2"> C. Hashing</label><label><input type="radio" name="q8" value="3"> D. HMAC</label><div class="feedback" id="f8" hidden=""></div></div><div class="q"><p><b>10. Which is a one-time-pad requirement?</b></p><label><input type="radio" name="q9" value="0"> A. Reuse key repeatedly</label><label><input type="radio" name="q9" value="1"> B. Predictable key</label><label><input type="radio" name="q9" value="2"> C. Truly random key used once</label><label><input type="radio" name="q9" value="3"> D. Key shorter than message</label><div class="feedback" id="f9" hidden=""></div></div><div class="q"><p><b>11. What does adding one bit to an ideal key do to the keyspace?</b></p><label><input type="radio" name="q10" value="0"> A. Halves it</label><label><input type="radio" name="q10" value="1"> B. Doubles it</label><label><input type="radio" name="q10" value="2"> C. Adds one possibility</label><label><input type="radio" name="q10" value="3"> D. No change</label><div class="feedback" id="f10" hidden=""></div></div><div class="q"><p><b>12. Which statement about a plain hash is correct?</b></p><label><input type="radio" name="q11" value="0"> A. It inherently proves sender identity</label><label><input type="radio" name="q11" value="1"> B. It encrypts the message</label><label><input type="radio" name="q11" value="2"> C. It does not by itself authenticate sender</label><label><input type="radio" name="q11" value="3"> D. It is identical to a signature</label><div class="feedback" id="f11" hidden=""></div></div><div class="q"><p><b>13. HMAC uses…</b></p><label><input type="radio" name="q12" value="0"> A. A shared secret with a hash construction</label><label><input type="radio" name="q12" value="1"> B. Only a public key</label><label><input type="radio" name="q12" value="2"> C. A new IP header</label><label><input type="radio" name="q12" value="3"> D. A VLAN tag</label><div class="feedback" id="f12" hidden=""></div></div><div class="q"><p><b>14. A digital signature is created using the sender’s…</b></p><label><input type="radio" name="q13" value="0"> A. Public key</label><label><input type="radio" name="q13" value="1"> B. Private key</label><label><input type="radio" name="q13" value="2"> C. Default gateway</label><label><input type="radio" name="q13" value="3"> D. DHCP lease</label><div class="feedback" id="f13" hidden=""></div></div><div class="q"><p><b>15. Which PKI component issues and signs certificates?</b></p><label><input type="radio" name="q14" value="0"> A. RA</label><label><input type="radio" name="q14" value="1"> B. CA</label><label><input type="radio" name="q14" value="2"> C. OCSP client</label><label><input type="radio" name="q14" value="3"> D. DHCP snooping</label><div class="feedback" id="f14" hidden=""></div></div><div class="q"><p><b>16. Which IPsec protocol commonly provides confidentiality through encryption?</b></p><label><input type="radio" name="q15" value="0"> A. AH</label><label><input type="radio" name="q15" value="1"> B. ESP</label><label><input type="radio" name="q15" value="2"> C. EAPOL</label><label><input type="radio" name="q15" value="3"> D. DTP</label><div class="feedback" id="f15" hidden=""></div></div><div class="q"><p><b>17. Which IPsec mode encapsulates the whole original IP packet in a new IP packet?</b></p><label><input type="radio" name="q16" value="0"> A. Transport</label><label><input type="radio" name="q16" value="1"> B. Tunnel</label><label><input type="radio" name="q16" value="2"> C. Access</label><label><input type="radio" name="q16" value="3"> D. Promiscuous</label><div class="feedback" id="f16" hidden=""></div></div><div class="q"><p><b>18. In classic IKEv1, Phase 1 primarily…</b></p><label><input type="radio" name="q17" value="0"> A. Applies ASA ACL</label><label><input type="radio" name="q17" value="1"> B. Authenticates peers and establishes protected IKE channel</label><label><input type="radio" name="q17" value="2"> C. Builds DHCP binding table</label><label><input type="radio" name="q17" value="3"> D. Changes VLAN IDs</label><div class="feedback" id="f17" hidden=""></div></div><div class="q"><p><b>19. What does access-group OUTSIDE-IN in interface outside do?</b></p><label><input type="radio" name="q18" value="0"> A. Creates DHCP pool</label><label><input type="radio" name="q18" value="1"> B. Applies ACL inbound on outside interface</label><label><input type="radio" name="q18" value="2"> C. Creates NAT only</label><label><input type="radio" name="q18" value="3"> D. Enables PortFast</label><div class="feedback" id="f18" hidden=""></div></div><div class="q"><p><b>20. In MPF, what activates a policy globally or on an interface?</b></p><label><input type="radio" name="q19" value="0"> A. Class map</label><label><input type="radio" name="q19" value="1"> B. Policy map</label><label><input type="radio" name="q19" value="2"> C. Service policy</label><label><input type="radio" name="q19" value="3"> D. Network object</label><div class="feedback" id="f19" hidden=""></div></div></div></section>
+</div><div class="footer"><b>Suggested revision method:</b> explain each concept aloud, redraw the diagrams from memory, complete the revision checks, then do the quiz without notes. This guide is based on the uploaded Network Security v1.0 Modules 13–21 materials and includes illustrative CLI patterns; use the exact commands and terminology from your assessed lab when they differ.</div></main></div>
 <script>
-let currentWeek = null;
-let currentModule = null;
-let currentQuestions = [];
-let currentQIndex = 0;
-let answeredCount = 0;
-let correctCount = 0;
-let selectedAnswer = null;
-let answered = false;
-let mode = 'quiz';
-let fcIndex = 0;
-
-// Build week selector
-function init() {
-  const grid = document.getElementById('weekGrid');
-  QUIZ_DATA.weeks.forEach(week => {
-    const moduleNames = week.modules.map(m => `Module ${m.id}`).join(', ');
-    const totalQ = week.modules.reduce((s, m) => s + m.questions.length, 0);
-    const card = document.createElement('div');
-    card.className = 'week-card';
-    card.onclick = () => selectWeek(week.week);
-    card.innerHTML = `
-      <div class="week-num">Week ${week.week}</div>
-      <div class="week-title">${week.title}</div>
-      <div class="week-modules">${moduleNames}</div>
-      <div class="week-badge">${totalQ} Questions</div>
-    `;
-    grid.appendChild(card);
-  });
-}
-
-function selectWeek(weekNum) {
-  currentWeek = QUIZ_DATA.weeks.find(w => w.week === weekNum);
-  document.getElementById('weekSelector').style.display = 'none';
-  document.getElementById('moduleSelector').style.display = 'block';
-  document.getElementById('backBtn').classList.add('show');
-  document.getElementById('modeToggle').style.display = 'flex';
-
-  const grid = document.getElementById('moduleGrid');
-  grid.innerHTML = '';
-  currentWeek.modules.forEach(mod => {
-    const card = document.createElement('div');
-    card.className = 'module-card';
-    card.onclick = () => startModule(mod);
-    card.innerHTML = `
-      <div class="mod-num">Module ${mod.id}</div>
-      <div class="mod-title">${mod.title}</div>
-      <div class="mod-obj">${mod.objective}</div>
-      <div class="mod-questions">${mod.questions.length} Questions</div>
-    `;
-    grid.appendChild(card);
-  });
-}
-
-function startModule(mod) {
-  currentModule = mod;
-  currentQuestions = shuffleArray([...mod.questions]);
-  currentQIndex = 0;
-  answeredCount = 0;
-  correctCount = 0;
-  updateStats();
-
-  if (mode === 'quiz') {
-    document.getElementById('moduleSelector').style.display = 'none';
-    document.getElementById('modeToggle').style.display = 'none';
-    document.getElementById('quizArea').style.display = 'block';
-    document.getElementById('resultsScreen').style.display = 'none';
-    showQuestion();
-  } else {
-    document.getElementById('moduleSelector').style.display = 'none';
-    document.getElementById('modeToggle').style.display = 'none';
-    document.getElementById('flashcardContainer').style.display = 'block';
-    fcIndex = 0;
-    showFlashcard();
-  }
-}
-
-function setMode(m) {
-  mode = m;
-  document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
-  event.target.classList.add('active');
-}
-
-// Quiz functions
-function showQuestion() {
-  answered = false;
-  selectedAnswer = null;
-  const q = currentQuestions[currentQIndex];
-  const container = document.getElementById('questionContainer');
-  document.getElementById('quizActions').style.display = 'none';
-
-  document.getElementById('quizProgress').innerHTML =
-    `Question <span>${currentQIndex + 1}</span> of <span>${currentQuestions.length}</span>`;
-  document.getElementById('progressFill').style.width =
-    `${(currentQIndex / currentQuestions.length) * 100}%`;
-
-  let html = `<div class="question-card">`;
-  html += `<span class="q-type-badge ${q.type}">${q.type === 'mcq' ? 'Multiple Choice' : 'Fill in the Blank'}</span>`;
-  html += `<div class="q-text">${formatQuestion(q)}</div>`;
-
-  if (q.type === 'mcq') {
-    html += `<div class="options">`;
-    q.options.forEach((opt, i) => {
-      const letter = String.fromCharCode(65 + i);
-      html += `<div class="option" onclick="selectOption(${i})" id="opt${i}">
-        <div class="opt-letter">${letter}</div>
-        <div>${opt}</div>
-      </div>`;
-    });
-    html += `</div>`;
-  } else {
-    html += `<div class="fill-input-container">
-      <input type="text" class="fill-input" id="fillInput"
-        placeholder="Type your answer..." onkeydown="if(event.key==='Enter')submitFill()">
-    </div>`;
-  }
-
-  html += `<div id="explanationBox"></div>`;
-  html += `</div>`;
-
-  container.innerHTML = html;
-
-  if (q.type === 'fill') {
-    setTimeout(() => document.getElementById('fillInput')?.focus(), 100);
-  }
-}
-
-function formatQuestion(q) {
-  if (q.type === 'fill') {
-    return q.question.replace(/______/g, '<span class="blank">______</span>');
-  }
-  return q.question;
-}
-
-function selectOption(idx) {
-  if (answered) return;
-  selectedAnswer = idx;
-  document.querySelectorAll('.option').forEach((el, i) => {
-    el.classList.toggle('selected', i === idx);
-  });
-  submitMCQ();
-}
-
-function submitMCQ() {
-  if (selectedAnswer === null) return;
-  answered = true;
-  const q = currentQuestions[currentQIndex];
-  const isCorrect = selectedAnswer === q.answer;
-
-  document.querySelectorAll('.option').forEach((el, i) => {
-    el.classList.add('disabled');
-    if (i === q.answer) el.classList.add('correct');
-    if (i === selectedAnswer && !isCorrect) el.classList.add('wrong');
-  });
-
-  showExplanation(isCorrect, q);
-  answeredCount++;
-  if (isCorrect) correctCount++;
-  updateStats();
-  document.getElementById('quizActions').style.display = 'flex';
-  document.getElementById('nextBtn').disabled = false;
-}
-
-function submitFill() {
-  if (answered) return;
-  const input = document.getElementById('fillInput');
-  const userAns = input.value.trim().toLowerCase();
-  if (!userAns) return;
-
-  answered = true;
-  const q = currentQuestions[currentQIndex];
-  const correctAns = q.answer.toLowerCase();
-  const isCorrect = userAns === correctAns;
-
-  input.classList.add(isCorrect ? 'correct' : 'wrong');
-  input.disabled = true;
-
-  showExplanation(isCorrect, q);
-  answeredCount++;
-  if (isCorrect) correctCount++;
-  updateStats();
-  document.getElementById('quizActions').style.display = 'flex';
-  document.getElementById('nextBtn').disabled = false;
-}
-
-function showExplanation(isCorrect, q) {
-  const box = document.getElementById('explanationBox');
-  let html = `<div class="explanation-box ${isCorrect ? 'correct' : 'wrong'}">`;
-  html += `<h4 class="${isCorrect ? 'correct-h' : 'wrong-h'}">${isCorrect ? '✅ Correct!' : '❌ Not quite!'}</h4>`;
-
-  if (q.type === 'mcq') {
-    html += `<div class="answer-reveal">Correct Answer: <strong>${q.options[q.answer]}</strong></div>`;
-  } else {
-    html += `<div class="answer-reveal">Correct Answer: <strong>${q.answer}</strong></div>`;
-  }
-
-  html += `<p style="margin-top:12px">${q.explanation}</p>`;
-  html += `</div>`;
-  box.innerHTML = html;
-}
-
-function nextQuestion() {
-  if (currentQIndex < currentQuestions.length - 1) {
-    currentQIndex++;
-    showQuestion();
-  } else {
-    showResults();
-  }
-}
-
-function showResults() {
-  document.getElementById('quizArea').style.display = 'none';
-  document.getElementById('resultsScreen').style.display = 'block';
-
-  const percent = Math.round((correctCount / currentQuestions.length) * 100);
-  document.getElementById('scorePercent').textContent = percent + '%';
-  document.getElementById('resCorrect').textContent = correctCount;
-  document.getElementById('resWrong').textContent = currentQuestions.length - correctCount;
-  document.getElementById('resTotal').textContent = currentQuestions.length;
-
-  const circle = document.getElementById('scoreCircle');
-  circle.className = 'score-circle ' + (percent >= 70 ? 'high' : percent >= 40 ? 'mid' : 'low');
-  circle.style.background = `conic-gradient(${percent >= 70 ? 'var(--success)' : percent >= 40 ? 'var(--warning)' : 'var(--danger)'} ${percent * 3.6}deg, var(--bg) ${percent * 3.6}deg)`;
-
-  let title, msg;
-  if (percent >= 90) { title = '🏆 Outstanding!'; msg = 'You\'ve mastered this module!'; }
-  else if (percent >= 70) { title = '🎉 Great Job!'; msg = 'You know your stuff! Review the missed ones.'; }
-  else if (percent >= 40) { title = '📚 Keep Studying'; msg = 'You\'re getting there. Review and try again!'; }
-  else { title = '💪 Don\'t Give Up!'; msg = 'Review the flashcards and try again!'; }
-  document.getElementById('resultTitle').textContent = title;
-  document.getElementById('resultMsg').textContent = msg;
-}
-
-function retryQuiz() {
-  currentQIndex = 0;
-  answeredCount = 0;
-  correctCount = 0;
-  currentQuestions = shuffleArray([...currentModule.questions]);
-  updateStats();
-  document.getElementById('resultsScreen').style.display = 'none';
-  document.getElementById('quizArea').style.display = 'block';
-  showQuestion();
-}
-
-function quitQuiz() {
-  document.getElementById('quizArea').style.display = 'none';
-  document.getElementById('moduleSelector').style.display = 'block';
-  document.getElementById('modeToggle').style.display = 'flex';
-}
-
-// Flashcard functions
-function showFlashcard() {
-  const q = currentQuestions[fcIndex];
-  document.getElementById('fcCounter').textContent = `${fcIndex + 1} / ${currentQuestions.length}`;
-  document.getElementById('fcPrev').disabled = fcIndex === 0;
-  document.getElementById('fcNext').disabled = fcIndex === currentQuestions.length - 1;
-
-  const front = document.getElementById('fcFront');
-  const back = document.getElementById('fcBack');
-
-  front.innerHTML = `
-    <div class="fc-type">${q.type === 'mcq' ? 'Multiple Choice' : 'Fill in the Blank'}</div>
-    <div class="fc-question">${formatQuestion(q)}</div>
-    <div class="fc-hint">👆 Click to reveal answer & explanation</div>
-  `;
-
-  let backHtml = `<div class="fc-type">Answer</div>`;
-  if (q.type === 'mcq') {
-    backHtml += `<div class="fc-answer">${q.options[q.answer]}</div>`;
-  } else {
-    backHtml += `<div class="fc-answer">${q.answer}</div>`;
-  }
-  backHtml += `<div class="fc-explanation">${q.explanation}</div>`;
-  back.innerHTML = backHtml;
-
-  document.getElementById('flashcard').classList.remove('flipped');
-}
-
-function flipCard() {
-  document.getElementById('flashcard').classList.toggle('flipped');
-}
-
-function nextCard() {
-  if (fcIndex < currentQuestions.length - 1) {
-    fcIndex++;
-    showFlashcard();
-  }
-}
-
-function prevCard() {
-  if (fcIndex > 0) {
-    fcIndex--;
-    showFlashcard();
-  }
-}
-
-// Navigation
-function goBack() {
-  if (document.getElementById('quizArea').style.display === 'block' ||
-      document.getElementById('flashcardContainer').style.display === 'block' ||
-      document.getElementById('resultsScreen').style.display === 'block') {
-    document.getElementById('quizArea').style.display = 'none';
-    document.getElementById('flashcardContainer').style.display = 'none';
-    document.getElementById('resultsScreen').style.display = 'none';
-    document.getElementById('moduleSelector').style.display = 'block';
-    document.getElementById('modeToggle').style.display = 'flex';
-  } else if (document.getElementById('moduleSelector').style.display === 'block') {
-    document.getElementById('moduleSelector').style.display = 'none';
-    document.getElementById('weekSelector').style.display = 'block';
-    document.getElementById('modeToggle').style.display = 'none';
-    document.getElementById('backBtn').classList.remove('show');
-  }
-}
-
-function goHome() {
-  document.getElementById('resultsScreen').style.display = 'none';
-  document.getElementById('weekSelector').style.display = 'block';
-  document.getElementById('backBtn').classList.remove('show');
-  document.getElementById('modeToggle').style.display = 'none';
-}
-
-function updateStats() {
-  document.getElementById('statAnswered').textContent = answeredCount;
-  document.getElementById('statCorrect').textContent = correctCount;
-  if (answeredCount > 0) {
-    const pct = Math.round((correctCount / answeredCount) * 100);
-    const el = document.getElementById('statAccuracy');
-    el.textContent = pct + '%';
-    el.className = 'value ' + (pct >= 70 ? 'success' : pct >= 40 ? '' : 'danger');
-  }
-}
-
-function shuffleArray(arr) {
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-  return arr;
-}
-
-init();
+const quiz=[
+{q:'In wired 802.1X, which device usually acts as authenticator?',o:['Client PC','Access switch','Certificate Authority','DNS server'],a:1,e:'The switch mediates access and communicates with the authentication server.'},
+{q:'EAPOL carries authentication traffic between which roles?',o:['Switch and RADIUS server','Supplicant and authenticator','CA and RA','Two VPN gateways'],a:1,e:'EAPOL is EAP over LAN on the client-to-switch link.'},
+{q:'Which port-security mode drops traffic and increments the violation counter?',o:['protect','restrict','shutdown','auto'],a:1,e:'Restrict drops and reports/counts violations; shutdown error-disables the port.'},
+{q:'A MAC flooding attack targets the switch’s…',o:['Routing table','PC ARP cache','MAC/CAM address table','Certificate store'],a:2,e:'It tries to fill the MAC address table with bogus source addresses.'},
+{q:'Which attack uses a rogue DHCP server to give false gateway/DNS information?',o:['DHCP starvation','DHCP spoofing','MAC flooding','STP root attack'],a:1,e:'DHCP spoofing supplies malicious or incorrect configuration.'},
+{q:'Which feature validates ARP against IP-to-MAC bindings?',o:['IP Source Guard','PortFast','DAI','PAT'],a:2,e:'Dynamic ARP Inspection helps mitigate ARP spoofing.'},
+{q:'How does IPSG differ from DAI?',o:['IPSG checks only ARP','IPSG filters IP packets generally, not only ARP','IPSG encrypts packets','IPSG is an IKE phase'],a:1,e:'IPSG filters source IP traffic, while DAI inspects ARP.'},
+{q:'A BPDU arrives on a PortFast + BPDU Guard port. Expected result?',o:['Port automatically becomes trunk','Port becomes error-disabled','Switch reboots','VLAN is deleted'],a:1,e:'BPDU Guard protects edge ports by error-disabling on BPDU reception.'},
+{q:'Which cipher rearranges symbol positions?',o:['Substitution','Transposition','Hashing','HMAC'],a:1,e:'Transposition changes positions; substitution replaces symbols.'},
+{q:'Which is a one-time-pad requirement?',o:['Reuse key repeatedly','Predictable key','Truly random key used once','Key shorter than message'],a:2,e:'OTP requires a random secret key at least as long as the message and one-time use.'},
+{q:'What does adding one bit to an ideal key do to the keyspace?',o:['Halves it','Doubles it','Adds one possibility','No change'],a:1,e:'2^(n+1) = 2 × 2^n.'},
+{q:'Which statement about a plain hash is correct?',o:['It inherently proves sender identity','It encrypts the message','It does not by itself authenticate sender','It is identical to a signature'],a:2,e:'A digest alone does not prove who created the message.'},
+{q:'HMAC uses…',o:['A shared secret with a hash construction','Only a public key','A new IP header','A VLAN tag'],a:0,e:'HMAC supports integrity and authentication between parties sharing a secret.'},
+{q:'A digital signature is created using the sender’s…',o:['Public key','Private key','Default gateway','DHCP lease'],a:1,e:'Sender signs with private key; receiver verifies using sender public key.'},
+{q:'Which PKI component issues and signs certificates?',o:['RA','CA','OCSP client','DHCP snooping'],a:1,e:'The Certificate Authority issues and signs certificates.'},
+{q:'Which IPsec protocol commonly provides confidentiality through encryption?',o:['AH','ESP','EAPOL','DTP'],a:1,e:'ESP commonly provides encryption; AH does not.'},
+{q:'Which IPsec mode encapsulates the whole original IP packet in a new IP packet?',o:['Transport','Tunnel','Access','Promiscuous'],a:1,e:'Tunnel mode adds a new outer IP header around the original IP packet.'},
+{q:'In classic IKEv1, Phase 1 primarily…',o:['Applies ASA ACL','Authenticates peers and establishes protected IKE channel','Builds DHCP binding table','Changes VLAN IDs'],a:1,e:'Phase 1 establishes the protected IKE relationship; Phase 2 negotiates IPsec SAs.'},
+{q:'What does access-group OUTSIDE-IN in interface outside do?',o:['Creates DHCP pool','Applies ACL inbound on outside interface','Creates NAT only','Enables PortFast'],a:1,e:'It attaches the ACL to inbound traffic on the named interface.'},
+{q:'In MPF, what activates a policy globally or on an interface?',o:['Class map','Policy map','Service policy','Network object'],a:2,e:'Class map matches; policy map defines actions; service policy activates.'}
+];
+function renderQuiz(){const root=document.getElementById('quizQuestions');quiz.forEach((x,i)=>{const d=document.createElement('div');d.className='q';let s=`<p><b>${i+1}. ${x.q}</b></p>`;x.o.forEach((v,j)=>s+=`<label><input type="radio" name="q${i}" value="${j}"> ${String.fromCharCode(65+j)}. ${v}</label>`);s+=`<div class="feedback" id="f${i}" hidden></div>`;d.innerHTML=s;root.appendChild(d)})}
+function markQuiz(){let score=0;quiz.forEach((x,i)=>{const a=document.querySelector(`input[name="q${i}"]:checked`),f=document.getElementById('f'+i);f.hidden=false;if(a&&+a.value===x.a){score++;f.className='feedback good';f.textContent='Correct. '+x.e}else{f.className='feedback bad';f.textContent='Correct answer: '+String.fromCharCode(65+x.a)+'. '+x.o[x.a]+'. '+x.e}});const s=document.getElementById('score');s.textContent=`Score: ${score} / ${quiz.length} (${Math.round(score/quiz.length*100)}%)`;s.style.color=score>=16?'var(--teal)':score>=12?'var(--gold)':'var(--red)'}
+function resetQuiz(){document.querySelectorAll('#quizQuestions input').forEach(x=>x.checked=false);document.querySelectorAll('.feedback').forEach(x=>{x.hidden=true;x.textContent=''});document.getElementById('score').textContent='Not marked'}
+function allDetails(v){document.querySelectorAll('details.rev').forEach(x=>x.open=v)}
+function updateProgress(){const d=[...document.querySelectorAll('details.rev')],n=d.filter(x=>x.dataset.done==='1').length;document.getElementById('progText').textContent=`${n} / ${d.length}`;document.getElementById('progBar').style.width=(n/d.length*100)+'%'}
+document.querySelectorAll('details.rev summary').forEach(s=>{s.title='Double-click to mark/unmark as reviewed';s.addEventListener('dblclick',()=>{const d=s.parentElement;d.dataset.done=d.dataset.done==='1'?'0':'1';updateProgress()})});
+function filter(){const q=document.getElementById('search').value.toLowerCase().trim();document.querySelectorAll('#sections [data-search]').forEach(s=>s.style.display=(!q||s.dataset.search.toLowerCase().includes(q)||s.innerText.toLowerCase().includes(q))?'':'none')};document.getElementById('search').addEventListener('input',filter);function clearSearch(){document.getElementById('search').value='';filter()}renderQuiz();updateProgress();
 </script>
-</body>
-</html>
+</body></html>
